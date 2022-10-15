@@ -2,12 +2,14 @@
 @section("title","$post->title")
 
 @section("content")
+{{--
 <style>
     a:hover{
         text-decoration:none;
     }
     
 </style>
+--}}
 <div class="container mt-2 minim">
     <div class="row mb-2">
         <div class="col-auto mt-2">
@@ -29,7 +31,8 @@
                         <p><?php echo $post->body_main; ?></p>                        
                     </div>
                     <div class="card-text mt-5 post_detail_bodyplus">
-                        <p><?php echo $post->body_plus; ?></p>
+                        {{--<p><?php echo $post->body_plus; ?></p>--}}
+                        <p>{!!$post->body_plus!!}</p>
                     </div>
                 </div>
             </div>
@@ -184,3 +187,6 @@
     </textarea>-->
     
 @endsection
+<script>
+    
+</script>
