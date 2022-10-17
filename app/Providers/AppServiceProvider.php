@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Blade;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,5 +25,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+        $this->registerBladeDirectives();
+    }
+
+    protected function registerBladeDirectives()
+    {
+        Blade::if('admin', function($role) {
+            return auth()->user() and auth()->user()->code==$role;
+        });
+
+        
     }
 }

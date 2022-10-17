@@ -1,3 +1,6 @@
+const token = document.getElementsByName('csrf_token')[0].getAttribute('content');
+const route = document.getElementsByName('route_name')[0].getAttribute('content');
+console.log(route)
 function editor_init(field){
     //CKEDITOR.plugins.addExternal('codesnippet',base+'/static/libs/ckeditor/plugins/codesnippet/','plugins.js');
     CKEDITOR.replace(field,{
@@ -19,3 +22,11 @@ function editor_init(field){
         ]
     })
 }
+
+//botón nav activo
+function set_active(){
+
+
+}
+
+//window.addEventListener

@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::post('/uploaded',[UploadController::class,'upload'])->name('upload');
 Route::get('/uploaded2',[UploadController::class,'upload2'])->name('upload2');
 
-Route::get('/',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/post/{slug}',[BlogController::class,'post'])->name('post');
 Auth::routes();
@@ -36,6 +36,12 @@ Route::get("category/{slug}",[BlogController::class,'category'])->name("category
 Route::get("tag/{slug}",[BlogController::class,'tag'])->name("tag");
 
 Route::middleware(["auth"])->group(function(){
-    Route::resource("posts",PostController::class);
+    Route::resource("posts",PostController::class,[
+        'names' => [
+            'index' =>'posts.index',
+            'create' =>'posts.create',
+            'edit' => 'posts.edit'
+        ]
+    ]);
 });
 

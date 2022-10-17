@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+{{--
+@if(perm()->testPermission(Auth::user()->code,'active'))
+--}}
 <div class="container">
 	<div class="row mt-3 mb-3">
         <div class="col-md-12 col-xl-9 pl-xl-0">
@@ -14,6 +17,10 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">                        
                         <img class="d-block w-100 imagen-car" src="ima/fondo_expressjs.png">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 imagen-car" src="ima/linux.jpg">
@@ -47,16 +54,15 @@
             </div>                        
         </div>
         
-        <div id="latcol" class="col-8 mx-auto col-xl-3 bg-dark text-center rounded mt-3 mt-xl-0 p-0 ">
+        <div id="latcol" class="col-8 mx-auto col-xl-3 text-center rounded mt-3 mt-xl-0 p-0 shadow" style="border:#D3D3D3 1px solid">
             <!--<h5 class="text-white pt-2 font-weight-bold">Entradas Recientes</h5>-->
             @foreach($posts as $post)
-                <div class="div_lat pb-3 pt-2">
-                    <h4  class="" >
-                        <a class="columna_index" href="#" >
-                            {{$post->title}}
-                        </a>
-                    </h4>
-                    <p class="text-white columna_index2">{{$post->body_main}}</p>
+                <div class="div_lat">
+                    <a class="column_index" href="{{route('post',['slug' => $post->slug])}}" >
+                        <h4>{{$post->title}}</h4>
+                    </a>
+                    
+                    <p class="column_index2">{{$post->body_main}}</p>
                     
                 </div>
                 <div class="w-100 d-xl-none" style="height:10px;background-color:white"></div>

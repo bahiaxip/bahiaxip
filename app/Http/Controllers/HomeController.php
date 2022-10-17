@@ -14,6 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        //$this->middleware('admin');
     }
 
     /**
@@ -27,7 +28,7 @@ class HomeController extends Controller
     }
 
     public function home(){
-        $posts=Posts::orderBy("id","desc")->where("status","PUBLISHED")->take(5)->get();
+        $posts=Posts::orderBy("id","desc")->where("status","PUBLISHED")->take(10)->get();
         $data = ['posts' => $posts];
         return view('home.home',$data);
     }

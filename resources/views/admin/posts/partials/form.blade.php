@@ -1,10 +1,12 @@
 {{ Form::hidden("user_id",auth()->user()->id) }}
 
-@if($post->id)
-    {{ Form::hidden("postId", $post->id ) }}
-@else
-    {{ Form::hidden("postId") }}
-@endif
+@isset($post)
+    @if($post && $post->id)
+        {{ Form::hidden("postId", $post->id ) }}
+    @else
+        {{ Form::hidden("postId") }}
+    @endif
+@endisset
 
 <div class="form-group mtop16">
     {{ Form::label("category_id", "Categorías") }}
@@ -41,12 +43,12 @@
 <div class="form-group mtop16">
     {{ Form::label("body_plus", "Contenido") }}
     <!--<div id="summernote" name="body" id="body"></div>-->
-    {{ Form::textarea("body_plus",htmlspecialchars($post->body_plus), ["class" => "form-control","id"=> "body_plus","rows" => "10", "cols" => "80","spellcheck"=>"false"]) }}
+    {{ Form::textarea("body_plus",($post) ? htmlspecialchars($post->body_plus): null, ["class" => "form-control","id"=> "body_plus","rows" => "10", "cols" => "80","spellcheck"=>"false"]) }}
     
 </div>
 <div class="form-group mtop16">
     {{ Form::label("file", "Imagen") }}
-    {{ Form::file("file",["oninput"=>"testFileUpload()"]) }}
+    {{ Form::file("file") }}
 </div>
 <!--<div class="form-group">
     {{ Form::label("status", "Estado") }}

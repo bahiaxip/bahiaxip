@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="csrf_token" content="{{ csrf_token() }}">
+    <meta name="route_name" content={{ Route::currentRouteName() }}>
+    <link rel="shortcut icon" href="{{asset('ima/logo_BX.png')}}" />
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -19,7 +20,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- styles highlight -->
-    <link rel="stylesheet" href="{{url('ckeditor/plugins/codesnippet/lib/highlight/styles/default.css')}}">
+    <link rel="stylesheet" href="{{url('ckeditor/plugins/codesnippet/lib/highlight/styles/sunburst.css')}}">
     <script src="{{url('ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js')}}"></script>
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
@@ -29,46 +30,70 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm bx_nav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Bahiaxip') }}
+                    {{--<img src="{{asset('ima/logo_bahiaxip.png')}}" alt="" height="30" >--}}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="">
+                <div class="collapse navbar-collapse bx_navbar" id="navbarSupportedContent " style="">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto" style="display:flex;margin:auto">
-                        <a href="/" class="nav-link">
-                            <li>Inicio</li>
-                        </a>
-                        <a href="/blog" class="nav-link">
-                            <li>Blog</li>
-                        </a>
-                        <a href="/" class="nav-link">
-                            <li>Contacto</li>
-                        </a>
-                        <a href="/" class="nav-link">
-                            <li>Login</li>
-                        </a>                        
+                    <ul class="navbar-nav me-auto links" >
+                        <li>
+                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'home') {{'active'}}@endif">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog" class="nav-link @if(Route::currentRouteName() == 'blog' || Route::currentRouteName() == 'post') {{'active'}}@endif">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'contact') {{'active'}}@endif">
+                                Contacto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
+                                Login
+                            </a>
+                        </li>
+                        @admin('active')
+                        <li>
+                            <a href="{{asset('/posts')}}" class="nav-link @if(Route::currentRouteName() == 'posts.index'
+                                ||Route::currentRouteName() == 'posts.index'
+                                ||Route::currentRouteName() == 'posts.create'
+                                ||Route::currentRouteName() == 'posts.edit'
+                                ) {{'active'}}@endif">
+                                Entradas
+                            </a>
+                        </li>
+                        @endadmin
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto nav_user">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link @if(Route::currentRouteName() == 'login') {{'active'}} @endif" href="{{ route('login') }}">
+                                    {{ __('Login') }}
+                                </a>
+                            </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
-                                </li>
+                            <li class="nav-item">    
+                                <a class="nav-link @if(Route::currentRouteName() == 'register') {{'active'}} @endif" href="{{ route('register') }}">
+                                    {{ __('Registro') }}
+                                </a>
+                            </li>                                
                             @endif
                         @else
                             <li class="nav-item dropdown">
@@ -80,7 +105,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar session') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -143,7 +168,7 @@
         </div>
         @endif
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
@@ -200,6 +225,7 @@
         //Busca los <pre><code>...</code></pre> y establece los estilos
         //https://highlightjs.org/usage/
         hljs.initHighlightingOnLoad();
+        
 
         
     </script>

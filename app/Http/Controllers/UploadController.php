@@ -24,7 +24,8 @@ class UploadController extends Controller
             return response()->json([
                 'uploaded' => 1,
                 'fileName' => $request->upload->getClientOriginalName(),
-                'url' => URL::asset('upload/posts/'.$this->email.'/'.$filename)
+                'url' => URL::asset('upload/posts/'.$this->email.'/'.$filename),
+                'error' => 'Ocurrió un error'
             ]);
     }
     public function create_dir_user(){

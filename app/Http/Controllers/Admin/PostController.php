@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\Posts, App\Models\Category,App\Models\Tag
+use App\Models\Posts, App\Models\Category,App\Models\Tag, App\Models\Ima_post
 ;
 use App\Http\Requests\PostStoreRequest;
+use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
 
@@ -49,16 +50,18 @@ class PostController extends Controller
         $categories = Category::orderBy("name","ASC")->pluck("name","id");
         $tags = Tag::orderBy("name","ASC")->get();
         $url=env("APP_URL","localhost");
+        $post='';
+        $url = null;
         // con $id hacemos una consulta mysql y obtenemos el próximo id de la tabla indicada
         //$id=DB::select('SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA= "mundaxip_com_db" AND TABLE_NAME ="posts" ');
         //$post=$id[0]->AUTO_INCREMENT;
 
         //ventana de aviso de cookies
-        $post=(object) array("id"=>null);
+            //$post=(object) array("id"=>null);
         //borramos sesión para la creación de un nuevo post, por si el mismo usuario ya ha creado otro post y .
-        session()->forget("id_images");
+            //session()->forget("id_images");
         
-        $img_sesion=session()->put("aviso",true);
+            //$img_sesion=session()->put("aviso",true);
         return view("admin.posts.create",compact("categories","tags","post","url"));
     }
 
@@ -271,6 +274,7 @@ class PostController extends Controller
             $img_to_delete=Ima_Post::where("post_id",$post->id)->get();
         //return $img_to_delete;
             //$cuenta=count($img_to_delete);
+            
             if(!$img_to_delete->isEmpty()){
                 foreach ($img_to_delete as $item ) {
                     //delete db

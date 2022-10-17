@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col column">
             <h5>Imagen Principal</h5>
-            <img src="{{ $post->file}}" >
+            <img src="{{asset($post->file)}}" >
         </div>
     </div>
     

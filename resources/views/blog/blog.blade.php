@@ -68,7 +68,7 @@
             <!--para que se visualice correctamente si se queda un post suelto
                 se ha creado un contador que cada número impar se añade un div "card-group" pero no se cierra y si es par no se crea pero se cierra, de esta forma se crea un div y cuando se ha creado el segundo div "card" se cierra el div "card-group" -->
             @if($i%2==0)
-            <div class="card-group w-100">
+            <div class="card-group w-100 mtop16">
             @endif
                 <div class="card border_card">
                     <div class="card-header post_title" >                
@@ -86,7 +86,7 @@
                         </div>
                     </div>-->
                     <div class="card-block  post_card_block">                
-                        <div class="card-text mt-3 post_text">
+                        <div class="card-text post_text">
                         {{ $post->body_main }}                        
                         </div>
                     </div>

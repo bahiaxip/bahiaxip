@@ -10,15 +10,16 @@
     
 </style>
 --}}
-<div class="container mt-2 minim">
-    <div class="row mb-2">
-        <div class="col-auto mt-2">
-            <a  class="btn_category" href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{ $post->category->name }}</span></a>
+<div class="container minim post">
+    <div class="row py-1">
+        <div class="col-auto">
+            <a href="javascript:history.back()" title="Volver" ><span style="font-size:18px;font-weight:bold;display:inline-flex;vertical-align:middle">&#x021A9;</span></a>
+            <a  class="btn_category"  href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{ $post->category->name }}</span></a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <div class="card border_card ">
+            <div class="card box_card ">
                 <p class="card-header card-success-outline post_detail_header ">
                     {{ $post->title }}
                 </p>
