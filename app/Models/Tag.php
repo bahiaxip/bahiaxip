@@ -10,7 +10,7 @@ class Tag extends Model
     use HasFactory;
 
     protected $fillable=[
-        "name","slug"
+        "name","slug",'status','user_id'
     ];
     
     public function posts()

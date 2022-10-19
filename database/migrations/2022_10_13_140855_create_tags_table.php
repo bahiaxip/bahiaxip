@@ -17,6 +17,8 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("slug")->unique();
+            $table->enum("status",["PUBLISHED", "DRAFT"])->default("DRAFT");
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

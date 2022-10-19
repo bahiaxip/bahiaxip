@@ -16,119 +16,177 @@ class TagSeeder extends Seeder
     {
         Tag::create([
             'name' => 'PHP',
-            'slug' => 'php'
+            'slug' => 'php',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'JavaScript',
-            'slug' => 'javascript'
+            'slug' => 'javascript',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Linux',
-            'slug' => 'linux'
+            'slug' => 'linux',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Laravel',
-            'slug' => 'laravel'
+            'slug' => 'laravel',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Drupal',
-            'slug' => 'drupal'
+            'slug' => 'drupal',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Xiaomi',
-            'slug' => 'xiaomi'
+            'slug' => 'xiaomi',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'MySQL',
-            'slug' => 'mysql'
+            'slug' => 'mysql',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'TypeScript',
-            'slug' => 'typescript'
+            'slug' => 'typescript',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Angular',
-            'slug' => 'angular'
+            'slug' => 'angular',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Git',
-            'slug' => 'git'
+            'slug' => 'git',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'MongoDB',
-            'slug' => 'mongodb'
+            'slug' => 'mongodb',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'NodeJS',
-            'slug' => 'nodejs'
+            'slug' => 'nodejs',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'HTML5',
-            'slug' => 'html5'
+            'slug' => 'html5',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'jQuery',
-            'slug' => 'jquery'
+            'slug' => 'jquery',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Debian',
-            'slug' => 'debian'
+            'slug' => 'debian',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'CSS',
-            'slug' => 'css'
+            'slug' => 'css',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'NPM',
-            'slug' => 'npm'
+            'slug' => 'npm',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'VPS',
-            'slug' => 'vps'
+            'slug' => 'vps',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'SQL',
-            'slug' => 'sql'
+            'slug' => 'sql',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'HTTP',
-            'slug' => 'http'
+            'slug' => 'http',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Socket',
-            'slug' => 'socket'
+            'slug' => 'socket',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Java',
-            'slug' => 'java'
+            'slug' => 'java',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Apache',
-            'slug' => 'apache'
+            'slug' => 'apache',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Android',
-            'slug' => 'android'
+            'slug' => 'android',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'React',
-            'slug' => 'react'
+            'slug' => 'react',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Vue',
-            'slug' => 'vue'
+            'slug' => 'vue',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Biedit',
-            'slug' => 'biedit'
+            'slug' => 'biedit',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Windows',
-            'slug' => 'windows'
+            'slug' => 'windows',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Tag::create([
             'name' => 'Fedora',
-            'slug' => 'fedora'
+            'slug' => 'fedora',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
 
 
