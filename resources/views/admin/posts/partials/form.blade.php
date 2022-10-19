@@ -39,11 +39,11 @@
     
     {{ Form::textarea("body_main",null, ["class" => "form-control","rows" => "10", "cols" => "80","spellcheck"=>"true"]) }}
 </div>
-
+{{-- añadimos la etiqueta v-pre para que no genere error la doble llave con Vue(integrado en Laravel Mix )--}}
 <div class="form-group mtop16">
     {{ Form::label("body_plus", "Contenido") }}
     <!--<div id="summernote" name="body" id="body"></div>-->
-    {{ Form::textarea("body_plus",($post) ? htmlspecialchars($post->body_plus): null, ["class" => "form-control","id"=> "body_plus","rows" => "10", "cols" => "80","spellcheck"=>"false"]) }}
+    {{ Form::textarea("body_plus",($post) ? htmlspecialchars($post->body_plus): null, ["class" => "form-control","id"=> "body_plus","rows" => "10", "cols" => "80","spellcheck"=>"false",'v-pre']) }}
     
 </div>
 <div class="form-group mtop16">
@@ -104,15 +104,31 @@
                 'X-CSRF-TOKEN':'{{csrf_token()}}'
             },
             
+            
             toolbar:[
+                /*no funciona el copy/paste en algunos navegadores*/
+                /* 
                 { name:'clipboard', items:['Cut','Copy','Paste','PasteText','-','Undo','Redo']},
+                */
+                { name: 'paragraph', items:['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']},
                 //{ name: 'basicstyles',items:['Bold','Italic','BulletedList','Strike','Image','Link','Unlink','Blockquote']},
                 //eliminamos 'Image','Link' y 'Unlink' temporalmente
-                { name: 'basicstyles',items:['Bold','Italic','BulletedList','Strike','Blockquote']},
+                { name: 'basicstyles',items:['Bold','Italic','UnderLine','Strike','BulletedList','Blockquote']},
+                {name: 'links', items:['Link']},
+                { name:'styles', items:['Font','FontSize']},
+                {name:'colors', items:['TextColor','BGColor']},
                 { name: 'document', items:['CodeSnippet','EmojiPanel','Preview','Source']},
-                { name:'insert', items:['Image']}
+                { name:'insert', items:['Image']},
+                
+
             ],
-            extraPlugins: 'codesnippet',
+            
+            /*
+            toolbar:[
+                {name: 'colors',items:['TextColor','BGColor']}
+            ],
+            */
+            extraPlugins:['codesnippet','colorbutton','font','justify','basicstyles'],
             codeSnippet_theme: 'monokai_sublime'
             
         });
