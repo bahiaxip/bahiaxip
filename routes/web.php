@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\Admin\PostController, App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController, App\Http\Controllers\Admin\TagController, App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +49,14 @@ Route::middleware(["auth"])->group(function(){
             'create' =>'tags.create',
             'edit' => 'tags.edit',
             'show' => 'tags.show'
+        ]
+    ]);
+    Route::resource("categories",CategoryController::class,[
+        'names' => [
+            'index' =>'categories.index',
+            'create' =>'categories.create',
+            'edit' => 'categories.edit',
+            'show' => 'categories.show'
         ]
     ]);
 });

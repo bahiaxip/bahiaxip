@@ -74,6 +74,28 @@
                             </a>
                         </li>
                         @endadmin
+                        @admin('active')
+                        <li>
+                            <a href="{{asset('/categories')}}" class="nav-link @if(Route::currentRouteName() == 'categories.index'
+                                ||Route::currentRouteName() == 'categories.index'
+                                ||Route::currentRouteName() == 'categories.create'
+                                ||Route::currentRouteName() == 'categories.edit'
+                                ) {{'active'}}@endif">
+                                Categorías
+                            </a>
+                        </li>
+                        @endadmin
+                        @admin('active')
+                        <li>
+                            <a href="{{asset('/tags')}}" class="nav-link @if(Route::currentRouteName() == 'tags.index'
+                                ||Route::currentRouteName() == 'tags.index'
+                                ||Route::currentRouteName() == 'tags.create'
+                                ||Route::currentRouteName() == 'tags.edit'
+                                ) {{'active'}}@endif">
+                                Etiquetas
+                            </a>
+                        </li>
+                        @endadmin
                     </ul>
 
                     <!-- Right Side Of Navbar -->

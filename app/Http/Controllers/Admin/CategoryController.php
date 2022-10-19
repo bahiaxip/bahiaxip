@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\Tag;
-
-class TagController extends Controller
+use App\Models\Category;
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,19 +14,17 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //$id=auth()->user()->id;
-        //$user=User::find($i)->roleuser->role_id;
+    {        
         $user = Auth::user();
         //comprobamos si es admin para dar acceso a todas las entradas
         if(auth()->user()->code=='active')//1 es Admin
         {
-            $tags = Tag::paginate(10);
+            $categories = Category::paginate(10);
         }else{
-            $tags = Tag::where('user_id',$user->id)->paginate(10);
+            $categories = Category::where('user_id',$user->id)->paginate(10);
         }
-        $data = ['tags' => $tags];
-        return view('admin.tags.index',$data);
+        $data = ['categories' => $categories];
+        return view('admin.categories.index',$data);
     }
 
     /**
@@ -37,7 +34,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view("admin.tags.create");
+        return view("admin.categories.create");
     }
 
     /**
@@ -48,10 +45,10 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $tag = Tag::create($request->all());
+        $cat = Category::create($request->all());
                 
-        return redirect()->route("tags.index",$tag->id)
-                ->with("info","Etiqueta creada con éxito");
+        return redirect()->route("categories.index",$cat->id)
+                ->with("info","Categoría creada con éxito");
     }
 
     /**
@@ -62,8 +59,9 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        $tag = Tag::find($id);
-        return view("admin.tags.show",compact("tag"));
+        $cat = Category::find($id);
+        $data = ['cat' => $cat];
+        return view("admin.categories.show",$data);
     }
 
     /**
@@ -74,8 +72,9 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        $tag = Tag::find($id);
-        return view("admin.tags.edit",compact("tag"));
+        $cat = Category::find($id);
+
+        return view("admin.categories.edit",compact("cat"));
     }
 
     /**
@@ -87,10 +86,10 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tag = Tag::find($id);
-        $tag->fill($request->all())->save();
-        return redirect()->route("tags.edit",$tag->id)
-                ->with("info","Etiqueta actualizada con éxito");
+        $cat = Category::find($id);
+        $cat->fill($request->all())->save();
+        return redirect()->route("categories.edit",$cat->id)
+                ->with("info","Categoría actualizada con éxito");
     }
 
     /**
@@ -103,17 +102,17 @@ class TagController extends Controller
     {
         if($request->ajax())
         {   
-            $tag = Tag::find($id);
+            $cat = Category::find($id);
             
             //if(!auth()->user()->isAdmin())
                 //$this->authorize("pass",$tag);
-            $tag->delete();
+            $cat->delete();
             //$totalposts= Posts::all()->count();
             
             return response()->json([
                 //"total" => $totalposts,
-                "tag" => $tag,
-                "message" => $tag->name." fue eliminado correctamente",
+                "cat" => $cat,
+                "message" => $cat->name." fue eliminado correctamente",
             ]);
         }
     }

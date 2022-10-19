@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->mediumText('body')->nullable();
+            $table->enum('status',['DRAFT','PUBLISHED'])->default('DRAFT');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

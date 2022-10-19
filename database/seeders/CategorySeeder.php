@@ -16,12 +16,16 @@ class CategorySeeder extends Seeder
         Category::create([
            "name"=>"Programación",
             "slug"=>"programacion",
-            "body"=>"NULL"
+            "body"=>"NULL",
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
         Category::create([
            "name"=>"Tecnología",
             "slug"=>"tecnología",
-            "body"=>"NULL"
+            "body"=>"NULL",
+            'status' => 'PUBLISHED',
+            'user_id' => 1
         ]);
     }
 }
