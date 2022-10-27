@@ -32,4 +32,8 @@ class HomeController extends Controller
         $data = ['posts' => $posts];
         return view('home.home',$data);
     }
+
+    public function contact(){
+        
+    }
 }

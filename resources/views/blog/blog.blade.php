@@ -74,7 +74,7 @@
                     <div class="card-header post_title" >                
                         <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
                     </div>
-                    @if($post->file)
+                    @if($post->file && $post->file != "NULL")
                         <a href="{{ route('post',$post->slug) }}">
                             <img src="{{ asset($post->file) }}" class="img-fluid img_posts">
                         </a>

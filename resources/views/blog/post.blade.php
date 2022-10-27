@@ -23,7 +23,7 @@
                 <p class="card-header card-success-outline post_detail_header ">
                     {{ $post->title }}
                 </p>
-                @if($post->file)
+                @if($post->file && $post->file != "NULL")
                         <img src="{{asset($post->file) }}" class="card-image-top img-fluid mx-auto mb-4 " >
                 @endif
                 
@@ -31,7 +31,8 @@
                     <div class="card-title post_detail_bodymain">
                         <p><?php echo $post->body_main; ?></p>                        
                     </div>
-                    <div class="card-text mt-5 post_detail_bodyplus">
+<!-- añadimos el tag v-pre para que las dobles llaves no generen conflicto con Vue (integrado en Laravel Mix)-->
+                    <div class="card-text mt-5 post_detail_bodyplus" v-pre>
                         {{--<p><?php echo $post->body_plus; ?></p>--}}
                         <p>{!!$post->body_plus!!}</p>
                     </div>

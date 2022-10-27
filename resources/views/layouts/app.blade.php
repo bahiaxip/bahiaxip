@@ -32,7 +32,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm bx_nav">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name', 'Bahiaxip') }}
                     {{--<img src="{{asset('ima/logo_bahiaxip.png')}}" alt="" height="30" >--}}
                 </a>
@@ -44,22 +44,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto links" >
                         <li>
-                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'home') {{'active'}}@endif">
+                            <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'home') {{'active'}}@endif">
                                 Inicio
                             </a>
                         </li>
                         <li>
-                            <a href="/blog" class="nav-link @if(Route::currentRouteName() == 'blog' || Route::currentRouteName() == 'post') {{'active'}}@endif">
+                            <a href="{{route('blog')}}" class="nav-link @if(Route::currentRouteName() == 'blog' || Route::currentRouteName() == 'post') {{'active'}}@endif">
                                 Blog
                             </a>
                         </li>
                         <li>
-                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'contact') {{'active'}}@endif">
+                            <a href="{{route('contact')}}" class="nav-link @if(Route::currentRouteName() == 'contact') {{'active'}}@endif">
                                 Contacto
                             </a>
                         </li>
                         <li>
-                            <a href="/" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
+                            <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
                                 Login
                             </a>
                         </li>

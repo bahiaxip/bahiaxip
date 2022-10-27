@@ -123,11 +123,16 @@ rgba1 = rgb(72,97,255)
 #principal-carousel
 	img
 		max-height 550px
+#latcol::-webkit-scrollbar{
+	display none
+}
 #latcol
 	display flex
 	flex-flow column
 	max-height 550px
-	overflow hidden
+	overflow auto
+	scrollbar-width none
+
 	.div_lat
 		background-color color10
 		border-bottom color9 1px solid

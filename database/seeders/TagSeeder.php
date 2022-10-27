@@ -188,9 +188,30 @@ class TagSeeder extends Seeder
             'status' => 'PUBLISHED',
             'user_id' => 1
         ]);
-
-
-
+        Tag::create([
+            'name' => 'IDE',
+            'slug' => 'ide',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
+        ]);
+        Tag::create([
+            'name' => 'SQLite',
+            'slug' => 'sqlite',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
+        ]);
+        Tag::create([
+            'name' => 'Composer',
+            'slug' => 'composer',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
+        ]);
+        Tag::create([
+            'name' => 'Youtube',
+            'slug' => 'youtube',
+            'status' => 'PUBLISHED',
+            'user_id' => 1
+        ]);
 
     }
 }

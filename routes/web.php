@@ -27,10 +27,12 @@ Route::get('/uploaded2',[UploadController::class,'upload2'])->name('upload2');
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
+
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/post/{slug}',[BlogController::class,'post'])->name('post');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 //categoría
 Route::get("category/{slug}",[BlogController::class,'category'])->name("category");
 Route::get("tag/{slug}",[BlogController::class,'tag'])->name("tag");

@@ -43,7 +43,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col mt-3">
+{{-- añadimos la etiqueta v-pre para que no genere error la doble llave con Vue(integrado en Laravel Mix )--}}
+        <div class="col mt-3" v-pre>
             <p><strong>Contenido Adicional</strong></p>
             <?php echo $post->body_plus; ?>
         </div>
