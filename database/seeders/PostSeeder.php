@@ -23370,7 +23370,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl</code></pre>
 ',          
             'user_id' => 1,
             'status' => 'PUBLISHED',
-            'file' => 'image/post/main/3B7VhwYt2vC0DK0VZBKXr66oS97yKcNWvpqVEhqH.jpg'
+            'file' => 'image/post/main/guoV2UCo8RV2fQTjXVWKfL6sMxIkekJ4mv8Blseq.jpg'
 
         ]);
 
@@ -23431,7 +23431,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl</code></pre>
 ',          
             'user_id' => 1,
             'status' => 'PUBLISHED',
-            'file' => 'image/post/main/BgBG8i3BpzBmvQDIzisdC8QMpiE505lGAdvrUJvw.jpg'
+            'file' => 'image/post/main/5NMJAk6Hm5HATwioeIk6uHiN4Yrlw6SUwqUWyb8m.jpg'
 
         ]);
 

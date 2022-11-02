@@ -126,6 +126,29 @@ rgba1 = rgb(72,97,255)
 	img
 		max-height 550px
 		padding 20px
+	/* añadir a mediaqueries */
+	/*	
+	.carousel-control-prev
+		margin-left 10px
+	.carousel-control-next
+		margin-right 10px
+	*/
+	
+	span.carousel-control-prev-icon,span.carousel-control-next-icon
+		background-color rgba(0,0,0,.5)
+		width 40px
+		height 40px
+		
+		border color6 2px solid
+		border-radius 50%
+		//para generar padding al span es necesario manejar background-origin o background-clip*/
+		background-origin content-box
+		/*background-clip content-box*/
+		background-size 100%
+		padding 6px
+		&:hover
+			border color13 2px solid
+		
 		
 #latcol::-webkit-scrollbar{
 	display none
