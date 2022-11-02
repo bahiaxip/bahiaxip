@@ -15,21 +15,25 @@
 				    <button type="button" data-bs-target="#principal-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
 			  </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">                        
-                        <img class="d-block w-100 imagen-car" src="ima/fondo_expressjs.png">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                    <div class="carousel-item active">
+                        <a href="{{url('/post/instalar-youtube-dl')}}">
+                            <img  class="d-block w-100 imagen-car" src="ima/youtubedl.jpg">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block" style="background-color:rgba(0,0,0,.8);border-radius:6px">
+                            <h5>Descarga tus vídeos favoritos de Youtube</h5>                            
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 imagen-car" src="ima/linux.jpg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Descarga todos tus vídeos de Youtube</h5>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 imagen-car" src="ima/mysql.jpg" >
+                        <img class="d-block w-100 imagen-car" src="ima/mongodb.jpg" >
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 imagen-car" src="ima/github.jpg" >
+                        <img class="d-block w-100 imagen-car" src="ima/fondo_expressjs.png" >
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 imagen-car" src="ima/angular.jpg" >
@@ -51,18 +55,20 @@
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
-            </div>                        
+            </div>
+            <div>lakjsdf</div>                       
         </div>
         
-        <div id="latcol" class="col-8 mx-auto col-xl-3 text-center rounded mt-3 mt-xl-0 p-0 shadow" style="border:#D3D3D3 1px solid">
+        <div id="latcol" class="col-8 mx-auto col-xl-3 text-center rounded mt-3 mt-xl-0 p-0 " >
             <!--<h5 class="text-white pt-2 font-weight-bold">Entradas Recientes</h5>-->
             @foreach($posts as $post)
                 <div class="div_lat">
                     <a class="column_index" href="{{route('post',['slug' => $post->slug])}}" >
+                        <img src="{{asset($post->file)}}" alt="" >
                         <h4>{{$post->title}}</h4>
                     </a>
                     
-                    <p class="column_index2">{{$post->body_main}}</p>
+                    {{--<p class="column_index2">{{$post->body_main}}</p>--}}
                     
                 </div>
                 <div class="w-100 d-xl-none" style="height:10px;background-color:white"></div>

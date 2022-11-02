@@ -22,6 +22,9 @@
     <!-- styles highlight -->
     <link rel="stylesheet" href="{{url('ckeditor/plugins/codesnippet/lib/highlight/styles/sunburst.css')}}">
     <script src="{{url('ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js')}}"></script>
+    <!-- awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/8588bc45a2.js" crossorigin="anonymous"></script>
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -30,9 +33,16 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm bx_nav">
+        <!--
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm " style="height:80px;display:flex;margin:auto;justify-content:center;background-color:rgba(0,0,0,.8)">
+            <img src="{{asset('ima/logo_bahiaxip_Nborde.png')}}" alt="" height="60">
+            bahiaxip
+        </nav>
+        -->
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm bx_nav" style="font-family: Usuzi;">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}">
+                <a class="navbar-brand" href="{{ route('home') }}" style="font-family:QuicksandB;font-size:16px">
+                    <img src="{{asset('ima/logo_BX_Nborde.png')}}" alt="" height="40">
                     {{ config('app.name', 'Bahiaxip') }}
                     {{--<img src="{{asset('ima/logo_bahiaxip.png')}}" alt="" height="30" >--}}
                 </a>
@@ -60,7 +70,7 @@
                         </li>
                         <li>
                             <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
-                                Login
+                                Proyectos
                             </a>
                         </li>
                         @admin('active')

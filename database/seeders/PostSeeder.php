@@ -23012,6 +23012,7 @@ nvm uninstall v15.0.1</code></pre>
 
 <pre>
 <code class="language-bash">sudo apt install libnss3-tools</code></pre>
+<p>En caso de error enviando documentos a la plataforma de ja Junta de Andalucia desinstalar la version instalada y volver a instalar la version de Autofirma que ofrece la Junta desde el siguiente enlace:&nbsp;&nbsp;<a href="https://ws024.juntadeandalucia.es/clienteafirma/autofirma/autofirma.html">AutoFirma Junta de Andalucia</a></p>
 
 <p>En el caso de Configurador fnmt puede ser requerida la librer&iacute;a libcanberra.</p>
 
@@ -23369,7 +23370,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl</code></pre>
 ',          
             'user_id' => 1,
             'status' => 'PUBLISHED',
-            'file' => 'image/post/main/66JVEXchmxa2gRAe8idWEm8tI0q8O4V6REOzt5xf.png'
+            'file' => 'image/post/main/3B7VhwYt2vC0DK0VZBKXr66oS97yKcNWvpqVEhqH.jpg'
 
         ]);
 
@@ -23425,12 +23426,12 @@ sudo chmod a+rx /usr/local/bin/youtube-dl</code></pre>
 <pre>
 <code class="language-bash">youtube-dl -f [formato] --add-metadata [vídeo]
 </code></pre>
-
+<p>Para poder instalar youtube-dl se puede seguir el proceso de instalacion desde&nbsp;<a href="/post/instalar-youtube-dl">Instalar youtube-dl</a></p>
 <p>&nbsp;</p>
 ',          
             'user_id' => 1,
             'status' => 'PUBLISHED',
-            'file' => 'image/post/main/66JVEXchmxa2gRAe8idWEm8tI0q8O4V6REOzt5xf.png'
+            'file' => 'image/post/main/BgBG8i3BpzBmvQDIzisdC8QMpiE505lGAdvrUJvw.jpg'
 
         ]);
 

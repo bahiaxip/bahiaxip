@@ -52,57 +52,66 @@
         {{ $posts->render() }}
     </div>-->
     <!--<div class="col-md-offset-2">-->
-    
-    <div class="row justify-content-center">
-        @if($posts->total()==0)
-        <div class="col text-center mt-4">
-            <h5 class="alert-danger p-3">No se obtuvieron resultados</h5>
-        </div>
-         
-        @endif
-        @php
-            $i=0;
-        @endphp
-        
-        @foreach($posts as $post)
-            <!--para que se visualice correctamente si se queda un post suelto
-                se ha creado un contador que cada número impar se añade un div "card-group" pero no se cierra y si es par no se crea pero se cierra, de esta forma se crea un div y cuando se ha creado el segundo div "card" se cierra el div "card-group" -->
-            @if($i%2==0)
-            <div class="card-group w-100 mtop16">
-            @endif
-                <div class="card border_card">
-                    <div class="card-header post_title" >                
-                        <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
-                    </div>
-                    @if($post->file && $post->file != "NULL")
-                        <a href="{{ route('post',$post->slug) }}">
-                            <img src="{{ asset($post->file) }}" class="img-fluid img_posts">
-                        </a>
-                    @endif
-                    <!--<div class="card-block ">                
-                        <div class="card-text mt-3 post_text">
-                        {{ $post->body_main }}
-                        <a href="{{ route('post',$post->slug) }}" class="float-right btn btn-sm leermas">Leer Más</a>
-                        </div>
-                    </div>-->
-                    <div class="card-block  post_card_block">                
-                        <div class="card-text post_text">
-                        {{ $post->body_main }}                        
-                        </div>
-                    </div>
-                </div>
-            @if($i%2!=0)
+    <div style="width:100%;display:flex">
+        <div class="" style="width:70%;margin-bottom:20px">
+            @if($posts->total()==0)
+            <div class="col text-center mt-4">
+                <h5 class="alert-danger p-3">No se obtuvieron resultados</h5>
             </div>
+             
             @endif
-            
             @php
-            $i++
+                $i=0;
             @endphp
-        
-        
-        
-        @endforeach        
-        
+            
+            @foreach($posts as $post)
+                <!--para que se visualice correctamente si se queda un post suelto
+                    se ha creado un contador que cada número impar se añade un div "card-group" pero no se cierra y si es par no se crea pero se cierra, de esta forma se crea un div y cuando se ha creado el segundo div "card" se cierra el div "card-group" -->
+                @if($i%2==0)
+                <div class="card-group mtop16" >
+                @endif
+                    <div class="card border_card">
+                        {{--
+                        <div class="card-header post_title" >                
+                            <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
+                        </div>
+                        --}}
+                        @if($post->file && $post->file != "NULL")
+                            <a href="{{ route('post',$post->slug) }}">
+                                <img src="{{ asset($post->file) }}" class="img-fluid img_posts">
+                            </a>
+                        @endif
+                        <!--<div class="card-block ">                
+                            <div class="card-text mt-3 post_text">
+                            {{ $post->body_main }}
+                            <a href="{{ route('post',$post->slug) }}" class="float-right btn btn-sm leermas">Leer Más</a>
+                            </div>
+                        </div>-->
+                        <div class="card-block  post_card_block">                
+                            <div class="card-text post_text">
+                            {{ $post->body_main }}                        
+                            </div>
+                        </div>
+                    </div>
+                @if($i%2!=0)
+                </div>
+                
+                
+                @endif
+                
+                @php
+                $i++
+                @endphp
+            
+            
+            
+            @endforeach
+            
+            
+        </div>
+        <div style="width:30%">
+            asdfasdf
+        </div>
     </div>
     {{ $posts->links() }}
     
