@@ -129,6 +129,8 @@ return [
     'cookie' => env(
         'SESSION_COOKIE',
         Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+        //cambiar nombre por otro a la cookie de sessión de Laravel por defecto
+        //Str::slug('laravel', '_').'_session'
     ),
 
     /*

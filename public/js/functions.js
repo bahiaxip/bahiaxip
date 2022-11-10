@@ -36,3 +36,33 @@ function set_active(){
 function testBodyPlus(e){
 }
 
+
+//necesario almacenarlo en localstorage
+//reanudar/detener animación cubo 
+let cubo3d_active=1;
+function pausar(){
+    let cubo3d = document.querySelector('.cubo2');
+    let div_pause = document.querySelector('.cubo_pause');
+    if(cubo3d.style.animationPlayState == 'paused'){
+        cubo3d.style.animationPlayState='running';
+        div_pause.style.backgroundImage= "url('../icon/icon_pause.svg')";
+        cubo3d_active = 1;
+    }
+    else{
+        cubo3d.style.animationPlayState='paused';
+        div_pause.style.backgroundImage= "url('../icon/icon_play.svg')";
+        cubo3d_active = 0;
+    }
+}
+
+function showPlay(){
+    let div_pause = document.querySelector('.cubo_pause');
+    div_pause.style.display = 'block';
+
+}
+
+function hidePlay(){
+    let div_pause = document.querySelector('.cubo_pause');
+    div_pause.style.display = 'none';
+}
+
