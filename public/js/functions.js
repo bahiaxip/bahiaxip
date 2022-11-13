@@ -39,30 +39,59 @@ function testBodyPlus(e){
 
 //necesario almacenarlo en localstorage
 //reanudar/detener animación cubo 
-let cubo3d_active=1;
+
 function pausar(){
     let cubo3d = document.querySelector('.cubo2');
     let div_pause = document.querySelector('.cubo_pause');
     if(cubo3d.style.animationPlayState == 'paused'){
+        let cubo2 = document.querySelector('.cubo2');
+        //necesario añadirle segundos desde los estilos, después establecer la animación desde aquí en 0,
+        //si no al cargar la página en pausadoinicia la animación hasta que carga JavaScript
+        cubo2.style.animationDelay = '0s';
+        //reanudamos la animación
         cubo3d.style.animationPlayState='running';
+        //sustituimos el icono de play por el de pause
         div_pause.style.backgroundImage= "url('../icon/icon_pause.svg')";
-        cubo3d_active = 1;
+        //establecemos en LocalStorage()
+        setStorage(1);        
     }
     else{
+        //pausamos la animación
         cubo3d.style.animationPlayState='paused';
+        //sustituimos el icono de pause por el de play
         div_pause.style.backgroundImage= "url('../icon/icon_play.svg')";
-        cubo3d_active = 0;
+        //establecemos en LocalStorage()
+        setStorage(0);
     }
 }
 
+function setStorage(num){
+    localStorage.setItem('bxcube_animate',num);
+}
+function getStorage(){
+
+}
 function showPlay(){
     let div_pause = document.querySelector('.cubo_pause');
+    
     div_pause.style.display = 'block';
 
 }
 
 function hidePlay(){
     let div_pause = document.querySelector('.cubo_pause');
+    
     div_pause.style.display = 'none';
 }
-
+window.addEventListener('load',()=>{
+    console.log("llega")
+    if(localStorage.getItem('bxcube_animate') == 0){
+        let div_pause = document.querySelector('.cubo_pause');        
+        pausar();
+    }else{
+        let cubo2 = document.querySelector('.cubo2');
+        //necesario añadirle segundos desde los estilos, y después establecer la animación desde aquí en 0,
+        //si no al cargar la página en pausado inicia la animación hasta que carga JavaScript
+        cubo2.style.animationDelay = '0s';
+    }
+})

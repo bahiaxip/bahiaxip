@@ -31,7 +31,7 @@
 @endsection
 @section("content")
 
-<div class="container minim">
+<div class="container box_blog">
     <!--<div class="col-md-offset-2">
         <h1>Lista de artículos</h1>
         
@@ -49,11 +49,11 @@
             </div>            
         </div>
         @endforeach        
-        {{ $posts->render() }}
+        {{-- $posts->render() --}}
     </div>-->
     <!--<div class="col-md-offset-2">-->
-    <div style="width:100%;display:flex">
-        <div class="" style="width:70%;margin-bottom:20px">
+    <div class="div_blog">
+        <div class="blog" >
             @if($posts->total()==0)
             <div class="col text-center mt-4">
                 <h5 class="alert-danger p-3">No se obtuvieron resultados</h5>
@@ -64,7 +64,7 @@
                 $i=0;
             @endphp
             
-            @foreach($posts as $post)
+            @foreach($posts as $key => $post)
                 <!--para que se visualice correctamente si se queda un post suelto
                     se ha creado un contador que cada número impar se añade un div "card-group" pero no se cierra y si es par no se crea pero se cierra, de esta forma se crea un div y cuando se ha creado el segundo div "card" se cierra el div "card-group" -->
                 @if($i%2==0)
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                     </div>
-                @if($i%2!=0)
+                @if($i%2!=0 || $key+1 == count($posts))
                 </div>
                 
                 
@@ -113,7 +113,9 @@
             asdfasdf
         </div>
     </div>
+
     {{ $posts->links() }}
+    
     
     
 </div>
