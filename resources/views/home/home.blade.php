@@ -40,14 +40,14 @@
                         </div>
                         <div class="back_skill">
                             <div class="skill" >
-                                <img src="{{asset('icon/responsive_green.svg')}}" alt="" width="64">
+                                <img src="{{asset('icon/software_developer_green.svg')}}" alt="" width="64">
                                 <p>DESARROLLO WEB</p>
                             </div>
                             
                         </div>
                         <div class="back_skill">
                             <div class="skill" >
-                                <img src="{{asset('icon/software_developer_green.svg')}}" alt="" width="64">
+                                <img src="{{asset('icon/api_green.svg')}}" alt="" width="64">
                                 <p>API REST</p>
                             </div>
                         </div>
@@ -55,20 +55,20 @@
                     <div class="box_skills">
                         <div class="back_skill">
                             <div class="skill" >
-                                <img src="{{asset('icon/design_web_green.svg')}}" alt="" width="64">
+                                <img src="{{asset('icon/upload_green.svg')}}" alt="" width="64">
                                 <p>DESPLIEGUE</p>
                             </div>
                         </div>
                         <div class="back_skill">
                             <div class="skill" >
-                                <img src="{{asset('icon/responsive_green.svg')}}" alt="" width="64">
+                                <img src="{{asset('icon/update_green.svg')}}" alt="" width="64">
                                 <p>MANTENIMIENTO</p>
                             </div>
                             
                         </div>
                         <div class="back_skill">
                             <div class="skill" >
-                                <img src="{{asset('icon/software_developer_green.svg')}}" alt="" width="64">
+                                <img src="{{asset('icon/server_green.svg')}}" alt="" width="64">
                                 <p>SERVIDORES</p>
                             </div>
                         </div>
@@ -173,10 +173,150 @@
                         </div>
                     </div>
                 </div>
-                
+            </div>
+            <div class="all_skills">
+                <ul class="carousel_skills mtop16" >
+                    {{--
+                    <div class="sticky left" >                            
+                        <button onclick="scroller('offers','left')">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                    </div>
+                    --}}
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/html5.svg')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            HTML5
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/css3.svg')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            CSS3
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/javascript.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            JavaScript
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/php.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            PHP
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/jquery.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            jQuery
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/mysql.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            MySQL
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/mongo.svg')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            MongoDB
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/composer.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            Composer
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/git_logo.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/npm.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                     <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/angular.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                     <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/bootstrap.svg')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/laravel.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/livewire.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+                    <li class="icon_skill">
+                        <div>
+                            <img src="{{asset('ima/logos/vue.png')}}" alt="" class="p5" >
+                        </div>
+                        <div class="title">
+                            titulo
+                        </div>
+                    </li>
+
+                    {{--
+                    <div class="sticky right">                            
+                        <button onclick="scroller('offers','right')" >
+                            <i  class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    --}}
+                    {{--<input id="auto" type="hidden" value="{{Config::get('ecomsail.owner_name')}}">--}}
+                </ul>
             </div>
         </div>
     </div>
+
     <div class="section_blog">
         <h5 style="color:white;text-align:center">BLOG</h5>
         <div class="row blog">
@@ -257,6 +397,7 @@
     </div>
 
 
+    {{--
     <div class="skills">
         <div class="div_angle">
             <div class="angle_bottom left"></div>
@@ -396,6 +537,7 @@
         
         <div class="image"></div> 
     </div>
+    --}}
     <div class="bill2" style="width:100%;height:200px">
         
     </div>

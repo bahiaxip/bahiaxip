@@ -17,7 +17,10 @@ color17 = #18D26E
 greyboot = #212529
 rgba2 = rgba(0,178,146,1)
 rgba1 = rgb(72,97,255)
-
+*
+	margin 0
+	padding 0
+	box-sizing border-box
 .box_canvas
 	/*
 	width 100%
@@ -388,10 +391,47 @@ rgba1 = rgb(72,97,255)
 							height 5px
 							width 100%
 					
-			
-				
+			.all_skills
+				display block
+				margin 10px auto
+				width 100%
+				overflow hidden
+				.carousel_skills
+					display flex
+					flex-shrink 1
+					gap 50px
+					/*flex-flow row nowrap*/
+					/*overflow auto*/
+					position relative
+					scroll-behavior smooth
+					
+					
+					.icon_skill
+						align-items center
+						justify-content center
+						position relative
+						flex-shrink 0
+						height 100px
+						min-width 0
+					
+						display flex
+						/*flex-flow row wrap*/
+						/*
+						margin auto 20px
+						max-width 150px
+						width calc(95% / 5)
+						*/
+						img
+							width 64px
+									
+					/*
+					.carousel_skills::-webkit-scrollbar{
+						display none
+					}
+					*/
 			
 	.section_blog
+		background-color rgba(0,0,0,.9)
 		margin auto
 		padding 20px 0
 		position relative
@@ -507,7 +547,7 @@ rgba1 = rgb(72,97,255)
 		.div_angle
 			display flex
 			.angle_bottom
-				background greyboot
+				background rgba(0,0,0,.9)
 				height 40px
 				width 50%
 			.left				

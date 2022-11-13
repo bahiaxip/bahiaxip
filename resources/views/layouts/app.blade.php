@@ -371,6 +371,7 @@
 
         
     </script>
+    <script src="{{asset('js/carousel_slides.js')}}"></script>
     @yield('scripts')
 </body>
 </html>
