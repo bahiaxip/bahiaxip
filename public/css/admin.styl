@@ -300,6 +300,8 @@ rgba1 = rgb(72,97,255)
 				font-family YoutubeB
 				font-size 60px
 				min-height 300px
+				transform translate(-400px)
+				opacity 0				
 				.text_name
 					
 					width 50%
@@ -324,12 +326,15 @@ rgba1 = rgb(72,97,255)
 				margin 20px auto 0px auto
 				position relative
 				width 80%
-				.box_skills
+				.box_skills1,.box_skills2
 					display flex
 					justify-content space-between
 					margin 20px auto
 					width 100%
-				.back_skill
+				.box_skills2 .back_skill#back_skill1
+					transform scale(0)
+					
+				.back_skill1,.back_skill2
 					background-color greyboot
 					border-radius 4px
 					color #FFF
@@ -341,14 +346,47 @@ rgba1 = rgb(72,97,255)
 					min-height 200px
 					min-width 175px
 					width 30%
+					transform scale(0)
 					.skill
 						margin auto
+						.path
+							fill transparent
+							stroke-width 1px
+							stroke #18D26E
+							/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
+							
+							
+							transition stroke-dashoffset 1s linear 0s,fill 0.2s linear 1s,stroke-width 0.2s linear 1s
+				
+								
+						.path.svg_active
+							stroke-dashoffset 0px
+							fill #18D26E
+							stroke-width 0px
+							
 						img
 							display flex
 							margin 20px auto
 						p	
 							font-size 18px
-			
+				.back_skill1.offset1 .path
+					stroke-dasharray 150px
+					stroke-dashoffset -150px
+				.back_skill1.offset2 .path
+					stroke-dasharray 220px
+					stroke-dashoffset -220px
+				.back_skill1.offset3 .path
+					stroke-dasharray 260px
+					stroke-dashoffset -260px
+				.back_skill2.offset1 .path
+					stroke-dasharray 100px
+					stroke-dashoffset -100px
+				.back_skill2.offset2 .path
+					stroke-dasharray 200px
+					stroke-dashoffset -200px
+				.back_skill2.offset3 .path
+					stroke-dasharray 250px
+					stroke-dashoffset -250px
 		/*
 		.logo
 			background-color rgba(0,0,0,.8)
@@ -558,6 +596,7 @@ rgba1 = rgb(72,97,255)
 			.right
 				shape-outside polygon(0 0,100% 0,100% 100%)
 				clip-path polygon(0 0,100% 0, 100% 100%)
+
 /* billboard */
 .board
 	display flex
