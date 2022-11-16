@@ -5,17 +5,16 @@
 --}}
 <div class="wrap">
     
+    {{--
     <div  style="width:100%;height:60px;display:flex;background-color:black;transition:all 3s linear;position:relative">
-        
         <div style="width:30px;height:30px;background-color:lightgreen;position:absolute;display:flex;justify-content:end;left:50%;top:15px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);"></div>
-
         <div style="width:200px;margin:auto;background-color:transparent;display:flex;">
-            
             <img src="{{asset('ima/logo_bahiaxipX800.png')}}" alt="" width="200" style="margin:auto;position:relative">
             <!--<img src="{{asset('ima/logo_bahiaxipX800.png')}}" alt="" width="350" style="margin:auto;position:absolute">-->
         </div>
-        
     </div>
+    --}}
+
     
     {{-- section home --}}
     <div class="section_home">
@@ -309,18 +308,22 @@
 
                 </div>
             </div>
-
-
         {{--
         <div style="width:100%;justify-content: center;display:flex;align-items:center;position:relative">
         </div>
         --}}
+        <div class="div_angle">
+            <div class="angle_bottom left"></div>
+            <div class="angle_bottom right"></div>
         </div>
+        </div>
+
     </div>
     {{-- section blog --}}
     <div class="section_skills">
+        
         <div class="skills0">
-            <h5>SKILLS</h5>
+            <h2>SKILLS</h2>
             <div class="box_progress_skills">
                 <div class="left">
                     <div class="progress_skill">
@@ -548,9 +551,14 @@
                 </ul>
             </div>
         </div>
+
     </div>
 
     <div class="section_blog">
+        <div class="div_angle">
+            <div class="angle_bottom left"></div>
+            <div class="angle_bottom right"></div>
+        </div>
         <h5 style="color:white;text-align:center">BLOG</h5>
         <div class="row blog">
             <div class="col-md-12 col-xl-9 pl-xl-0 ">

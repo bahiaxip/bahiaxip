@@ -264,155 +264,179 @@ rgba1 = rgb(72,97,255)
 
 .wrap
 	position relative
-	
-	.home
-		background-color rgba(0,0,0,.9)
-		display flex
-		justify-content center
-		margin auto
-		min-height 100vh
-		perspective 2000px
-		perspective-origin top
-		position relative
-		padding-bottom 30px
+	.section_home
+		background transparent
+		position relative		
 		
-		.box_profile::before
-			content ''			
-			background-image url('../ima/DNI_2022_recortado_bynx800.png')
-			background-repeat no-repeat
-			background-position top right
-			background-size 35%
-			top 0
-			left 0
-			right 0
-			bottom 0
+		.home
+			background-color rgba(0,0,0,.9)
+			display flex
+			justify-content center
 			margin auto
-			opacity 0.2
-			position absolute
-			width 60%
-		.box_profile
+			min-height 100vh
+			perspective 2000px
+			perspective-origin top
+			position relative
+			padding-bottom 40px
 			
-			width 60%
-			.profile
-				align-items center
-				color #FFF
-				display flex
-				font-family YoutubeB
-				font-size 60px
-				min-height 300px
-				transform translate(-400px)
-				opacity 0				
-				.text_name
-					
-					width 50%
-					h5	
-						font-size 35px					
-						span
-							color #18D26E
-				.image
-					
-					display flex
-					
-					min-height 350px
-					justify-content center
-					width 40%
-					/*
-					img
-						width 40%
-						min-width 250px
-						opacity 0.2
-					*/
-			.skills2
-				margin 20px auto 0px auto
-				position relative
-				width 80%
-				.box_skills1,.box_skills2
-					display flex
-					justify-content space-between
-					margin 20px auto
-					width 100%
-				.box_skills2 .back_skill#back_skill1
-					transform scale(0)
-					
-				.back_skill1,.back_skill2
-					background-color greyboot
-					border-radius 4px
+			.box_profile::before
+				content ''			
+				background-image url('../ima/DNI_2022_recortado_bynx800.png')
+				background-repeat no-repeat
+				background-position top right
+				background-size 35%
+				top 0
+				left 0
+				right 0
+				bottom 0
+				margin auto
+				opacity 0.2
+				position absolute
+				width 60%
+			.box_profile
+				
+				width 60%
+				.profile
+					align-items center
 					color #FFF
 					display flex
-					flex-flow column
 					font-family YoutubeB
-					font-size 18px
-					margin auto
-					min-height 200px
-					min-width 175px
-					width 30%
-					transform scale(0)
-					.skill
-						margin auto
-						.path
-							fill transparent
-							stroke-width 1px
-							stroke #18D26E
-							/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
-							
-							
-							transition stroke-dashoffset 1s linear 0s,fill 0.2s linear 1s,stroke-width 0.2s linear 1s
-				
-								
-						.path.svg_active
-							stroke-dashoffset 0px
-							fill #18D26E
-							stroke-width 0px
-							
+					font-size 60px
+					min-height 300px
+					transform translate(-400px)
+					opacity 0				
+					.text_name
+						
+						width 50%
+						h5	
+							font-size 35px					
+							span
+								color #18D26E
+					.image
+						
+						display flex
+						
+						min-height 350px
+						justify-content center
+						width 40%
+						/*
 						img
-							display flex
-							margin 20px auto
-						p	
-							font-size 18px
-				.back_skill1.offset1 .path
-					stroke-dasharray 150px
-					stroke-dashoffset -150px
-				.back_skill1.offset2 .path
-					stroke-dasharray 220px
-					stroke-dashoffset -220px
-				.back_skill1.offset3 .path
-					stroke-dasharray 260px
-					stroke-dashoffset -260px
-				.back_skill2.offset1 .path
-					stroke-dasharray 100px
-					stroke-dashoffset -100px
-				.back_skill2.offset2 .path
-					stroke-dasharray 200px
-					stroke-dashoffset -200px
-				.back_skill2.offset3 .path
-					stroke-dasharray 250px
-					stroke-dashoffset -250px
-		/*
-		.logo
-			background-color rgba(0,0,0,.8)
-			position absolute
-			width 100%
-			height 100%
-		*/
+							width 40%
+							min-width 250px
+							opacity 0.2
+						*/
+				.skills2
+					margin 20px auto 0px auto
+					position relative
+					width 80%
+					.box_skills1,.box_skills2
+						display flex
+						justify-content space-between
+						margin 20px auto
+						width 100%
+					.box_skills2 .back_skill#back_skill1
+						transform scale(0)
+						
+					.back_skill1,.back_skill2
+						background-color greyboot
+						border-radius 4px
+						color #FFF
+						display flex
+						flex-flow column
+						font-family YoutubeB
+						font-size 18px
+						margin auto
+						min-height 200px
+						min-width 175px
+						width 30%
+						transform scale(0)
+						.skill
+							margin auto
+							.path
+								fill transparent
+								stroke-width 1px
+								stroke #18D26E
+								/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
+								
+								
+								transition stroke-dashoffset 1s linear 0s,fill 0.2s linear 1s,stroke-width 0.2s linear 1s
+					
+									
+							.path.svg_active
+								stroke-dashoffset 0px
+								fill #18D26E
+								stroke-width 0px
+								
+							img
+								display flex
+								margin 20px auto
+							p	
+								font-size 18px
+					.back_skill1.offset1 .path
+						stroke-dasharray 150px
+						stroke-dashoffset -150px
+					.back_skill1.offset2 .path
+						stroke-dasharray 220px
+						stroke-dashoffset -220px
+					.back_skill1.offset3 .path
+						stroke-dasharray 260px
+						stroke-dashoffset -260px
+					.back_skill2.offset1 .path
+						stroke-dasharray 100px
+						stroke-dashoffset -100px
+					.back_skill2.offset2 .path
+						stroke-dasharray 200px
+						stroke-dashoffset -200px
+					.back_skill2.offset3 .path
+						stroke-dasharray 250px
+						stroke-dashoffset -250px
+			/*
+			.logo
+				background-color rgba(0,0,0,.8)
+				position absolute
+				width 100%
+				height 100%
+			*/
+			.div_angle
+				bottom 0
+				position absolute
+				width 100%
+				display flex
+				.angle_bottom
+					background greyboot
+					height 40px
+					width 50%
+				.left				
+					display block
+					position relative
+					shape-outside polygon(0 100%,0% 100,100% 100%)
+					clip-path polygon(0 100%,0% 0, 100% 100%)
+				.right
+					shape-outside polygon(100% 0,0% 100%,100% 100%)
+					clip-path polygon(100% 0,0% 100%, 100% 100%)	
 		
 			
 	.section_skills
 		margin auto
-		padding 20px 0
+		padding 20px 0 20px 0
 		position relative
 		width 100%
 		.skills0
 			color color10
 			margin auto
 			width 70%
-			h5
+			h2
+				font-size 35px
+				font-family YoutubeB
 				text-align center
 				margin 10px auto 20px auto
 			.box_progress_skills
 				display flex
+				padding 10px 0
 				.left,.right
 					color white
 					margin auto
+					
 					width 48%
 					.title
 						display flex
@@ -467,11 +491,25 @@ rgba1 = rgb(72,97,255)
 						display none
 					}
 					*/
+		
+				
+	.home::before
+		content ""
+		background-image url('../ima/computer2.jpg')
+		background-size 100% 
+		background-repeat no-repeat
+		background-position center center
+		position absolute
+		top 0
+		left 0
+		right 0
+		bottom 0
+		opacity 0.15
 			
 	.section_blog
 		background-color rgba(0,0,0,.9)
 		margin auto
-		padding 20px 0
+		padding 0 0 20px 0
 		position relative
 		width 100%
 		
@@ -504,19 +542,21 @@ rgba1 = rgb(72,97,255)
 					padding 6px
 					&:hover
 						border color13 1px solid
-	.home::before
-		content ""
-		background-image url('../ima/computer2.jpg')
-		background-size 100% 
-		background-repeat no-repeat
-		background-position center center
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
-		opacity 0.15
-		
+	
+		.div_angle
+			display flex
+			.angle_bottom
+				background greyboot
+				height 40px
+				width 50%
+			.left				
+				display block
+				position relative
+				shape-outside polygon(0 0,100% 0,0 100%)
+				clip-path polygon(0 0,100% 0, 0 100%)
+			.right
+				shape-outside polygon(0 0,100% 0,100% 100%)
+				clip-path polygon(0 0,100% 0, 100% 100%)
 	.skills
 		background-image url('../ima/fondo_azul2_500.jpg')
 		background-position center
@@ -582,20 +622,7 @@ rgba1 = rgb(72,97,255)
 			width 100%
 			height 100%
 		*/
-		.div_angle
-			display flex
-			.angle_bottom
-				background rgba(0,0,0,.9)
-				height 40px
-				width 50%
-			.left				
-				display block
-				position relative
-				shape-outside polygon(0 0,100% 0,0 100%)
-				clip-path polygon(0 0,100% 0, 0 100%)
-			.right
-				shape-outside polygon(0 0,100% 0,100% 100%)
-				clip-path polygon(0 0,100% 0, 100% 100%)
+		
 
 /* billboard */
 .board
