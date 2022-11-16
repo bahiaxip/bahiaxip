@@ -99,7 +99,7 @@ window.addEventListener('load',()=>{
             
             scrub:1,
             start: '80% top',
-            end:'+=800 bottom'
+            end:'top bottom'
         },
     }).to('.section_skills h2',{        
         scale:1.5,
@@ -111,7 +111,7 @@ window.addEventListener('load',()=>{
             markers:true,
             scrub:1,
             start: '80% top',
-            end:'+=1200 bottom'
+            end:'+=900 bottom'
         },
     })
     //tl2.from('.box_progress_skills ',{x:-500,opacity:0})
@@ -132,7 +132,7 @@ window.addEventListener('load',()=>{
     var tl3 = gsap.timeline(),
     tl4 = gsap.timeline(),
     tl5 = gsap.timeline();
-    gsap.from('.box_progress_skills .left',{
+    tl3.from('.box_progress_skills .left',{
         x:-500,opacity:0,
         ease:'power2.out',
         duration:3,
@@ -145,7 +145,7 @@ window.addEventListener('load',()=>{
             end:'+=800 100%'    
         }
     })
-    gsap.from('.box_progress_skills .right',{
+    tl3.from('.box_progress_skills .right',{
         x:500,opacity:0,
         ease:'power2.out',
         duration:3,
@@ -158,7 +158,7 @@ window.addEventListener('load',()=>{
             end:()=>'+=800 100%'    
         }
     })
-    gsap.from('.all_skills',{
+    tl3.from('.all_skills',{
         scale:0,opacity:0,
         ease:'linear',
         delay:3,
@@ -168,10 +168,11 @@ window.addEventListener('load',()=>{
             markers:true,
             //scrub:3,
             scrub:2,
-            start: '30% top',
-            end:'+=800 100%'    
+            start: '50% top',
+            end:'+=1000 100%'    
         }
     })
+    //tl3.to('.all_skills',{duration:1,delay:1}).call(dar);
         
     
     /*
@@ -188,8 +189,97 @@ window.addEventListener('load',()=>{
     //tl3.to('.all_skills',{scale:1,opacity:1,duration:2.5})
     //.to('box_progress_skills .left',{opacity:1,x:0});
     
+//array de barras de progreso
+let progressSkill = document.querySelectorAll('.progress_skill');
+progressSkill.forEach((item,index)=>{
+    console.log(index)
+    const title = item.querySelector('.title .percent');
+    const progress = item.querySelector('.div_progress');
+    const progressbar = progress.querySelector('.progress0');
+    //porcentaje establecido en el HTML de cada barra de progreso 
+    const percent = title.textContent;
+    //console.log(progress)
+    let a = 'pbtl_'+index;
+    a = gsap.timeline({
+        defaults:{
+            duration:3,
+            ease:'bounce.out',
+            
+        },
+        scrollTrigger:{
+            trigger: '.box_skills1',
+            scrub:2,
+            delay:2,
 
+            start: '30% top',
+            end:'+=800 100%',
+            markers:true
+            //toogleActions: 'play pause resume reset'
+        }
+    })
+    a.fromTo(progressbar,{width:0},{width:percent});
+    
+    a.from(title,{
+        duration:3,
+        
+        ease:'bounce.out',
+        textContent: 0 + '%',
+        snap:{ textContent: 1},
+    },'<');
 
+})
 });
+//progressBar();
+/*
+function dar(){
+tlm.invalidate().kill();
+tlm.restart();
+}
+*/
+/*var tlm;
+function progressBar(){
+    let progressbar = document.querySelector('.progress0.progress1');
+    //console.log("progressbar: ", progressbar);
+    tlm = new TimelineMax({
+        paused:true
+    })
+    tlm.to({},3,{
+        force3D:true,
+        onUpdateParams:['{self}'],
+        onUpdate:function(timeline){
+            TweenMax.set(progressbar,{
+                scaleX:timeline.progress(),
+                transformOrigin:'0px 0px'
+            })
+        }
+    })
+    tlm.play();
+}*/
+
+
+
+
+
+/*function dar(){
+
+    //let div =document.querySelector('.progress_skill.skill1 .percent');
+    let percent = document.querySelector('.progress_skill.skill1 .percent').innerHTML;
+    console.log(percent)
+    //console.log(div.textContent);
+    const target = '100%';
+    gsap.fromTo('.div_progress.progress_back',{width:0},{
+        width:percent,
+        duration:2,
+        ease:'bounce.out'
+    })
+    gsap.from('.progress_skill.skill1 .percent',{
+        textContent:0+'%',
+        duration:2,
+        ease:'bounce.out',
+        snap:{textContent:1}
+    })
+}*/
+
+
 
 //tl.to('.box_skills',{x:'1000',duration:1}).call(setIcons);

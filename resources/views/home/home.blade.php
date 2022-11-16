@@ -321,14 +321,22 @@
     </div>
     {{-- section blog --}}
     <div class="section_skills">
-        
+        <button style="position:absolute;width:50px;height:50px;bottom:50px" onclick="dar()">Dar</button>
         <div class="skills0">
             <h2>SKILLS</h2>
             <div class="box_progress_skills">
                 <div class="left">
+                    <div class="progress_skill skill1">
+                        <div class="title">
+                            <span>HTML5</span><span class="percent">95%</span>    
+                        </div>
+                        <div class="div_progress progress_back">
+                            <div class="progress0 progress1"></div>
+                        </div>
+                    </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>HTML5</span><span>95%</span>    
+                            <span>CSS3</span><span class="percent">80%</span>
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -336,7 +344,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>CSS3</span><span>80%</span>
+                            <span>JavaScript</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -344,7 +352,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>JavaScript</span><span>75%</span>    
+                            <span>PHP</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -352,15 +360,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>PHP</span><span>75%</span>    
-                        </div>
-                        <div class="div_progress">
-                            <div class="progress0"></div>
-                        </div>
-                    </div>
-                    <div class="progress_skill">
-                        <div class="title">
-                            <span>JavaScript</span><span>75%</span>    
+                            <span>JavaScript</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -370,7 +370,7 @@
                 <div class="right">
                     <div class="progress_skill">
                         <div class="title">
-                            <span>PHP</span><span>100%</span>    
+                            <span>PHP</span><span class="percent">100%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -378,7 +378,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>Laravel</span><span>80%</span>
+                            <span>Laravel</span><span class="percent">80%</span>
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -386,7 +386,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>Vue</span><span>75%</span>    
+                            <span>Vue</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -394,7 +394,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>Linux</span><span>75%</span>    
+                            <span>Linux</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
@@ -402,7 +402,7 @@
                     </div>
                     <div class="progress_skill">
                         <div class="title">
-                            <span>Apache</span><span>75%</span>    
+                            <span>Apache</span><span class="percent">75%</span>    
                         </div>
                         <div class="div_progress">
                             <div class="progress0"></div>
