@@ -4,11 +4,11 @@ window.addEventListener('load',function(){
 	const ctx =canvas.getContext('2d');
 	//en lugar de window.innerWidth establecemos un número fijo(1000) para que siempre tenga
 	//las mismas dimensiones, tanto en la acción de resize() como cargando desde cualquier resolución
-	canvas.width = 1800;
+	canvas.width = 500;
 	canvas.height = window.innerHeight;
 	let counter1 = 0;
 	const image1 = document.getElementById('image1');
-	console.log("image1: ",image1)
+	//console.log("image1: ",image1)
 	//añadimos los parámetros x, y que serán el origen y el color
 	class Particle {
 		constructor(effect,x,y,color){
@@ -104,14 +104,15 @@ window.addEventListener('load',function(){
 			this.x = this.centerX - this.image.width * 0.34;
 			this.y = this.centerY - this.image.height * 0.34;
 			*/
+			/* anchura y altura*/
 			this.centerX = this.width * 0.5;
-			this.centerY = this.height * 0.5;
+			this.centerY = this.height * 0.03;
 			this.x = this.centerX - this.image.width * 0.5;
-			this.y = this.centerY - this.image.height * 0.5;
+			this.y = this.centerY - this.image.height * 0.03;
 			//para que la animación sea fluida sin optimizaciones más avanzadas,
 			//debemos dar un rango de píxeles que salte la coordenada hacia abajo y a derecha,
 			//en lugar de uno por uno. Esta variable la llamamos gap
-			this.gap = 4;
+			this.gap = 2;
 			/*
 			this.mouse = {
 				radius: 200,
@@ -156,7 +157,7 @@ window.addEventListener('load',function(){
 					}
 				}
 			}
-			console.log(pixels)
+			//console.log(pixels)
 		}
 		draw(context){
 			this.particlesArray.forEach(particle => particle.draw(context));
@@ -179,7 +180,7 @@ window.addEventListener('load',function(){
 	const effect = new Effect(canvas.width,canvas.height);
 	effect.init(ctx);
 
-	console.log(effect)
+	//console.log(effect)
 	function animate(){
 		//En la animación tb se muestran los cuadros antiguos, para solo mostrar los cuadros de animación actuales
 		//debemos eliminar el lienzo con clearRect()S

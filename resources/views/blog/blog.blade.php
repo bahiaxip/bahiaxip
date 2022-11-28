@@ -70,7 +70,7 @@
                 @if($i%2==0)
                 <div class="card-group mtop16" >
                 @endif
-                    <div class="card border_card">
+                    <div class="card border_card {{($key %2 == 0) ? 'even':'odd'}}">
                         {{--
                         <div class="card-header post_title" >                
                             <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
@@ -113,10 +113,6 @@
             asdfasdf
         </div>
     </div>
-
     {{ $posts->links() }}
-    
-    
-    
 </div>
 @endsection

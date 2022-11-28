@@ -11,28 +11,34 @@
 </style>
 --}}
 <div class="container minim post">
-    <div class="row py-1">
-        <div class="col-auto">
-            <a href="javascript:history.back()" title="Volver" ><span style="font-size:18px;font-weight:bold;display:inline-flex;vertical-align:middle">&#x021A9;</span></a>
-            <a  class="btn_category"  href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{ $post->category->name }}</span></a>
+    <div class="row py-1 div_buttons">
+        <div class="div_btn_anim " >
+            <div class="back_btn_anim btn1" >
+                <div class="wrap_button btn1" ></div>
+                <a href="javascript:history.back()" title="Volver" ><span >&#x021A9;</span></a>
+            </div>
+            <div class="back_btn_anim btn2" >
+                <div class="wrap_button btn2" ></div>
+                <a  class="btn_category"  href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{$post->category->slug}}</span></a>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="card box_card ">
-                <p class="card-header card-success-outline post_detail_header ">
+                <h2 class="card-success-outline post_detail_header ">
                     {{ $post->title }}
-                </p>
+                </h2>
                 @if($post->file && $post->file != "NULL")
                         <img src="{{asset($post->file) }}" class="card-image-top img-fluid mx-auto mb-4 " >
                 @endif
                 
-                <div class="card-block">
+                <div class="card-block card_block">
                     <div class="card-title post_detail_bodymain">
                         <p><?php echo $post->body_main; ?></p>                        
                     </div>
 <!-- añadimos el tag v-pre para que las dobles llaves no generen conflicto con Vue (integrado en Laravel Mix)-->
-                    <div class="card-text mt-5 post_detail_bodyplus" v-pre>
+                    <div class="card-text post_detail_bodyplus" v-pre>
                         {{--<p><?php echo $post->body_plus; ?></p>--}}
                         <p>{!!$post->body_plus!!}</p>
                     </div>
@@ -40,25 +46,36 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-start">
-        <div class="col-auto ">
+    <div class="back_tags div_buttons">
+        <div class="tags_buttons">
+            
             <!--<div class="card ">
                 <div class="card-block  ">                    -->
                     <!--<h6 class="card-header tagTitle_post text-white text-center">Etiquetas</h6>-->
-
-                    <p class="card-text tag_post mt-3">
-                    <!--<ul class="tag_post">-->
-                    @foreach($post->tags as $tag)
-                    
-                        <button class="btn  mb-2">
-                            <a href="{{ route("tag",$tag->slug) }}" >
-                            {{ $tag->name }}
-                            </a>
-                        </button>
-                    
-                    @endforeach
-                    <!--</ul>-->
-                    </p>
+                @foreach($post->tags as $tag)
+                    <a href="{{ route("tag",$tag->slug) }}" class="">
+                        <div class="tag_button"></div>
+                        <span>
+                        {{ $tag->name }}
+                        </span>
+                    </a>
+                @endforeach
+            
+            {{--
+                <p class="card-text tag_post mt-3">
+                <!--<ul class="tag_post">-->
+                @foreach($post->tags as $tag)
+                
+                    <button class="btn  mb-2">
+                        <a href="{{ route("tag",$tag->slug) }}" >
+                        {{ $tag->name }}
+                        </a>
+                    </button>
+                
+                @endforeach
+                <!--</ul>-->
+                </p>
+            --}}
                 <!--</div>
             </div>-->
         </div>

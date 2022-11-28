@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="route_name" content={{ Route::currentRouteName() }}>
-    <link rel="shortcut icon" href="{{asset('ima/logo_BX.png')}}" />
+    <link rel="shortcut icon" href="{{asset('ima/logo_BX_verdex200.png')}}" />
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -31,6 +31,8 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     {{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet">--}}
     {{--<script src="{{asset('js/script.js')}}"></script>--}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id="app">
@@ -261,6 +263,7 @@
             </div>
             
         </nav>
+
     <!-- ventana modal confirmación eliminar registros de admin-->
         <div class="modal fade"  id="modal-delete" role="dialog" aria-labelledby="modal-delete" >
             <div class="modal-dialog modal-sm">
@@ -311,6 +314,12 @@
         @endif
 
         <main class="main">
+            <div class="btn_floatup" onclick="up()">        
+                {{--<i class="fa-solid fa-circle-arrow-up"></i>--}}
+                <div class="circle">
+                    <span class="arrow">&#x02191;</span>
+                </div>
+            </div>
             @yield('content')
         </main>
     </div>
@@ -375,7 +384,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
-    
+    <script src="{{asset('js/animation_gsap.js')}}"></script>
     @yield('scripts')
 </body>
 </html>

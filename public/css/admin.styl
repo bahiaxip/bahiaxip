@@ -14,13 +14,16 @@ color14 = #88f1d5
 color15 = #b4ffdb
 color16 = #d3ffda
 color17 = #18D26E
-greyboot = #212529
+greyboot = #212529 //rgb(33,37,41)
 rgba2 = rgba(0,178,146,1)
+rgba17 = rgba(24,210,110,1)
 rgba1 = rgb(72,97,255)
-*
+/*
+*,*::before,*::after
 	margin 0
 	padding 0
 	box-sizing border-box
+*/
 .box_canvas
 	/*
 	width 100%
@@ -28,12 +31,12 @@ rgba1 = rgb(72,97,255)
 	justify-content center
 	position relative
 	*/
-	height 50px
+	height 30px
 	width 100%
 	display flex
 	/*el position relative permite mostrarlo en el nav pero pierde la transparencia */
 	position relative
-	bottom 40px
+	bottom 62px
 	
 	#canvas1
 		/*
@@ -87,7 +90,9 @@ rgba1 = rgb(72,97,255)
 		color #FFF
 .float-right
 	float right
-	
+
+.mauto
+	margin auto
 .mtop16
 	margin-top 16px
 .p5
@@ -279,6 +284,7 @@ rgba1 = rgb(72,97,255)
 			position relative
 			padding-bottom 40px
 			
+			/*
 			.box_profile::before
 				content ''			
 				background-image url('../ima/DNI_2022_recortado_bynx800.png')
@@ -293,6 +299,7 @@ rgba1 = rgb(72,97,255)
 				opacity 0.2
 				position absolute
 				width 60%
+			*/
 			.box_profile
 				
 				width 60%
@@ -303,8 +310,9 @@ rgba1 = rgb(72,97,255)
 					font-family YoutubeB
 					font-size 60px
 					min-height 300px
-					transform translate(-400px)
-					opacity 0				
+					transform translateY(-400px)
+					opacity 0
+					width 100%				
 					.text_name
 						
 						width 50%
@@ -313,12 +321,17 @@ rgba1 = rgb(72,97,255)
 							span
 								color #18D26E
 					.image
+						/*
+						background-image url('../ima/logo_BX_verdex200.png')
+						background-repeat no-repeat
+						background-size 100%
+						background-position center
 						
 						display flex
-						
-						min-height 350px
+						margin auto
+						min-height 200px
 						justify-content center
-						width 40%
+						width 200px
 						/*
 						img
 							width 40%
@@ -426,7 +439,7 @@ rgba1 = rgb(72,97,255)
 			margin auto
 			width 70%
 			h2
-				font-size 35px
+				font-size 45px
 				font-family YoutubeB
 				text-align center
 				margin 10px auto 20px auto
@@ -498,7 +511,7 @@ rgba1 = rgb(72,97,255)
 				
 	.home::before
 		content ""
-		background-image url('../ima/computer2.jpg')
+		background-image url('../ima/computer1.jpg')
 		background-size 100% 
 		background-repeat no-repeat
 		background-position center center
@@ -507,17 +520,23 @@ rgba1 = rgb(72,97,255)
 		left 0
 		right 0
 		bottom 0
-		opacity 0.15
+		opacity 0.1
 			
 	.section_blog
 		background-color rgba(0,0,0,.9)
 		margin auto
-		padding 0 0 20px 0
+		overflow hidden
+		padding 0 0 50px 0
 		position relative
 		width 100%
-		
+		h2
+			font-size 45px
+			font-family YoutubeB
+			color white
+			text-align center
 		.blog
 			margin auto
+			padding-top 20px
 			width 70%	
 			#principal-carousel
 				img
@@ -545,7 +564,46 @@ rgba1 = rgb(72,97,255)
 					padding 6px
 					&:hover
 						border color13 1px solid
-	
+			#latcol
+				display flex
+				flex-flow column
+				/* 545 + 40 padding-bottom*/
+				/*max-height 585px*/
+				/*overflow auto*/
+				scrollbar-width none
+				/*border #D3D3D3 1px solid*/
+				height 80%
+				.div_lat
+					
+					border-bottom color9 1px solid
+					display block
+					padding 10px 0
+					width 100%
+					a.column_index
+						color color9
+						display flex
+						font-family QuicksandB
+						font-size 18px
+						height 100%
+						text-decoration none
+						width 100%
+						&:hover
+							color #FFF
+						img
+							max-width 35%
+							padding 10px
+							
+						h4
+							display flex
+							
+							/*border-bottom color10 1px solid*/
+							font-size 16px
+							margin auto
+							padding 5px
+				
+					p
+						font-family QuicksandR
+						margin auto
 		.div_angle
 			display flex
 			.angle_bottom
@@ -560,84 +618,116 @@ rgba1 = rgb(72,97,255)
 			.right
 				shape-outside polygon(0 0,100% 0,100% 100%)
 				clip-path polygon(0 0,100% 0, 100% 100%)
-	.skills
-		background-image url('../ima/fondo_azul2_500.jpg')
-		background-position center
-		/*
-		background: rgb(14,0,110);
-		background: radial-gradient(circle, rgba(14,0,110,0.8071603641456583) 23%, rgba(0,89,236,1) 100%);
-			*/
-		position relative
-		width 100%
-		height 520px
-		.list
-			display flex
-			justify-content space-around
-			font-family YoutubeB
-			font-size 24px
-			ul
-				margin 10px
-				padding 0
-				width 33%
-				li
-					color #FFF
-					display flex
-					justify-content center
-					align-items center
-					
-					padding 0
-					margin 10px auto
-					.div_skill
-						align-items center						
-						display flex
-						width 200px
-						height 70px
-						transition all 0.3s ease-in
-						.logo
-							
-							width 64px
-							img
-								padding 0px
-								
-								width 64px
-						
-						.text
-							margin auto
-							
-						&:hover 
-							transform scale(1.2)
-					
-		/*
-		height 500px
-		width 100%
-		*/
-		/*
-		.image
-			background-image url('../image/post/linux.png')
-			background-position center center
-			background-repeat no-repeat
-			background-size 25%
-			top 0
-			margin auto
-			display flex
-			opacity 1
+	.section_skills
+		overflow hidden
+		.skills
+			background-image url('../ima/fondo_azul2_500.jpg')
+			background-position center
+			/*
+			background: rgb(14,0,110);
+			background: radial-gradient(circle, rgba(14,0,110,0.8071603641456583) 23%, rgba(0,89,236,1) 100%);
+				*/
 			position relative
 			width 100%
-			height 100%
-		*/
-		
+			height 520px
+			.list
+				display flex
+				justify-content space-around
+				font-family YoutubeB
+				font-size 24px
+				ul
+					margin 10px
+					padding 0
+					width 33%
+					li
+						color #FFF
+						display flex
+						justify-content center
+						align-items center
+						
+						padding 0
+						margin 10px auto
+						.div_skill
+							align-items center						
+							display flex
+							width 200px
+							height 70px
+							transition all 0.3s ease-in
+							.logo
+								
+								width 64px
+								img
+									padding 0px
+									
+									width 64px
+							
+							.text
+								margin auto
+								
+							&:hover 
+								transform scale(1.2)
+						
+			/*
+			height 500px
+			width 100%
+			*/
+			/*
+			.image
+				background-image url('../image/post/linux.png')
+				background-position center center
+				background-repeat no-repeat
+				background-size 25%
+				top 0
+				margin auto
+				display flex
+				opacity 1
+				position relative
+				width 100%
+				height 100%
+			*/
+	.footer
+		display flex
+		flex-flow column
+		height 200px
+		width 100%
+		.div_animation
+			display flex
+			margin auto
+			.animation
+				margin auto
+				overflow hidden
+				position relative
+				.image
+					margin auto
+					position relative
+					top 10px
+					z-index 1
+				.icon
+					background-image url('../ima/logos_programacion/linux_new.png')
+					background-repeat no-repeat
+					background-size 100%
+					display flex					
+					height 50px
+					justify-content end
+					left 60%
+					position absolute
+					top 35px
+					width 50px
+					
 
 /* billboard */
+/*
 .board
 	display flex
 	justify-content center
 	width 100%
 	height 600px
 .board2
-	background-image url('../ima/fondo_estrellas_X650.jpg')
-	background-position center
+	
 	padding 40px 0 0 0
 	width 100%
+	transform translateY(100%)
+	opacity 0
 	.ad
 		position relative
 		margin auto
@@ -657,7 +747,7 @@ rgba1 = rgb(72,97,255)
 				justify-content center
 		.ad_2	
 			img{width:0px;height:336px;margin-left:18px;position:absolute;}
-				
+*/				
 .billboard{
 	background transparent url(../billboard/billboard.png) no-repeat 0px 0px
 	background-position center
@@ -725,51 +815,100 @@ rgba1 = rgb(72,97,255)
 #latcol::-webkit-scrollbar{
 	display none
 }
-#latcol
-	display flex
-	flex-flow column
-	/* 545 + 40 padding-bottom*/
-	/*max-height 585px*/
-	/*overflow auto*/
-	scrollbar-width none
-	border #D3D3D3 1px solid
-	
-	.div_lat
-		
-		border-top color9 1px solid
-		display block
-		padding 10px 0
-		width 100%
-		a.column_index
-			color color6
-			display flex
-			font-family QuicksandB
-			font-size 18px
-			height 100%
-			text-decoration none
-			width 100%
-			&:hover
-				color color1
-			img
-				max-width 35%
-				padding 10px
-				
-			h4
-				
-				border-bottom color10 1px solid
-				font-size 16px
-				margin-top 10px
-				padding 5px
-				
-		p
-			font-family QuicksandR
-			margin auto
+.wrap_contact
+	background-color black
+	min-height 600px
+	height 92vh
+	position relative
+	.box_contact
+		position relative
+		.contact
+			color color10
+			padding-top 20px
+			position relative
+			transform translateY(-300px)
+			opacity 0
 			
-.contact
-	textarea
-		width 100%		
-		
-		
+			h2
+				font-family YoutubeB
+				font-size 40px
+			.form
+				background-color rgba(33,37,41,.7)
+				border-radius 8px
+				
+				padding 20px 10px 20px 10px
+				.div_input
+					padding 18px 0
+					input,textarea
+						background-color greyboot
+						border none
+						color color10
+						&:focus
+							background-color #333333
+							outline none
+							box-shadow none
+				.submit
+					display flex
+					justify-content center
+					button
+						background-color greyboot
+						padding 10px 50px
+						&:hover
+							color color17
+							background-color #333333
+						&:active,&:focus
+							box-shadow 0px 0px 5px #D3D3D3
+						
+	.contact2
+		margin-top 20px
+		width 100%
+		.box_circle
+			width 100%
+			.circle
+				background-color color17
+				border-radius 50%
+				display flex
+				height 80px
+				margin auto
+				width 80px
+				transform translateX(-1000px)
+				opacity 0
+				
+				img
+					vertical-align middle
+					display flex
+					margin auto
+					width 40px
+		.text_email
+			display flex
+			justify-content center
+			margin auto
+			width 100%	
+			p
+				color white
+				font-family YoutubeB
+				font-size 20px
+				margin 20px
+				transform translateY(-200px)
+				opacity 0
+				span
+					color color17
+/*
+.box_contact::before
+	content ""
+	
+	background-image url('../ima/fondo_estrellas_1920X2160_borrada2.jpg')
+	background-size 100% 
+	background-repeat no-repeat
+	background-position top center
+	
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+	opacity 1
+*/
 main
 	.box_blog
 		padding 20px 0
@@ -777,16 +916,33 @@ main
 			display flex
 			width 100%
 			.blog
-				width 70% 
 				padding-bottom 20px
+				width 70%
+				/*pares*/
+				.border_card.even
+					transform translateX(-400px)
+				/*impares*/
+				.border_card.odd
+					transform translateX(400px)
+					
 				.border_card
 					background-color greyboot
-					
+					opacity 0
 					a
+						overflow hidden
+						
 						img
 							max-height 500px
 							margin 0 auto
+							
+							transition transform .5s linear
 							width 100%
+					&:hover
+						
+						img
+							transform scale(1.05)
+						.post_card_block .post_text
+							color #FFF 	
 					.post_title				
 						display flex
 						font-family QuicksandB
@@ -817,6 +973,7 @@ main
 							margin auto
 							padding 10px
 							text-align center
+							transition color .3s linear
 		ul.pagination
 			display flex
 			font-family QuicksandR
@@ -846,27 +1003,173 @@ main
 			
 		/*post*/
 	.minim.post
+		padding 10px 0
+		.div_buttons
+			opacity 0
+			z-index 1
+			.div_btn_anim
+				display flex				
+				.back_btn_anim.btn1
+					&:hover 
+						.wrap_button::before
+							transform scaleX(5)
+						.wrap_button::after
+							transform scaleX(5)
+				.back_btn_anim.btn2
+					&:hover 
+						.wrap_button::before
+							transform scaleX(10)
+						.wrap_button::after
+							transform scaleX(10)
+				.back_btn_anim
+					background-color transparent
+					border 1px solid color17
+					border-radius 4px
+					display block
+					margin auto 5px					
+					overflow hidden
+					padding 0
+					position relative					
+					height 30px					
+					width auto
+					z-index 1
+					.wrap_button
+						background-color color17
+						display block
+						height 100%
+						position absolute
+						z-index 1
+						/*.wrap_button.btn1					
+						left -35%*/
+						transform skewX(-35deg)
+						
+					.wrap_button::before
+						content ''
+						background-color color17
+						display block
+						height 100%
+						opacity .7
+						position absolute
+						transform skewX(-35deg)
+						transition all .4s linear
+						width 35px
+					.wrap_button.btn1::before
+						left -50px
+					.wrap_button.btn2::before
+						left -50px
+					.wrap_button::after
+						content ''
+						background-color color17
+						display block
+						height 100%					
+						opacity 1
+						position absolute
+						transform skewX(-35deg)
+						transition all .4s linear
+						width 35px
+					.wrap_button.btn1::after
+						left 60px
+					.wrap_button.btn2::after
+						left 140px
+					a
+						background-color transparent
+						border-radius 4px
+						color color8
+						display flex
+						font-family QuicksandB
+						font-size 12px
+						height 100%
+						padding 5px 15px
+						position relative
+						text-decoration none
+						width 100%
+						z-index 2
+						
+						&:hover
+							color color1
+							width 100%
+					
+						span
+							align-items center						
+							color #FFF
+							display block
+							font-size 1em
+							font-weight bold
+							max-width 120px							
+							vertical-align middle
+					
+				/*
+				button
+					background-color transparent
+					border none
+					padding 4px 12px
+				*/
 		
-		a
-			background-color color9
-			border-radius 4px
-			color color8
-			font-family QuicksandB
-			font-size 12px
-			padding 4px 12px
-			text-decoration none
-			&:hover
-				color color1
+			
+			/* buttons tags */
+			.tags_buttons
+				display flex
+				margin 20px auto
+				position relative
+				a
+					border color6 1px solid
+					border-radius 4px
+					background-color transparent
+					color white
+					margin auto 5px
+					padding 5px 15px
+					position relative
+					text-decoration none
+					
+					&:hover
+						.tag_button::before
+							width 200%
+					.tag_button
+						border-radius 4px
+						height 100%
+						left 0
+						overflow hidden
+						padding 5px 15px
+						position absolute
+						top 0
+						width 100%
+						
+					.tag_button::before					
+						background-color color17
+						bottom 0
+						content ''
+						height 100%
+						left -30px
+						position absolute
+						top 0
+						right 0
+						transform skewX(-35deg)
+						transition all .5s linear
+						width 0
+					span
+						font-weight bold
+						position relative
+						z-index 2
+							
+							
+							
+		.back_tags
+			margin 10px
+			width 100%
 		.box_card
+			background-color transparent
 			border none
+			/*transform translateX(-100%)*/
+			transform scale(0)
+			opacity 0
+			.card_block
+				background-color #FFF
+				border-radius 8px
 			.post_detail_header
-				background-color color1
-				border color7 1px solid
-				border-radius 4px
 				color color10
 				display flex
 				font-family QuicksandB
-				font-size 22px
+				font-size 30px
 				justify-content center
 				margin 2px 0px 10px 0px
 				padding 10px
@@ -874,7 +1177,7 @@ main
 			img
 				max-height 550px
 			.post_detail_bodymain
-				
+				margin auto 10px
 				border-bottom color9 1px solid
 				display flex
 				justify-content center
@@ -889,7 +1192,9 @@ main
 					margin 0
 					padding 10px 5px
 			.post_detail_bodyplus
+				color black
 				font-family Montserrat
+				padding 1rem 3rem
 
 /* admin */
 .admin_posts
@@ -900,7 +1205,52 @@ main
 		a, button
 			font-size 14px
 			
-
+/* botón de subir */
+.btn_floatup
+	bottom 30px
+	cursor pointer
+	opacity 0
+	position fixed
+	right 30px
+	transition all .5s linear
+	z-index 1
+	/*i
+		font-size 3em*/
+	.circle
+		background-color transparent
+		border color17 1px solid
+		border-radius 50%
+		display flex
+		height 40px
+		width 40px
+		.arrow
+			align-items center
+			color white
+			display flex
+			font-size 2em
+			height 100%
+			justify-content center
+			width 100%
+		&:hover
+			background-color color17
+			border-radius 50%
+			color #FFF
+	
+	/* flecha de icono (subir arriba) con pseudoelemento before en lugar de span*/
+	/*span::before
+		align-items center
+		color color8
+	*/
+		/* código hexadecimal &#x021E7; se convierte en \021E7 para pseudoelements*/
+		/*
+		content '\02191'
+		display flex
+		font-size 2em
+		height 40px
+		justify-content center
+		margin auto
+		width 40px
+		*/
 
 .pagination
 	display flex
@@ -931,8 +1281,10 @@ main
 	.wrap .home::before
 		background-position top center	
 @media only screen and (max-width 1000px)
+	/*
 	.board2 .ad
 		width 100%
+	*/
 	.ad_1,.ad_2
 		display none 
 	.billboard
@@ -956,9 +1308,10 @@ main
 			margin 16px auto
 			width 80%
 @media only screen and (max-width 620px)
+	/*
 	.board2
 		display none
-	/*
+	
 	.box_canvas #canvas1
 		width 200px
 	*/

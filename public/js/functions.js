@@ -1,6 +1,6 @@
 const token = document.getElementsByName('csrf_token')[0].getAttribute('content');
 const route = document.getElementsByName('route_name')[0].getAttribute('content');
-console.log(route)
+//console.log(route)
 function editor_init(field){
     //CKEDITOR.plugins.addExternal('codesnippet',base+'/static/libs/ckeditor/plugins/codesnippet/','plugins.js');
     CKEDITOR.replace(field,{
@@ -84,7 +84,7 @@ function hidePlay(){
     div_pause.style.display = 'none';
 }
 window.addEventListener('load',()=>{
-    console.log("llega")
+    
     if(localStorage.getItem('bxcube_animate') == 0){
         let div_pause = document.querySelector('.cubo_pause');        
         pausar();
