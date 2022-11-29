@@ -37,7 +37,7 @@
                 <div class="profile">
                     <div class="text_name">
                         Fernando Gómez
-                        <h5><span>Desarrollador</span> Web</h5>
+                        <h5><span>FullStack</span> Developer</h5>
                     </div>
                     
                     <!--
@@ -92,7 +92,7 @@
                 @include('home.slider_blog')
             </div>
             
-            <div id="latcol" class="col-8 mx-auto col-xl-3 text-center rounded mt-3 mt-xl-0 p-0 " >
+            <div id="latcol" class="col-8 mx-auto col-xl-4 text-center rounded mt-3 mt-xl-0 p-0 " >
                 <!--<h5 class="text-white pt-2 font-weight-bold">Entradas Recientes</h5>-->
                 @foreach($posts as $post)
                     <div class="div_lat">
@@ -104,7 +104,7 @@
                         {{--<p class="column_index2">{{$post->body_main}}</p>--}}
                         
                     </div>
-                    <div class="w-100 d-xl-none" style="height:10px;background-color:white">
+                    <div class="w-100 d-xl-none" style="height:10px;">
                         
                     </div>
                 

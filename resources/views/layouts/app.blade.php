@@ -29,12 +29,19 @@
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
     {{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet">--}}
     {{--<script src="{{asset('js/script.js')}}"></script>--}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
 <body>
+    <!-- fondo al abrir el menú principal en bajas resoluciones -->
+    <div id="back_menu" class="back_menu"></div>
+    <div id="latleft_oculto" class="hidden_menu  ">
+        @include('layouts.hidden_nav')
+        
+    </div>
     <div id="app">
         <!--
         <nav class="navbar navbar-expand-md navbar-light shadow-sm " style="height:80px;display:flex;margin:auto;justify-content:center;background-color:rgba(0,0,0,.8)">
@@ -42,227 +49,8 @@
             bahiaxip
         </nav>
         -->
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm bx_nav" style="font-family: Usuzi;">
-
-            <div class="container">
-                <ul class="navbar-nav me-auto" >
-                        
-                    <li>
-                        <a class="nav-link .cubo" onclick="pausar()" onmousemove="showPlay()" onmouseout="hidePlay()" style="font-family:QuicksandB;font-size:16px;display:flex;margin:auto;cursor:pointer" title="Pausar/Reanudar">
-                            <div class="cubo_pause"></div>
-                            <div class="cubo2" >
-                                
-                                <div class="cara2" id="uno" style="">
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                    <div class="cuadrado uno"></div>
-                                </div>
-                                <div class="cara2" id="dos">
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                    <div class="cuadrado dos"></div>
-                                </div>
-                                <div class="cara2" id="tres">
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                    <div class="cuadrado tres"></div>
-                                </div>
-                                <div class="cara2" id="cuatro">
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                    <div class="cuadrado cuatro"></div>
-                                </div>
-                                <div class="cara2" id="cinco">
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                    <div class="cuadrado cinco"></div>
-                                </div>
-                                <div class="cara2" id="seis">
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                    <div class="cuadrado seis"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link logo" href="{{ route('home') }}" style="font-family:QuicksandB;font-size:16px;display:flex;margin:auto" >
-                            <div>{{ config('app.name', 'Bahiaxip') }}</div>
-                        </a>
-                    </li>
-                    
-                    {{--
-                    <img src="{{asset('ima/logo_BX_trans.png')}}" alt="" width="50">
-                    --}}
-                    {{--<img src="{{asset('ima/logo_BX_Nborde.png')}}" alt="" height="40">--}}
-                        
-                    
-                    
-                    {{--<img src="{{asset('ima/logo_bahiaxip.png')}}" alt="" height="30" >--}}
-                </ul>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse bx_navbar" id="navbarSupportedContent " style="">
-                    <!-- Left Side Of Navbar -->
-                    
-                    
-                    
-                    
-                
-                    <ul class="navbar-nav me-auto links" >
-                        <li>
-                            <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'home') {{'active'}}@endif">
-                                Inicio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('blog')}}" class="nav-link @if(Route::currentRouteName() == 'blog' || Route::currentRouteName() == 'post') {{'active'}}@endif">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('contact')}}" class="nav-link @if(Route::currentRouteName() == 'contact') {{'active'}}@endif">
-                                Contacto
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
-                                Proyectos
-                            </a>
-                        </li>
-                        @admin('active')
-                        <li>
-                            <a href="{{asset('/posts')}}" class="nav-link @if(Route::currentRouteName() == 'posts.index'
-                                ||Route::currentRouteName() == 'posts.index'
-                                ||Route::currentRouteName() == 'posts.create'
-                                ||Route::currentRouteName() == 'posts.edit'
-                                ) {{'active'}}@endif">
-                                Entradas
-                            </a>
-                        </li>
-                        @endadmin
-                        @admin('active')
-                        <li>
-                            <a href="{{asset('/categories')}}" class="nav-link @if(Route::currentRouteName() == 'categories.index'
-                                ||Route::currentRouteName() == 'categories.index'
-                                ||Route::currentRouteName() == 'categories.create'
-                                ||Route::currentRouteName() == 'categories.edit'
-                                ) {{'active'}}@endif">
-                                Categorías
-                            </a>
-                        </li>
-                        @endadmin
-                        @admin('active')
-                        <li>
-                            <a href="{{asset('/tags')}}" class="nav-link @if(Route::currentRouteName() == 'tags.index'
-                                ||Route::currentRouteName() == 'tags.index'
-                                ||Route::currentRouteName() == 'tags.create'
-                                ||Route::currentRouteName() == 'tags.edit'
-                                ) {{'active'}}@endif">
-                                Etiquetas
-                            </a>
-                        </li>
-                        @endadmin
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto nav_user">
-                        {{-- no es el efecto deseado...
-                        <div class="box_canvas">
-                            <canvas id="canvas1" class="canvas1"></canvas>    
-                        </div>
-                        --}}
-                        
-                        <!-- Authentication Links -->
-                        {{--
-                        @guest
-                            @if (Route::has('login'))
-
-                            <li class="nav-item">
-                                <a class="nav-link @if(Route::currentRouteName() == 'login') {{'active'}} @endif" href="{{ route('login') }}">
-                                    {{ __('Login') }}
-                                </a>
-                            </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                            <li class="nav-item">    
-                                <a class="nav-link @if(Route::currentRouteName() == 'register') {{'active'}} @endif" href="{{ route('register') }}">
-                                    {{ __('Registro') }}
-                                </a>
-                            </li>                                
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar session') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                        --}}
-                    </ul>
-                </div>
-                <ul class="rrss">
-                    <div >
-                            <a href="">
-                                <div class="linkedin"></div>    
-                            </a>
-                            
-                        </div>
-                </ul>
-            </div>
-            
-        </nav>
+        @include('layouts.nav')
+        
 
     <!-- ventana modal confirmación eliminar registros de admin-->
         <div class="modal fade"  id="modal-delete" role="dialog" aria-labelledby="modal-delete" >

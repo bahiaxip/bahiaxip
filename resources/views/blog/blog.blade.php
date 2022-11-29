@@ -109,10 +109,12 @@
             
             
         </div>
-        <div style="width:30%">
+        <div class="col_right" >
             asdfasdf
         </div>
     </div>
-    {{ $posts->links() }}
+    <div class="box_pagination">
+    {{ $posts->onEachSide(0)->links() }}
+    </div>
 </div>
 @endsection

@@ -94,4 +94,54 @@ window.addEventListener('load',()=>{
         //si no al cargar la página en pausado inicia la animación hasta que carga JavaScript
         cubo2.style.animationDelay = '0s';
     }
+
+    //botón flotante 
+    let btn_floatup = document.querySelector('.btn_floatup');
+    console.log(btn_floatup)
+    let toggle_floatup;
+    window.addEventListener('scroll',function(e){
+        //console.log("scrolling...",window.scrollY)
+        if(btn_floatup){
+            console.log(window.scrollY)
+            if(window.scrollY > 200){
+                if(!toggle_floatup){
+                    btn_floatup.style.opacity = '1';
+                    //AOS.refresh();
+                    toggle_floatup = true;
+                }
+                //console.log("mostrar botón")
+            }else{
+                btn_floatup.style.opacity = '0';
+                toggle_floatup = false;
+                //console.log("ocultar botón")
+            }
+        }
+        
+    })
+
+    showMenu();
 })
+// función subir de botón flotante 
+function up(){
+    window.scrollTo({
+        top:0,
+        behavior:'smooth',
+    });
+}
+//función menú oculto
+function showMenu(){
+    let btn = document.querySelector('.current_menu .btn_menu');
+    let back = document.querySelector('#back_menu');
+    console.log("btn: ",btn)
+    btn.addEventListener('click',(e)=>{
+        back.classList.toggle('active');
+        document.querySelector('#latleft_oculto').classList.toggle("active");
+        e.preventDefault();
+    })
+    back.addEventListener('click',(e)=>{
+        back.classList.toggle('active');
+        document.querySelector('#latleft_oculto').classList.toggle("active");
+        e.preventDefault();
+    })
+    console.log("actives")
+}

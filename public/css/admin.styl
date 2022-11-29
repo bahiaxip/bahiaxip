@@ -101,6 +101,8 @@ rgba1 = rgb(72,97,255)
 	padding 8px !important
 
 /*navegador y barra de navegación*/
+
+
 #app
 	background-color greyboot
 	min-height 100vh
@@ -167,7 +169,8 @@ rgba1 = rgb(72,97,255)
 				box-shadow: 1px 1px 1px black,-1px -1px 1px black, 1px -1px 1px black,-1px 1px 1px black;
 			
 			.cuadrado.uno
-				background-color #b851ce
+				/*background-color #00bb77*/
+				background-color #18D26E
 			
 			.cuadrado.dos
 				background-color #ff8700
@@ -179,7 +182,7 @@ rgba1 = rgb(72,97,255)
 				background-color #3190ff
 			
 			.cuadrado.cinco
-				background-color #00bb77
+				background-color #b851ce
 			
 			.cuadrado.seis
 				background-color white
@@ -308,14 +311,14 @@ rgba1 = rgb(72,97,255)
 					color #FFF
 					display flex
 					font-family YoutubeB
-					font-size 60px
+					
 					min-height 300px
 					transform translateY(-400px)
 					opacity 0
 					width 100%				
 					.text_name
-						
-						width 50%
+						font-size 60px
+						width 100%
 						h5	
 							font-size 35px					
 							span
@@ -575,7 +578,7 @@ rgba1 = rgb(72,97,255)
 				height 80%
 				.div_lat
 					
-					border-bottom color9 1px solid
+					border-bottom color17 1px solid
 					display block
 					padding 10px 0
 					width 100%
@@ -817,8 +820,8 @@ rgba1 = rgb(72,97,255)
 }
 .wrap_contact
 	background-color black
-	min-height 600px
-	height 92vh
+	min-height 95vh
+	height 100%
 	position relative
 	.box_contact
 		position relative
@@ -919,87 +922,93 @@ main
 				padding-bottom 20px
 				width 70%
 				/*pares*/
-				.border_card.even
-					transform translateX(-400px)
-				/*impares*/
-				.border_card.odd
-					transform translateX(400px)
-					
-				.border_card
-					background-color greyboot
-					opacity 0
-					a
-						overflow hidden
+				.card-group
+					overflow hidden
+					.border_card.even
+						transform translateX(-400px)
+					/*impares*/
+					.border_card.odd
+						transform translateX(400px)
 						
-						img
-							max-height 500px
-							margin 0 auto
-							
-							transition transform .5s linear
-							width 100%
-					&:hover
-						
-						img
-							transform scale(1.05)
-						.post_card_block .post_text
-							color #FFF 	
-					.post_title				
-						display flex
-						font-family QuicksandB
-						font-size 22px				
-						background-color:transparent
-						padding 0
-						margin 0
+					.border_card
+						background-color greyboot
+						opacity 0
 						a
-							background-color color10
-							color #494949
-							display flex
-							height 100%
-							justify-content center
-							padding 10px
-							text-decoration none
-							width 100%
-							&:hover						
-								color color1
-					.post_card_block
-						
-						.post_text
+							overflow hidden
 							
-							border-top color17 1px solid
-							color color9
+							img
+								max-height 500px
+								margin 0 auto
+								
+								transition transform .5s linear
+								width 100%
+						&:hover
+							
+							img
+								transform scale(1.05)
+							.post_card_block .post_text
+								color #FFF 	
+						.post_title				
+							display flex
 							font-family QuicksandB
-							font-size 22px
-							font-weight bold
-							margin auto
-							padding 10px
-							text-align center
-							transition color .3s linear
-		ul.pagination
-			display flex
-			font-family QuicksandR
-			font-size 20px
-			
-			li.page-item
+							font-size 22px				
+							background-color:transparent
+							padding 0
+							margin 0
+							a
+								background-color color10
+								color #494949
+								display flex
+								height 100%
+								justify-content center
+								padding 10px
+								text-decoration none
+								width 100%
+								&:hover						
+									color color1
+						.post_card_block
+							
+							.post_text
+								
+								border-top color17 1px solid
+								color color9
+								font-family QuicksandB
+								font-size 22px
+								font-weight bold
+								margin auto
+								padding 10px
+								text-align center
+								transition color .3s linear
+			.col_right
+				width 30%
+		.box_pagination
+			width 80%
+			ul.pagination
+				display flex
+				font-family QuicksandB
+				font-size 20px
 				
-				a
-					background-color color8
-					border color6 1px solid
-					color color9
-					&:hover
-						background-color color6
-						color #FFF
-					&:focus
-						color color17						
-						box-shadow none
-				span
-					background-color color8
-					border color6 1px solid
-					color color9
+				li.page-item
 					
-			li.page-item.active
-				span.page-link
-					background-color color6
-					color color9
+					a
+						background-color color8
+						border color6 1px solid
+						color color9
+						&:hover
+							background-color color6
+							color #FFF
+						&:focus
+							color color17						
+							box-shadow none
+					span
+						background-color color8
+						border color6 1px solid
+						color color9
+						
+				li.page-item.active
+					span.page-link
+						background-color color6
+						color color9
 			
 		/*post*/
 	.minim.post
@@ -1195,6 +1204,8 @@ main
 				color black
 				font-family Montserrat
 				padding 1rem 3rem
+				pre
+					background-color #000
 
 /* admin */
 .admin_posts
@@ -1218,14 +1229,15 @@ main
 		font-size 3em*/
 	.circle
 		background-color transparent
-		border color17 1px solid
+		border color8 1px solid
 		border-radius 50%
 		display flex
 		height 40px
 		width 40px
 		.arrow
 			align-items center
-			color white
+			
+			color color8
 			display flex
 			font-size 2em
 			height 100%
@@ -1233,8 +1245,10 @@ main
 			width 100%
 		&:hover
 			background-color color17
+			border color17 1px solid
 			border-radius 50%
-			color #FFF
+			.arrow
+				color #FFF
 	
 	/* flecha de icono (subir arriba) con pseudoelemento before en lugar de span*/
 	/*span::before
@@ -1280,7 +1294,13 @@ main
 	/* cambiamos a top para que la franja negra se quede debajo*/
 	.wrap .home::before
 		background-position top center	
+	
 @media only screen and (max-width 1000px)
+	.wrap .section_home .home .box_profile .profile
+		.text_name
+			font-size 48px
+			h5
+				font-size 30px
 	/*
 	.board2 .ad
 		width 100%
@@ -1296,6 +1316,8 @@ main
 	.box_canvas #canvas1
 		width 300px
 	*/
+	.wrap .section_home .home .box_profile
+		width 80%
 @media only screen and (max-width 768px)
 	.bx_nav
 		.navbar-nav
@@ -1307,6 +1329,20 @@ main
 		.back_skill
 			margin 16px auto
 			width 80%
+	.wrap .home .box_skills1,.wrap .home .box_skills2
+		flex-flow column wrap
+	.main .box_blog .div_blog 
+		.blog
+			margin auto
+			width 80%
+			.card-group .border_card .post_card_block
+				.post_text
+					font-size 18px		
+		.col_right
+			display none
+		
+		
+		
 @media only screen and (max-width 620px)
 	/*
 	.board2
@@ -1315,11 +1351,34 @@ main
 	.box_canvas #canvas1
 		width 200px
 	*/
+@media only screen and (max-width 576px)
+	main .box_blog .box_pagination
+		margin auto		
+		width 80%
+	.btn_floatup
+		right 10px
 @media only screen and (max-width 420px)
 	.box_canvas
 		display none
 	.skills
 		display none
+	.wrap .section_home .home .box_profile .profile
+		.text_name
+			font-size 40px
+			h5
+				font-size 25px
+	.btn_floatup
+		bottom 70px	
+	
+		
+	main .box_blog .box_pagination
+		overflow auto
+		width 95%
+		nav
+			display flex
+			ul.pagination
+				margin auto
+			
 
 @keyframes girar2{
 	0%{
