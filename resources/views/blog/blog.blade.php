@@ -116,5 +116,6 @@
     <div class="box_pagination">
     {{ $posts->onEachSide(0)->links() }}
     </div>
+    @include('layouts.footer')
 </div>
 @endsection

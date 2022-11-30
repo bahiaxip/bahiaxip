@@ -40,6 +40,7 @@ class BlogController extends Controller
             $query->where("slug",$slug);   
         })      
         ->orderBy("id","DESC")->where("status","PUBLISHED")->paginate(6);
+        //dd($posts);
         return view("blog.blog",compact("posts"));
     }
 }

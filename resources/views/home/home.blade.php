@@ -92,7 +92,7 @@
                 @include('home.slider_blog')
             </div>
             
-            <div id="latcol" class="col-8 mx-auto col-xl-4 text-center rounded mt-3 mt-xl-0 p-0 " >
+            <div id="latcol" class="col-10 col-sm-8 mx-auto col-xl-4 text-center rounded mt-3 mt-xl-0 p-0 " >
                 <!--<h5 class="text-white pt-2 font-weight-bold">Entradas Recientes</h5>-->
                 @foreach($posts as $post)
                     <div class="div_lat">
@@ -256,28 +256,7 @@
         <div class="image"></div> 
     </div>
     --}}
-    <div class="footer" >
-        <div class="div_animation" >
-            <div class="animation">
-                <img class="image" src="{{asset('ima/logo_bahiaxipX800.png')}}" alt="" height="80" >
-                {{--<div style="width:30px;height:30px;background-color:white;position:absolute;display:flex;justify-content:end;left:50%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>
-                <div style="width:30px;height:30px;background-color:lightgreen;position:absolute;display:flex;justify-content:end;left:76%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>
-                <div style="width:30px;height:30px;background-color:lightgreen;position:absolute;display:flex;justify-content:end;left:10%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>--}}
-                <div class="icon" ></div>
-                {{--
-                <div style="width:40px;height:40px;background-image:url({{asset('ima/logos/php.png')}});background-repeat:no-repeat;background-size:100%;position:absolute;display:flex;justify-content:end;left:30%;top:35px;"></div>
-                <div style="width:50px;height:50px;background-image:url({{asset('ima/logos/laravel.png')}});background-size:100%;position:absolute;display:flex;justify-content:end;left:2%;top:25px;z-index:1"></div>
-                --}}
-            </div>
-        </div>
-        <div style="width:100%;/*height:100%;*/display:flex;flex-flow:column">
-            <div style="width:100%;height:100%;display:flex;margin:auto;align-items:end;justify-content:center">
-                <p style="color:white;">
-                    &copy;Todos los derechos reservados    
-                </p>    
-            </div>
-        </div>
-    </div>
+    @include('layouts.footer')
     
 </div>
 @endsection

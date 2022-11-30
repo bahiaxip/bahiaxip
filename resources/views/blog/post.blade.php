@@ -204,7 +204,7 @@
         Esto es un textarea ckeditor
         
     </textarea>-->
-    
+    @include('layouts.footer')
 @endsection
 <script>
     

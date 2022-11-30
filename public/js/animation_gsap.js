@@ -33,6 +33,7 @@ function setIcons(div_parent){
 }
 
 window.addEventListener('load',()=>{
+    console.log("ruta: ",route)
     if(route == 'home'){
 
         /* pruebas con bahiaxip en inicio 
@@ -303,60 +304,12 @@ window.addEventListener('load',()=>{
                 //markers:true,
             }
         })
-
+        animationFooter('home','.section_blog');
         
-        gsap.from('.footer .div_animation',{
-            scale:0,
-            ease: 'power2.out',
-            duration:2,
-            delay: 2,
-            scrollTrigger:{
-                trigger: '.section_blog',
-                start:'top top',
-                end:'+=300 100%',
-                scrub:1,
-            }
-        })
         
-        tlicon = gsap.timeline({
-            scrollTrigger:{
-                trigger:'.section_blog',
-                start:'top top',
-                end:'+=500 100%',
-                //scrub:1,
-                //markers:true,    
-            }
-        });
-        
-        tlicon.from('.icon',{
-            y:-200,
-            ease: 'bounce.inOut',            
-            duration:3,
-            
-        })        
-        .to('.icon',{            
-            x:-20,
-            duration:0.8,
-        })
-        .to('.icon',{            
-            x:10,
-            duration:0.8
-        }).to('.icon',{
-            x:0,
-            duration: 0.5
-        })
-        .to('.icon',{
-            scale:1.1,
-            duration: 0.5
-        })
-        .to('.icon',{
-            delay:2,
-            scale:1,
-            duration: 0.5
-        })
     }
 
-    if(route == 'blog'){
+    if(route == 'blog' || route == 'tag' || route == 'category'){
         tl_blog = gsap.timeline();
         tl_blog.to('.border_card',{
             x:0,
@@ -365,9 +318,10 @@ window.addEventListener('load',()=>{
             duration:1,
             stagger:0.5,
         })
+        animationFooter('blog')
     }
 
-    if(route=='post'){
+    if(route=='post' ){
         gsap.to('.box_card',{
             opacity:1,
             scale:1,
@@ -380,6 +334,7 @@ window.addEventListener('load',()=>{
             delay:.5,
             duration:2
         })
+        animationFooter('post')
     }
 
     if(route == 'contact'){
@@ -413,13 +368,78 @@ window.addEventListener('load',()=>{
             opacity:1
 
         })
+        animationFooter('contact')
     }
+    
 
 
 
     
 });
-
+//animación footer
+function animationFooter(path,selector=null){
+    let tlicon;
+    if(path == 'home'){
+        gsap.to('.footer .div_animation',{
+            scale:1,
+            ease: 'power2.out',
+            duration:2,
+            delay: 2,
+            scrollTrigger:{
+                trigger: selector,
+                start:'top top',
+                end:'+=300 100%',
+                scrub:1,
+            }
+        })
+    
+        tlicon = gsap.timeline({
+            scrollTrigger:{
+                trigger:selector,
+                start:'top top',
+                end:'+=500 100%',
+                //scrub:1,
+                //markers:true,    
+            }
+        });
+    }else if(path == 'blog' || path == 'contact' || path == 'post'){
+        gsap.to('.footer .div_animation',{
+            scale:1,
+            ease: 'power2.out',
+            duration:2,
+            delay: 2,
+        });
+        tlicon=gsap.timeline();
+    }
+        
+    tlicon.from('.icon',{
+        y:-200,
+        ease: 'bounce.inOut',            
+        duration:3,
+        delay:1
+        
+    })        
+    .to('.icon',{            
+        x:-20,
+        duration:0.8,
+    })
+    .to('.icon',{            
+        x:10,
+        duration:0.8
+    }).to('.icon',{
+        x:0,
+        duration: 0.5
+    })
+    .to('.icon',{
+        scale:1.1,
+        duration: 0.5
+    })
+    .to('.icon',{
+        delay:2,
+        scale:1,
+        duration: 0.5
+    })
+}
 function effectButton(){
     let btn = document.querySelector('.post .wrap_button');
     if(btn.style.width=='100%'){

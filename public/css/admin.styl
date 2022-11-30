@@ -103,161 +103,7 @@ rgba1 = rgb(72,97,255)
 /*navegador y barra de navegación*/
 
 
-#app
-	background-color greyboot
-	min-height 100vh
-	.bx_nav
-		background linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,1) 25%, rgba(0,0,0,1) 70%,rgba(0,0,0,.6))
-		
-		padding 0
-		min-height 60px
-		/*height 50px*/
-		
-		a.logo
-			color color9
-			&:hover
-				color #FFF		
-		.cubo_pause			
-			display none
-			position absolute
-			background-image url('../icon/icon_pause.svg')
-			background-size 100%
-			background-repeat no-repeat
-			height 25px
-			width 25px
-			z-index 999
-		.cubo2
-			/*bottom 300px*/
-			will-change transform
-			width 25px
-			height 25px
-			position relative
-			transform-style preserve-3d
-			animation-name  girar2
-			animation-duration 25s
-			animation-iteration-count  infinite
-			animation-direction  alternate
-			animation-play-state running
-			animation-delay 3s			
-			
-			.cara2
-				border #46aeff 1px solid
-				border-radius 5px
-				/*box-shadow: 1px 1px 4px #61e5ff,-1px -1px 4px #61e5ff, 1px -1px 4px #61e5ff,-1px 1px 4px #61e5ff;*/
-				box-shadow 0px 0px 5px #000
-				display grid
-				position absolute
-				width 100%
-				height 100%
-				grid-template-columns: repeat(3, 1fr);			
-			#uno				
-				transform translateZ(12.5px)
-			#dos				
-				transform  translateX(12.5px) rotateY(90deg)
-			#tres				
-				transform  translateZ(-12.5px)
-			#cuatro				
-				transform  translateX(-12.5px) rotateY(90deg)
-			#cinco				
-				transform  translateY(-12.5px) rotateX(90deg)
-			#seis				
-				transform  translateY(12.5px) rotateX(90deg)
 
-			.cuadrado
-				border: grey 1px solid;
-				border-radius 2px
-				box-shadow: 1px 1px 1px black,-1px -1px 1px black, 1px -1px 1px black,-1px 1px 1px black;
-			
-			.cuadrado.uno
-				/*background-color #00bb77*/
-				background-color #18D26E
-			
-			.cuadrado.dos
-				background-color #ff8700
-			
-			.cuadrado.tres
-				background-color yellow
-			
-			.cuadrado.cuatro
-				background-color #3190ff
-			
-			.cuadrado.cinco
-				background-color #b851ce
-			
-			.cuadrado.seis
-				background-color white
-				
-		
-		.container
-			height 100%
-			.bx_navbar
-				font-family QuicksandB
-				height 100%
-				
-				ul.links
-					display flex
-					margin 0 auto
-					height 100%					
-					li
-						display flex						
-						a
-							align-items center
-							border-bottom transparent 2px solid
-							border-image linear-gradient(to right,transparent 10%, transparent 70%,transparent 20%)
-							
-							
-							border-bottom-width 50%
-							color color9
-							display flex
-							font-family QuicksandB
-							padding 5px 20px
-							transition border-image 0.5s linear
-							&:hover								
-								color #FFF
-								border-bottom color17 2px solid
-								border-image linear-gradient(to right,transparent 10%, color17 70%,transparent 20%)
-								border-image-slice 1
-								
-								
-							
-						a.active
-							border-bottom black 2px solid
-							border-image linear-gradient(to right,transparent 10%, color17 70%,transparent 20%)
-							border-image-slice 1
-							color #18D26E
-				ul.nav_user
-					margin 0
-					height 100%
-						
-					li
-						display flex
-						margin auto
-						a
-							color color9
-							&:focus
-								color color10
-						a.active
-							background-color color1
-							color color10
-					
-						
-				.dropdown-menu a
-					color greyboot
-			ul.rrss
-				margin 0
-				height 100%
-				.linkedin
-					/*background-color color6*/
-					background-color rgba(26,227,188,.3)
-					background-image url('../icon/icon_linkedin_white.svg')
-					background-size 90%
-					background-position center
-					border-radius 50%
-					cursor pointer
-					height 35px
-					width 35px
-					&:hover
-						background-color color17
 						
 				
 				
@@ -688,34 +534,35 @@ rgba1 = rgb(72,97,255)
 				width 100%
 				height 100%
 			*/
-	.footer
+.footer
+	display flex
+	flex-flow column
+	height 200px
+	width 100%
+	.div_animation
 		display flex
-		flex-flow column
-		height 200px
-		width 100%
-		.div_animation
-			display flex
+		margin auto
+		transform scale(0)
+		.animation
 			margin auto
-			.animation
+			overflow hidden
+			position relative
+			.image
 				margin auto
-				overflow hidden
 				position relative
-				.image
-					margin auto
-					position relative
-					top 10px
-					z-index 1
-				.icon
-					background-image url('../ima/logos_programacion/linux_new.png')
-					background-repeat no-repeat
-					background-size 100%
-					display flex					
-					height 50px
-					justify-content end
-					left 60%
-					position absolute
-					top 35px
-					width 50px
+				top 10px
+				z-index 1
+			.icon
+				background-image url('../ima/logos_programacion/linux_new.png')
+				background-repeat no-repeat
+				background-size 100%
+				display flex					
+				height 50px
+				justify-content end
+				left 60%
+				position absolute
+				top 35px
+				width 50px
 					
 
 /* billboard */
