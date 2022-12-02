@@ -11,8 +11,12 @@ class BlogController extends Controller
 {
 
     public function blog(Request $request){
+        // si existe $_GET['search'] buscará por search si no, search se 
+        //tomará como null y buscará todos
         $posts= Posts::search($request->get("search"))->orderBy("id","DESC")->where("status","PUBLISHED")->paginate(6)->appends($request->query());
-        $data = ['posts'=> $posts];
+        $tags = Tag::where('status','PUBLISHED')->get()->random(5);
+        $rand_posts = Posts::where('status','PUBLISHED')->get()->random(5);
+        $data = ['posts'=> $posts,'tags' => $tags,'rand_posts'=> $rand_posts];
         return view('blog.blog',$data);
     }
     public function post($slug)
@@ -30,7 +34,9 @@ class BlogController extends Controller
     {
         $category= Category::where("slug",$slug)->pluck("id")->first();
         $posts= Posts::where("category_id",$category)->orderBy("id","DESC")->where("status","PUBLISHED")->paginate(6);
-        return view("blog.blog",compact("posts"));
+        $tags = Tag::where('status','PUBLISHED')->get()->random(5);
+        $rand_posts = Posts::where('status','PUBLISHED')->get()->random(5);
+        return view("blog.blog",compact("posts","tags","rand_posts"));
     }
     
     public function tag($slug)
@@ -40,7 +46,9 @@ class BlogController extends Controller
             $query->where("slug",$slug);   
         })      
         ->orderBy("id","DESC")->where("status","PUBLISHED")->paginate(6);
-        //dd($posts);
-        return view("blog.blog",compact("posts"));
+        $tags = Tag::where('status','PUBLISHED')->get()->random(5);
+        $rand_posts = Posts::where('status','PUBLISHED')->get()->random(5);
+        
+        return view("blog.blog",compact("posts","tags","rand_posts"));
     }
 }

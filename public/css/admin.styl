@@ -18,6 +18,7 @@ greyboot = #212529 //rgb(33,37,41)
 rgba2 = rgba(0,178,146,1)
 rgba17 = rgba(24,210,110,1)
 rgba1 = rgb(72,97,255)
+main = #161616
 /*
 *,*::before,*::after
 	margin 0
@@ -279,6 +280,7 @@ rgba1 = rgb(72,97,255)
 		
 			
 	.section_skills
+		background-color greyboot
 		margin auto
 		padding 20px 0 20px 0
 		position relative
@@ -535,6 +537,7 @@ rgba1 = rgb(72,97,255)
 				height 100%
 			*/
 .footer
+	background-color greyboot
 	display flex
 	flex-flow column
 	height 200px
@@ -563,7 +566,23 @@ rgba1 = rgb(72,97,255)
 				position absolute
 				top 35px
 				width 50px
-					
+		
+	.div_rights
+		display flex
+		flex-flow column
+		width 100%
+		.rights_text_footer
+			align-items end
+			display flex
+			height 100%
+			justify-content center
+			margin 0
+			width 100%
+			p
+				color #FFF
+				margin-bottom 3px
+				
+				
 
 /* billboard */
 /*
@@ -666,12 +685,15 @@ rgba1 = rgb(72,97,255)
 	display none
 }
 .wrap_contact
-	background-color black
-	min-height 95vh
-	height 100%
+	/*background-color #161616*/
+	display flex
+	flex-wrap wrap
+	min-height 92vh
 	position relative
+	width 100%
 	.box_contact
 		position relative
+		width 100%
 		.contact
 			color color10
 			padding-top 20px
@@ -679,11 +701,12 @@ rgba1 = rgb(72,97,255)
 			transform translateY(-300px)
 			opacity 0
 			
-			h2
+			h2				
 				font-family YoutubeB
 				font-size 40px
 			.form
 				background-color rgba(33,37,41,.7)
+				/*background-color rgba(255,255,255,.04)*/
 				border-radius 8px
 				
 				padding 20px 10px 20px 10px
@@ -759,11 +782,99 @@ rgba1 = rgb(72,97,255)
 	bottom 0
 	opacity 1
 */
+/* tipos de estilos para autocompletado en input */
+/* opción 1, con background-clip */
+/*
+input.no-autofill:-webkit-autofill{
+	-webkit-background-clip: text
+	-webkit-text-fill-color: white !important
+}
+*/
+/* opción 2, con transition */
+/*
+input.no-autofill:-webkit-autofill,
+input.no-autofill:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input.no-autofill[data-autocompleted] {
+    background-color: transparent !important;
+}
+*/
+/* opción 3, con box-shadow (interfiere en el box-shadow del input) */
+
+/*
+input.no-autofill:-webkit-autofill{
+	-webkit-box-shadow:none inset !important
+	-webkit-text-fill-color: yellow !important
+}
+*/
 main
-	.box_blog
+	//background-color rgba(0,0,0,.7)
+	background-color main
+	display flex
+	flex-wrap wrap
+	width 100%
+	.wrap_blog.box_blog
+		
 		padding 20px 0
+		.div_search
+			display flex			
+			width 100%
+			.input_search
+				position relative
+				height 35px
+				width 100%
+				
+				input
+					background-color transparent !important
+					border color9 1px solid
+					border-radius 5px
+					color #FFF
+					font-family YoutubeB
+					height 35px
+					padding 0 10px
+					width 100%
+				
+					&:focus
+						border transparent 1px solid
+						outline none
+						box-shadow 0px 0px 5px color17,0px 0px 5px color17
+				/* sobreescribiendo autocomplete */
+				input.no-autofill:-webkit-autofill,
+				input.no-autofill:-webkit-autofill:hover,
+				input.no-autofill:-webkit-autofill:active,
+				input.no-autofill:-webkit-autofill:focus{
+				    transition background-color 600000s 0s, color 600000s 0s
+				}
+				
+				input::placeholder
+					color color8
+			.icon_search
+				background-color transparent
+				border transparent 1px solid
+				border-radius 4px
+				display flex
+				height 100%
+				padding 3px
+				position absolute
+				right 0
+				top 0
+				&:hover
+					button
+						background-image url('../icon/magnifying-glass_green.svg')	
+				&:active
+					border color9 1px solid
+					box-shadow 0px 0px 2px color9,-0px -0px 2px color9
+				button
+					background-color transparent					
+					background-image url('../icon/magnifying-glass_white.svg')
+					background-repeat no-repeat
+					background-size 100%
+					border none
+					min-width 24px
 		.div_blog
 			display flex
+			margin 20px auto
 			width 100%
 			.blog
 				padding-bottom 20px
@@ -805,6 +916,7 @@ main
 							a
 								background-color color10
 								color #494949
+								
 								display flex
 								height 100%
 								justify-content center
@@ -814,20 +926,110 @@ main
 								&:hover						
 									color color1
 						.post_card_block
-							
+							cursor pointer
 							.post_text
-								
 								border-top color17 1px solid
 								color color9
 								font-family QuicksandB
-								font-size 22px
+								font-size 20px
 								font-weight bold
 								margin auto
 								padding 10px
 								text-align center
 								transition color .3s linear
 			.col_right
+				
 				width 30%
+				h2
+					color color12
+					display flex
+					font-family YoutubeB
+					font-size 25px
+					justify-content center
+					margin 20px auto
+				
+				ul.posts
+					li
+						list-style none
+						margin 10px auto
+						a
+							display flex
+							flex-flow column
+							text-decoration none
+							width 100%
+							&:hover .image_post
+								img
+									/*transform scale(1.05)*/
+									animation bounce_image 1s 1
+								span
+									color color17
+							.image_post
+								display flex
+								flex-flow column
+								margin auto
+								max-width 200px
+								overflow hidden
+								width 90%
+								img
+									margin auto
+									max-width 200px									
+									width 90%
+								span
+									color color9
+									font-family YoutubeB
+									font-size 18px									
+									margin 5px auto
+									max-width 60%
+									overflow hidden
+									text-overflow ellipsis
+									white-space nowrap
+									
+				ul.tags
+					color white
+					width 90%
+					margin auto
+					li
+						display flex
+						list-style none
+						margin 10px 5px
+						padding 4px
+						a.tag_button
+							background-color transparent
+							border color17 1px solid
+							border-radius 4px
+							color #FFF							
+							overflow hidden
+							padding 4px 20px
+							position relative
+							text-decoration none
+							transition width .5s linear
+							&:hover
+								
+								&:before
+									width 200%
+							span
+								font-weight bold
+								position relative
+								
+						
+						a.tag_button::before					
+							background-color color17
+							bottom 0
+							content ''
+							height 100%
+							left -30px
+							position absolute
+							top 0
+							right 0
+							transform skewX(-35deg)
+							transition all .5s linear
+							width 0
+						&:before
+							color color17
+							content '\027A4'
+							display flex
+							margin 0 8px
+							padding 4px 			
 		.box_pagination
 			width 80%
 			ul.pagination
@@ -935,7 +1137,7 @@ main
 						font-family QuicksandB
 						font-size 12px
 						height 100%
-						padding 5px 15px
+						padding 4px 20px
 						position relative
 						text-decoration none
 						width 100%
@@ -973,7 +1175,7 @@ main
 					background-color transparent
 					color white
 					margin auto 5px
-					padding 5px 15px
+					padding 4px 20px
 					position relative
 					text-decoration none
 					
@@ -985,7 +1187,7 @@ main
 						height 100%
 						left 0
 						overflow hidden
-						padding 5px 15px
+						padding 4px 20px
 						position absolute
 						top 0
 						width 100%
@@ -1250,5 +1452,19 @@ main
 	100%{
 		transform:  rotateY(0deg) ;
 	}
+}
 
+@keyframes bounce_image{
+	from,to { 
+		transform: scale(1,1)
+	}
+	25%{
+		transform scale(0.95,1.05)
+	}
+	50%{ 
+		transform scale(1.05,0.95) 
+	}
+	75%{ 
+		transform scale(0.98,1.02) 
+	}
 }

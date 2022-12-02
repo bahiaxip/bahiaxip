@@ -121,8 +121,11 @@
         </div>
     </div>
 	</div>
+    <div style="width:100%;align-self:flex-end">
     @include('layouts.footer')
 </div>
+</div>
+
 @endsection
 @section('scripts')
 <script>

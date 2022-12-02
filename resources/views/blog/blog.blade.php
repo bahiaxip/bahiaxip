@@ -1,37 +1,30 @@
 @extends("layouts.app")
 @section("title","Blog")
-@section("sidebar-bar")
-    @parent
-    <div class=" d-lg-none" id="sidebar-bar">
-        {{ Form::open(["route" => "blog","method" => "GET"]) }}
-        <input type="text" name="search" class = "" placeholder = "Buscar..." autocomplete="off" >
-        <button type="submit" class="boton_sidebar-bar" value=""></button>
-                   
-        {{ Form::close() }}
-    </div>
-@endsection
-@section("sidebar")
-    @parent
+
+
+
     
-    <ul class="d-none d-lg-flex navbar-nav mr-2 sidebar_nav ">
-        <li class="nav-item" >
-        {{ Form::open(["route" => "blog","method" => "GET","class" => "card card-sm"]) }}
-            <div class="col-auto">
-            {{ Form::text("search",null,["class" => "form-control form-control-sm form-control-borderless", "placeholder" => "Buscar..."]) }}
-            </div>
-        </li>
-        <li class="">
-            <div class="col-auto">
-                <button class="btn btn-sm " type="submit"><img src="{{asset('./ima/lupa_10.png')}}"></button>
-            </div>
-        {{ Form::close() }}
-        </li>
-    </ul>
     
-@endsection
+    
+
 @section("content")
 
-<div class="container box_blog">
+<div class="container wrap_blog box_blog">
+    <div class="div_search">
+        <div class="input_search" >
+        {{ Form::open(["route" => "blog","method" => "GET"]) }}
+            
+            {{ Form::text("search",null,[ "placeholder" => "Buscar...","class" => "no-autofill"]) }}
+            <div class="icon_search">
+                <button class="" type="submit">
+                    {{--<button class="btn btn-sm" type="submit"><img src="{{asset('icon/magnifying-glass.svg')}}"></button>
+                    --}}
+                </button>
+            </div>
+        </div>
+        
+        {{ Form::close() }}
+    </div>
     <!--<div class="col-md-offset-2">
         <h1>Lista de artículos</h1>
         
@@ -109,13 +102,39 @@
             
             
         </div>
-        <div class="col_right" >
-            asdfasdf
-        </div>
+        <aside class="col_right" >
+            <h2>Otras entradas</h2>
+            <ul class="posts">
+                @foreach($rand_posts as $rand_post)
+                <li>
+                    <a href="{{route('post',$rand_post->slug)}}" class="tag_button">
+                        <div class="image_post">
+                            <img src="{{asset($rand_post->file)}}" alt="" >
+                            <span>{{$rand_post->title}}</span>
+                        </div>
+                        
+                    </a>
+                </li>
+                
+                @endforeach
+                
+            </ul>
+            <ul class="tags">
+                <h2>Etiquetas</h2>
+                @foreach($tags as $t)
+                <li>
+                    <a href="{{route('tag',$t->slug)}}" class="tag_button"><span>{{$t->name}}</span></a>
+                </li>
+                
+                @endforeach
+                
+            </ul>
+        </aside>
     </div>
     <div class="box_pagination">
     {{ $posts->onEachSide(0)->links() }}
     </div>
-    @include('layouts.footer')
+    
 </div>
+@include('layouts.footer')
 @endsection
