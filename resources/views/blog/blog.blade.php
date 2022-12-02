@@ -46,7 +46,28 @@
     </div>-->
     <!--<div class="col-md-offset-2">-->
     <div class="div_blog">
-        <div class="blog" >
+        <div class="blog">
+            <div class="div_title"  style="color:#D3D3D3;font-family:YoutubeB">
+                @if($param)
+                <span class="title_blog">Entradas 
+                    <span>{{$param}}</span>
+                </span>    
+                @else
+                    {{--@if(request()->page)
+                    <span class="title_blog">Entradas página <span>{{request()->page}}</span></span>                    
+                    @else
+                    <span class="title_blog">Últimas entradas</span>
+                    @endif
+                    --}}
+                    @if(request()->search)
+                    <span class="title_blog">
+                        Búsqueda de entradas: <span>{{request()->search}}</span>
+                    </span>                    
+                    @else
+                    <span class="title_blog">Últimas entradas</span>
+                    @endif
+                @endif
+            </div class="div_title">
             @if($posts->total()==0)
             <div class="col text-center mt-4">
                 <h5 class="alert-danger p-3">No se obtuvieron resultados</h5>
@@ -102,7 +123,7 @@
             
             
         </div>
-        <aside class="col_right" >
+        <aside class="aside" >
             <h2>Otras entradas</h2>
             <ul class="posts">
                 @foreach($rand_posts as $rand_post)

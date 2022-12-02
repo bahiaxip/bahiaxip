@@ -118,7 +118,13 @@ main = #161616
 /*home*/
 
 .wrap
+	/*
+	display flex
+	flex-wrap wrap
+	*/
 	position relative
+	width 100%
+	
 	.section_home
 		background transparent
 		position relative		
@@ -818,6 +824,7 @@ main
 		
 		padding 20px 0
 		.div_search
+			transform translateY(-200px) scale(0)
 			display flex			
 			width 100%
 			.input_search
@@ -875,11 +882,25 @@ main
 		.div_blog
 			display flex
 			margin 20px auto
+			
 			width 100%
 			.blog
 				padding-bottom 20px
 				width 70%
 				/*pares*/
+				.div_title
+					display flex
+					span.title_blog
+						color color9
+						font-family YoutubeB
+						font-size 28px					
+						opacity 0
+						transform translateY(-70px) rotateX(180deg)
+						span
+							color color17
+							font-size 24px
+							text-transform capitalize
+						
 				.card-group
 					overflow hidden
 					.border_card.even
@@ -937,16 +958,17 @@ main
 								padding 10px
 								text-align center
 								transition color .3s linear
-			.col_right
-				
+			.aside
+				transform translateX(100%)
+				opacity 0
 				width 30%
 				h2
-					color color12
+					color color9
 					display flex
 					font-family YoutubeB
 					font-size 25px
 					justify-content center
-					margin 20px auto
+					margin 10px auto 20px auto
 				
 				ul.posts
 					li
@@ -977,16 +999,16 @@ main
 								span
 									color color9
 									font-family YoutubeB
-									font-size 18px									
+									font-size 16px									
 									margin 5px auto
-									max-width 60%
+									max-width 80%
 									overflow hidden
 									text-overflow ellipsis
 									white-space nowrap
 									
 				ul.tags
 					color white
-					width 90%
+					width 80%
 					margin auto
 					li
 						display flex
@@ -1070,9 +1092,9 @@ main
 				.back_btn_anim.btn1
 					&:hover 
 						.wrap_button::before
-							transform scaleX(5)
+							transform scaleX(6)
 						.wrap_button::after
-							transform scaleX(5)
+							transform scaleX(6)
 				.back_btn_anim.btn2
 					&:hover 
 						.wrap_button::before
@@ -1126,7 +1148,7 @@ main
 						transition all .4s linear
 						width 35px
 					.wrap_button.btn1::after
-						left 60px
+						left 70px
 					.wrap_button.btn2::after
 						left 140px
 					a
@@ -1387,7 +1409,7 @@ main
 			.card-group .border_card .post_card_block
 				.post_text
 					font-size 18px		
-		.col_right
+		.aside
 			display none
 		
 		

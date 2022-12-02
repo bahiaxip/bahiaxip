@@ -311,12 +311,29 @@ window.addEventListener('load',()=>{
 
     if(route == 'blog' || route == 'tag' || route == 'category'){
         tl_blog = gsap.timeline();
+        tl_blog.to('.div_search',{
+            y:0,
+            scale:1,
+            duration:1
+        })
+        tl_blog.to('.title_blog',{
+            y:0,
+            /*transform:'rotateX(0deg)',*/
+            opacity:1,
+            duration:.5,
+            ease:"bounce.out",
+        }).to('.title_blog',{transform:'rotateX(0deg)'})
+
         tl_blog.to('.border_card',{
             x:0,
             ease:'back.out',            
             opacity:1,
             duration:1,
             stagger:0.5,
+        })
+        tl_blog.to('.aside',{
+            x:0,
+            opacity:1
         })
         animationFooter('blog')
     }
