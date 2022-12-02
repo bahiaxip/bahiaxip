@@ -368,7 +368,7 @@ window.addEventListener('load',()=>{
             opacity:1
 
         })
-        animationFooter('contact')
+        animationFooter('contact',null,3.5)
     }
     
 
@@ -377,8 +377,13 @@ window.addEventListener('load',()=>{
     
 });
 //animación footer
-function animationFooter(path,selector=null){
+function animationFooter(path,selector=null,secondsDelay=null){
     let tlicon;
+    let delay = 2;
+    if(secondsDelay){
+        delay = secondsDelay;
+    }
+
     if(path == 'home'){
         gsap.to('.footer .div_animation',{
             scale:1,
@@ -407,9 +412,9 @@ function animationFooter(path,selector=null){
             scale:1,
             ease: 'power2.out',
             duration:2,
-            delay: 2,
+            delay: delay,
         });
-        tlicon=gsap.timeline();
+        tlicon=gsap.timeline({delay:delay});
     }
         
     tlicon.from('.icon',{
