@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Posts;
 use App\Models\Category;
 use App\Models\Tag;
+use Cookie;
 
 class BlogController extends Controller
 {
@@ -52,5 +53,85 @@ class BlogController extends Controller
         $rand_posts = Posts::where('status','PUBLISHED')->get()->random(5);
         $param = $slug;
         return view("blog.blog",compact("posts","tags","rand_posts",'param'));
+    }
+//función ajax de gestión de cookies
+    public function cookies(Request $request){  
+        if($request->post('bahiaxip')){
+            $ano = 60;
+            $bxcookie = cookie('bx','true',$ano);
+            return response(['status' => '200','msge' => 'La cookie recordatorio ha sido activada'])->withCookie($bxcookie);
+        }      
+        if($request->post('analytics') && $request->post('type')){
+            //1año en minutos
+            $ano = 60;
+            $type = $request->post('type');
+
+            
+            $cookie_analytics = $request->cookie('bahiaxip_analytics');
+            //return response(['dato' => $cookie_analytics]);
+            if($request->post('analytics')){
+                $new_value = $request->post('analytics');
+                if($type == 'all'){
+                    //si el parámetro es all (activar todas) establecemos a true
+                    $micookie = cookie('bahiaxip_analytics','true',$ano);
+                    return response(['status' => '200','msge' => 'Todas las cookies han sido activadas','value' => $new_value])->withCookie($micookie);
+                }
+                if($new_value == 'false' && $cookie_analytics == 'false' 
+                    || $new_value == 'false' && !$cookie_analytics){
+                    return response(['status' => '200','msge' => 'No es necesario actualizar la cookie','value' => $new_value]);
+                }
+                elseif($new_value == 'false' && $cookie_analytics == 'true'){
+                    //eliminamos cookie
+                    $rm_cookie = Cookie::forget('bahiaxip_analytics');
+                    return response(['status' => '200','msge' => 'La cookie ha sido desactivada','value' => $new_value])->withCookie($rm_cookie);
+                }else{
+                    //creamos o actualizamos cookie
+                    $micookie = cookie('bahiaxip_analytics',$new_value,$ano);
+                    return response(['status'=>'200','msge' => 'La cookie ha sido actualizada a : $new_value ','value' => $new_value])->withCookie($micookie);
+                }
+                
+                
+            }
+            //comprobamos si el valor de la cookie
+            /*if($request->cookie('bahiaxip_analytics') == 'true'){
+                $b_analytics = $request->cookie('bahiaxip_analytics');
+                //comprobamos si existe valor por el formulario
+                if($request->post('analytics')){
+
+                    $new_value = $request->post('analytics');
+                    //comparamos si el valor nuevo es igual o distinto de el 
+                    //que ya estaba establecido en la cookie, si es igual
+                    //lo dejamos, podríamos reiniciar el año, si no es igual
+                    //establecemos la nueva cookie
+                    if($new_value === 'undefined'){
+                        $new_value = 'false';
+                    }
+                    if($new_value != $b_analytics){
+                        $micookie = cookie('bahiaxip_analytics',$new_value,$ano);
+                        //echo "la cookie: ".$b_analytics." tiene un valor distinto que el input: ".$new_value."<br>";
+                        return response()->json(['dato','es distinto'])->withCookie($micookie);
+                    }else{
+                        $micookie = $b_analytics;
+                        //echo "la cookie: ".$b_analytics." tiene el mismo valor que el input ".$new_value."<br>";
+                        return response()->json(['dato','es el mismo'])->withCookie($micookie);
+                    }
+                }    
+            }else{
+                //$b_analytics = $request->cookie('bahiaxip_analytics');
+                $micookie = cookie('bahiaxip_analytics','true',$ano);
+                return response()->json(['dato','midato'])->withCookie($micookie);
+            }*/
+            //return response()->json(['dato','midato'])->withCookie($micookie);
+                
+            
+            // }else{
+            //     $rm_cookie = Cookie::forget('bahiaxip_analytics');
+            //     return response()->json(['hola' => 'bien'])->withCookie($rm_cookie);
+            // }
+            
+        }else{
+            //devolvemos mensaje de error
+            return response(['error',"Se originó un error durante la administración de cookies (function cookies())"]);
+        }
     }
 }

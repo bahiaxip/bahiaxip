@@ -63,3 +63,5 @@ Route::middleware(["auth"])->group(function(){
     ]);
 });
 
+Route::post('cookies',[BlogController::class,'cookies']);
+

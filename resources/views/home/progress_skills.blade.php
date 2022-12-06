@@ -18,7 +18,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>JavaScript</span><span class="percent">75%</span>    
+                <span>JavaScript</span><span class="percent">80%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -26,7 +26,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>PHP</span><span class="percent">75%</span>    
+                <span>PHP</span><span class="percent">80%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -34,7 +34,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>JavaScript</span><span class="percent">75%</span>    
+                <span>jQuery</span><span class="percent">75%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -42,9 +42,10 @@
         </div>
     </div>
     <div class="right">
+        
         <div class="progress_skill">
             <div class="title">
-                <span>PHP</span><span class="percent">100%</span>    
+                <span>Laravel</span><span class="percent">70%</span>
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -52,7 +53,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>Laravel</span><span class="percent">80%</span>
+                <span>Angular</span><span class="percent">60%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -60,7 +61,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>Vue</span><span class="percent">75%</span>    
+                <span>Vue</span><span class="percent">70%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -68,7 +69,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>Linux</span><span class="percent">75%</span>    
+                <span>Linux</span><span class="percent">80%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -76,7 +77,7 @@
         </div>
         <div class="progress_skill">
             <div class="title">
-                <span>Apache</span><span class="percent">75%</span>    
+                <span>Apache</span><span class="percent">80%</span>    
             </div>
             <div class="div_progress">
                 <div class="progress0"></div>
@@ -97,121 +98,123 @@
             <div>
                 <img src="{{asset('ima/logos/html5.svg')}}" alt="" class="p5" >
             </div>
+            {{--
             <div class="title">
                 HTML5
             </div>
+            --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/css3.svg')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 CSS3
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/javascript.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 JavaScript
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/php.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 PHP
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/jquery.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 jQuery
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/bootstrap.svg')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Bootstrap
-            </div>
+            </div> --}}
         </li>                    
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/laravel.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Laravel
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/livewire.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Livewire
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/angular.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Angular
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/vue.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Vue
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/git_logo.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Git
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/mysql.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 MySQL
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/mongo.svg')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 MongoDB
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/composer.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 Composer
-            </div>
+            </div> --}}
         </li>
         <li class="icon_skill">
             <div>
                 <img src="{{asset('ima/logos/npm.png')}}" alt="" class="p5" >
             </div>
-            <div class="title">
+            {{-- <div class="title">
                 NPM
-            </div>
+            </div> --}}
         </li>
 
         {{--

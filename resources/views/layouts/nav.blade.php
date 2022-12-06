@@ -92,7 +92,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            {{--
+            
             <ul class="navbar-nav ms-auto nav_user">
                 <!-- no es el efecto deseado...
                 <div class="box_canvas">
@@ -100,8 +100,11 @@
                 </div>
                 -->
                 
+                @include('layouts.links_login')
+
+
                 <!-- Enlaces login y registro -->
-                <!--
+                {{--
                 @guest
                     @if (Route::has('login'))
 
@@ -138,9 +141,9 @@
                         </div>
                     </li>
                 @endguest
-                -->
+                --}}
             </ul>
-            --}}
+            
         </div>
         {{--
         <div class="collapse navbar-collapse bx_navbar2" id="navbarSupportedContent">

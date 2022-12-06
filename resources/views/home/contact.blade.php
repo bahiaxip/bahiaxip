@@ -3,6 +3,7 @@
 @section('content')
 <div class="wrap_contact">
 	<div class="box_contact">
+        
 	<div class="container contact">
 		<div class="row ">
 			<div class="col">

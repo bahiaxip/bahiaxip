@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
-
 //Necesario para obtener cookies (con el método1 sin helper request())
 //use Request as OtroRequest;
 //Necesario para crear obtener cookies(con el método2)
-use Cookie;
+//use Cookie;
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
-     */
-    public function __construct()
+     */    
+
+    public function __construct(Request $request)
     {
         //$this->middleware('auth');
         //$this->middleware('admin');
-
     }
 
     /**
@@ -58,9 +57,19 @@ class HomeController extends Controller
     https://developers.google.com/tag-platform/gtagjs/reference#consent
 
     */
-    public function home(){
-        $posts=Posts::orderBy("id","desc")->where("status","PUBLISHED")->take(6)->get();
+    public function home(Request $request){
+        /*
+        if($request->cookie('bahiaxip_analytics')){
+            $cookie = $request->cookie('bahiaxip_analytics');
+        }
+        */
         
+        
+        
+        
+        
+        $posts=Posts::orderBy("id","desc")->where("status","PUBLISHED")->take(6)->get();
+        //$data = ['posts' => $posts];
         $data = ['posts' => $posts];
         //creando cookies -> método1 con vista
         //return response(view('home.home',$data))->cookie('Cookie1','micookie',50);

@@ -15,6 +15,7 @@ color15 = #b4ffdb
 color16 = #d3ffda
 color17 = #18D26E
 greyboot = #212529 //rgb(33,37,41)
+darkgreyboot = #151515
 rgba2 = rgba(0,178,146,1)
 rgba17 = rgba(24,210,110,1)
 rgba1 = rgb(72,97,255)
@@ -189,6 +190,8 @@ rgba1 = rgb(72,97,255)
     cursor n-resize
 .back_menu.active
     display block
+    
+
 /* nav link menu */
 .btn_menu    
     display block
@@ -248,7 +251,11 @@ rgba1 = rgb(72,97,255)
     .hidden_list div input[type="text"]
         width 70%    
         display inline-block
-
+@media screen and (max-width 800px)
+    .div_cookies
+        height 100%
+        max-width 100%
+        width 100%
 @media screen and (max-width 600px)
     .wrap 
         .section_blog .blog
