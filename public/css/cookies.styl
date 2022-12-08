@@ -20,43 +20,146 @@ rgba2 = rgba(0,178,146,1)
 rgba17 = rgba(24,210,110,1)
 rgba1 = rgb(72,97,255)
 .banner_cookies
-    background-color orange
+    align-items center    
+    background-color rgba(0,0,0,.8)
     bottom 0
-    display block
-    height 50px 
+    color color9
+    display flex
+    justify-content space-between
+    min-height 50px
     opacity 0
+    padding 15px 0
     position fixed
+    transition all 1s linear
+    visibility hidden
     width 100%
     z-index 999
+    .info_links,.div_buttonall
+        display flex
+        justify-content space-between
+        margin auto 20px
+        p
+            margin auto
+        .btn_cookies
+            background-color transparent
+            display flex
+            margin auto 10px 
+            padding 2px 12px
+            
+        .btn_cookies.btn_banner
+            background-color transparent
+            border color17 1px solid
+            border-radius 4px
+            color color9
+            font-weight bold
+            overflow hidden
+            position relative
+            transition color .5s linear
+            &:hover
+                color blue
+                &:before
+                    
+                    width 200%
+            span
+                position relative
+                z-index 100
+        .btn_cookies.btn_banner::before
+            bottom 0
+            content ''
+            background-color color17
+            
+            position absolute
+            height 100%
+            left -40px
+            right 0
+            top 0
+            transform skewX(-35deg)
+            transition width .5s linear 
+            
+            width 0
+            z-index 100
+            
+            
+        div
+            display flex
+            margin auto
+            span
+                padding 5px 15px
+            .link
+                background-color transparent                    
+                color color9
+                display block                
+                overflow hidden
+                position relative
+                text-decoration none
+            .link::before
+                content attr(data-hover)
+                
+            .link::after
+                content attr(data-hover)
+                position absolute
+                color color17
+                left 0
+                width 0
+                overflow hidden
+                transition all .6s linear
+                white-space nowrap
+            .link:hover:after,.link:active:after,.link:focus:after
+                width 100%
 .banner_cookies.active
     opacity 1
+    visibility visible
+    
+
 .div_cookies
     background-color darkgreyboot
     border color8 1px solid
     border-radius 5px
     color color9
-    display:none
+    font-family QuicksandR
+    font-size 16px
     min-height 500px
     left 50%
-    
+    opacity 0
     position fixed
+    transform translate(-50%,-50%) scale(0)
     
-    transform translate(-50%,-50%)
+    transition all .5s linear
     top 50%
     max-width 600px
+    visibility hidden
     width 50%
     z-index 999
     .cookies
         margin auto
         .logus
-            
-            display flex
+            align-items center
+            display flex            
             height 80px
-            
+            justify-content space-between            
             width 100%
             img
                 margin 20px
                 width 64px
+            a
+                cursor pointer
+                font-size 20px
+                margin auto 20px
+                .close                    
+                    height 30px
+                    width 30px
+                    &:hover
+                        &:before
+                            font-size 25px
+                            color red
+                            
+                    &:before
+                        color color17                        
+                        content '\2716'
+                        font-size 25px
+                        height 100%
+                        width 100%
+                        
         
         .cookies_links
             border-bottom color8 1px solid
@@ -94,7 +197,20 @@ rgba1 = rgb(72,97,255)
             .tab-pane.show
                 background-color transparent
                 color #FFF
-            
+        /* a todos li, tanto de necesarias como analíticas */
+        .tab-pane
+            ul
+                list-style none
+                li
+                    color color9
+                li:before
+                    
+                    color color17
+                    content '\2714'
+                    font-size 18px
+                    margin auto 5px
+                    
+                    
         .footer_cookies
             align-self flex-end
             display flex
@@ -103,6 +219,36 @@ rgba1 = rgb(72,97,255)
             width 100%
             z-index 100
             button
+                background-color transparent
                 border color17 1px solid
+                border-radius 4px
                 color white
+                
+                font-size 15px
+                font-weight bold
                 margin auto
+                overflow hidden
+                padding 4px 14px
+                position relative                
+                    
+                &:hover
+                    &:before
+                        width 150%
+                &:before
+                    background-color color17
+                    content ''
+                    height 100%
+                    left -20px
+                    position absolute
+                    top 0
+                    transform skewX(-35deg)
+                    transition all .5s linear
+                    width 0
+                span
+                    position relative
+@media only screen and (max-width 1200px)
+    .banner_cookies 
+        .info_links
+            display block
+            span
+                justify-content center

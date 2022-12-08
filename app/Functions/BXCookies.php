@@ -8,6 +8,7 @@
 //establece la cookie, para ello sería necesario enviar un return con
 //el método withCookie($cookie), pero no es necesario para el input.
 function get_cookies(){
+	
 	return request()->cookie('bx','false');
 }
 function get_cookie_analytics(){

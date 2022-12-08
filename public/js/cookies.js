@@ -96,13 +96,13 @@ function updateAnalyticsApi(){
     }
 }
 //función que actualiza la api de Analytics y guarda los cambios en la cookie de Analytics
-function saveCookies(){
+function saveCookies(ev){
     checkInitBx();
     //actualizamos el consentimiento de Google Analytics
     updateAnalyticsApi();
     saveCookies2(null,'modal');
     //ocultamos el modal de configuración de cookies
-    toggleModalCookies('hide');
+    toggleModalCookies('hide',ev);
 }
 
 function checkInitAnalytics(){
@@ -121,23 +121,24 @@ function checkInitBx(){
 //parámetro selector es si se llama desde el modal o el banner flotante
 //estos parámetros se irán modificando mediante JavaScript mientras no se recargue la página
 //y se cambie mediante el interruptor de activar/desactivar
-function activeAllCookies(analyticsCookie,selector){
+function activeAllCookies(analyticsCookie,selector,ev){
+
     checkInitBx();
     checkInitAnalytics();
     toggleBannerCookies('hide');
-    toggleModalCookies('hide');
+    toggleModalCookies('hide',ev);
     if(analyticsCookie != true){
         switchAnalytics = "true";
         //Establecemos el input switch a true
         document.querySelector('.switch.analytics input').checked=true;
         updateAnalyticsApi();
         //establecemos la cookie mediante ajax
-        saveCookies2('all',selector);
+        saveCookies2('all',selector,ev);
     }
 }
 
 //función para establecer o eliminar cookies mediante Ajax
-function saveCookies2(param = null,selector){
+function saveCookies2(param = null,selector,ev){
     
     //let analytics = el.checked;
     //enviamos petición
@@ -153,7 +154,7 @@ function saveCookies2(param = null,selector){
     xhtp.open('POST',vinculo);
     xhtp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     
-    xhtp.onreadystatechange = function(){
+    xhtp.onreadystatechange = function(ev){
         if(xhtp.readyState == 4){
             //console.log(vinculo);return;    
             if(xhtp.status == 200){
@@ -181,7 +182,8 @@ function saveCookies2(param = null,selector){
                 //es necesario el banner informativo
                      
                     toggleBannerCookies('hide');
-                    toggleModalCookies('hide');
+                    
+                    toggleModalCookies('hide',ev);
                 }
                 
             }else{
@@ -199,18 +201,28 @@ function setTextAnalytics(){
         text='Desactivadas';            
     modal.querySelector('.switch.analytics label').innerHTML = text;
 }
-function toggleModalCookies(type){
-    checkInitAnalytics();
+function toggleModalCookies(type,ev){
+    ev.preventDefault();
     let modal = document.querySelector('.div_cookies');
-    if(type == 'hide')
-        modal.style.display = 'none';
-    else
-        modal.style.display = 'block';
+    if(type == 'hide'){
+        modal.style.visibility = 'hidden';
+        modal.style.opacity = '0';
+        modal.style.transform = 'translate(-50%,-50%) scale(0)';
+
+    }else{
+        checkInitAnalytics();
+        modal.style.visibility = 'visible';
+        modal.style.opacity = '1';
+        modal.style.transform = 'translate(-50%,-50%) scale(1)';
+    }
 }
 function toggleBannerCookies(type){
     let banner = document.querySelector('.banner_cookies');
-    if(type == 'hide')
-        banner.style.display = 'none';
-    else
-        banner.style.display = 'block';
+    if(type == 'hide'){
+        banner.style.visibility = 'hidden';
+        banner.style.opacity = '0';
+    }else{
+        banner.style.visibility = 'visible';
+        banner.style.opacity = '1';
+    }
 }

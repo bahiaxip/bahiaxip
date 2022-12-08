@@ -12,6 +12,11 @@
             --}}
         </div>
     </div>
+    <div style="display:flex;justify-content:space-around;margin:20px 0">
+        <a href="#">Configuración de cookies</a>
+        <a href="#">Política de cookies</a>
+        <a href="#">Aviso legal</a>
+    </div>
     <div class="div_rights" >
         <div class="rights_text_footer" >
             <p>
