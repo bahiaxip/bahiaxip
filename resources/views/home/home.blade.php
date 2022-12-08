@@ -88,7 +88,7 @@
         </div>
         <h2 >BLOG</h2>
         <div class="row blog">
-            <div class="col-md-12 col-xl-7 pl-xl-0 mauto">
+            <div class="col-md-12 col-xl-7 pl-xl-0 mauto slider_blog">
                 @include('home.slider_blog')
             </div>
             

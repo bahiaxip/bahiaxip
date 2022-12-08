@@ -84,7 +84,7 @@
                 @if($i%2==0)
                 <div class="card-group mtop16" >
                 @endif
-                    <div class="card border_card {{($key %2 == 0) ? 'even':'odd'}}">
+                    <div class="card border_card {{($key %2 == 0) ? 'even':'odd'}}" title="{{ $post->body_main }}">
                         {{--
                         <div class="card-header post_title" >                
                             <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
@@ -101,10 +101,11 @@
                             <a href="{{ route('post',$post->slug) }}" class="float-right btn btn-sm leermas">Leer Más</a>
                             </div>
                         </div>-->
-                        <div class="card-block  post_card_block">                
-                            <div class="card-text post_text">
-                            {{ $post->body_main }}                        
-                            </div>
+                        <div class="card-block  post_card_block">    
+                            <span>
+                                <div class="card-text post_text" data-hover="{{ $post->body_main }}" ></div>    
+                            </span>          
+                            
                         </div>
                     </div>
                 @if($i%2!=0 || $key+1 == count($posts))

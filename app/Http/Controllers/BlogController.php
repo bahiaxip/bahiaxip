@@ -16,7 +16,7 @@ class BlogController extends Controller
         //tomará como null y buscará todos
         $posts= Posts::search($request->get("search"))->orderBy("id","DESC")->where("status","PUBLISHED")->paginate(6)->appends($request->query());
         $tags = Tag::where('status','PUBLISHED')->get()->random(5);
-        $rand_posts = Posts::where('status','PUBLISHED')->get()->random(5);
+        $rand_posts = Posts::where('status','PUBLISHED')->get()->random(4);
         $data = ['posts'=> $posts,'tags' => $tags,'rand_posts'=> $rand_posts,'param' => false];
         
         return view('blog.blog',$data);

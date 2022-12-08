@@ -287,7 +287,24 @@ window.addEventListener('load',()=>{
                 end:'+=800 bottom'
             },
         })
-        gsap.from('.row.blog',{
+        gsap.from('.row.blog .slider_blog',{
+            
+            duration:2,
+            delay:2,
+            
+            opacity:0,
+            x:'-100%',
+            ease:'power2.out',
+            
+            scrollTrigger:{
+                trigger:'.box_skills2',
+                start:'bottom top',
+                end:'+=1200 100%',
+                scrub:1,
+                //markers:true,
+            }
+        })
+        gsap.from('.row.blog #latcol',{
             
             duration:2,
             delay:2,
@@ -298,7 +315,7 @@ window.addEventListener('load',()=>{
             
             scrollTrigger:{
                 trigger:'.box_skills2',
-                start:'center top',
+                start:'bottom top',
                 end:'+=1200 100%',
                 scrub:1,
                 //markers:true,

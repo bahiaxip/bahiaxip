@@ -913,6 +913,7 @@ main
 					.border_card
 						background-color greyboot
 						opacity 0
+						overflow hidden
 						a
 							overflow hidden
 							
@@ -926,8 +927,12 @@ main
 							
 							img
 								transform scale(1.05)
+							/*
 							.post_card_block .post_text
-								color #FFF 	
+								color #FFF
+							*/
+							.post_card_block .post_text:after
+								width 100%
 						.post_title				
 							display flex
 							font-family QuicksandB
@@ -948,17 +953,42 @@ main
 								&:hover						
 									color color1
 						.post_card_block
+							border-top color17 1px solid
 							cursor pointer
+							display block
+							margin auto
+							padding 10px
+							width 100%
 							.post_text
-								border-top color17 1px solid
+								
 								color color9
+								
 								font-family QuicksandB
 								font-size 20px
 								font-weight bold
+								
 								margin auto
-								padding 10px
-								text-align center
+								overflow hidden
+								position relative
+								
+								text-overflow ellipsis
 								transition color .3s linear
+								white-space nowrap
+								width 100%
+							.post_text::before
+								content attr(data-hover)
+							.post_text::after
+								content attr(data-hover)
+								color color17
+								
+								
+								left 0
+								overflow hidden
+								position absolute
+								text-overflow ellipsis
+								transition all .6s linear
+								width 0
+								white-space nowrap
 			.aside
 				transform translateX(100%)
 				opacity 0
@@ -1014,15 +1044,16 @@ main
 					li
 						display flex
 						list-style none
-						margin 10px 5px
+						margin  5px
 						padding 4px
 						a.tag_button
 							background-color transparent
 							border color17 1px solid
 							border-radius 4px
-							color #FFF							
+							color #FFF
+							font-size 15px							
 							overflow hidden
-							padding 4px 20px
+							padding 3px 15px
 							position relative
 							text-decoration none
 							transition width .5s linear
@@ -1061,26 +1092,33 @@ main
 				font-size 20px
 				
 				li.page-item
-					
 					a
-						background-color color8
+						background-color transparent
 						border color6 1px solid
-						color color9
+						color color7
 						&:hover
-							background-color color6
-							color #FFF
+							
+							color color17
 						&:focus
 							color color17						
 							box-shadow none
 					span
-						background-color color8
+						background-color transparent
 						border color6 1px solid
 						color color9
-						
+				li.disabled
+					span.page-link
+						background-color transparent
+						color color6		
 				li.page-item.active
 					span.page-link
+						
+						color color17
+						/*
 						background-color color6
 						color color9
+						*/
+					
 			
 		/*post*/
 	.minim.post
