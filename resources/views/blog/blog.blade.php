@@ -67,13 +67,15 @@
                     <span class="title_blog">Últimas entradas</span>
                     @endif
                 @endif
-            </div class="div_title">
+            </div>
+            <div class="div_title">
             @if($posts->total()==0)
-            <div class="col text-center mt-4">
-                <h5 class="alert-danger p-3">No se obtuvieron resultados</h5>
+            <div class="no_results">
+                <h5 class="p-3">No se obtuvieron resultados</h5>
             </div>
              
             @endif
+            </div>
             @php
                 $i=0;
             @endphp

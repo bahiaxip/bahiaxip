@@ -395,7 +395,8 @@ main = #161616
 		.blog
 			margin auto
 			padding-top 20px
-			width 70%	
+			width 70%
+			
 			#principal-carousel
 				img
 					max-height 550px
@@ -573,12 +574,19 @@ main = #161616
 				position absolute
 				top 35px
 				width 50px
+	
+	.footer_links
+		display flex
+		justify-content space-around
+		margin 20px 0
+		a
+			text-decoration none
 		
-	.div_rights
+	.div_textfooter
 		display flex
 		flex-flow column
 		width 100%
-		.rights_text_footer
+		.textfooter
 			align-items end
 			display flex
 			height 100%
@@ -588,6 +596,9 @@ main = #161616
 			p
 				color #FFF
 				margin-bottom 3px
+				a
+					color color17
+					text-decoration none
 				
 				
 
@@ -891,10 +902,16 @@ main
 				/*pares*/
 				.div_title
 					display flex
+					.no_results
+						color color17
+						font-family YoutubeB
+						font-size 20px
+						text-align center
+						width 100%
 					span.title_blog
 						color color9
 						font-family YoutubeB
-						font-size 28px					
+						font-size 28px
 						opacity 0
 						transform translateY(-70px) rotateX(180deg)
 						span

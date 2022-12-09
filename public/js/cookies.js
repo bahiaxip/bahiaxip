@@ -128,12 +128,15 @@ function activeAllCookies(analyticsCookie,selector,ev){
     toggleBannerCookies('hide');
     toggleModalCookies('hide',ev);
     if(analyticsCookie != true){
+
         switchAnalytics = "true";
         //Establecemos el input switch a true
         document.querySelector('.switch.analytics input').checked=true;
         updateAnalyticsApi();
         //establecemos la cookie mediante ajax
+
         saveCookies2('all',selector,ev);
+
     }
 }
 
@@ -147,13 +150,13 @@ function saveCookies2(param = null,selector,ev){
     var aleatorio=parseInt(Math.random()*99999999);
     let vinculo;
     if(param == 'bx' && selector == 'bahiaxip')
-        vinculo = 'cookies?rand='+aleatorio+'&bahiaxip=true&_token='+token;
+        vinculo = '/cookies?rand='+aleatorio+'&bahiaxip=true&_token='+token;
     else
-        vinculo = 'cookies?rand='+aleatorio+'&analytics='+switchAnalytics+'&_token='+token+'&type='+param;
+        vinculo = '/cookies?rand='+aleatorio+'&analytics='+switchAnalytics+'&_token='+token+'&type='+param;
     let method = "POST";
     xhtp.open('POST',vinculo);
     xhtp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    
+    console.log("entra: ",vinculo)
     xhtp.onreadystatechange = function(ev){
         if(xhtp.readyState == 4){
             //console.log(vinculo);return;    
