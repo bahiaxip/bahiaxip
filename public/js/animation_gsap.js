@@ -321,6 +321,7 @@ window.addEventListener('load',()=>{
                 //markers:true,
             }
         })
+
         animationFooter('home','.section_blog');
         
         
@@ -348,10 +349,16 @@ window.addEventListener('load',()=>{
             duration:1,
             stagger:0.5,
         })
+        tl_blog.to('.box_pagination',{
+            y:0,
+            opacity:1,
+            duration: .5
+        })
         tl_blog.to('.aside',{
             x:0,
             opacity:1
         })
+        
         animationFooter('blog')
     }
 
@@ -431,7 +438,19 @@ function animationFooter(path,selector=null,secondsDelay=null){
                 scrub:1,
             }
         })
-    
+        gsap.to('.textfooter',{
+            x:0,
+            opacity:1,
+            duration:3,
+            delay:delay,
+            ease: 'power2.inOut',
+            scrollTrigger:{
+                trigger: selector,
+                start:'top top',
+                end:'+=300 100%',
+                scrub:1,
+            }
+        })
         tlicon = gsap.timeline({
             scrollTrigger:{
                 trigger:selector,
@@ -448,6 +467,13 @@ function animationFooter(path,selector=null,secondsDelay=null){
             duration:2,
             delay: delay,
         });
+        gsap.to('.textfooter',{
+            x:0,
+            opacity:1,
+            duration:3,
+            delay:delay,
+            ease: 'power2.inOut',
+        })
         tlicon=gsap.timeline({delay:delay});
     }
         

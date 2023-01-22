@@ -10,32 +10,43 @@
     
 </style>
 --}}
-<div class="container minim post">
+<div class="minim post">
+    @if(Route::currentRouteName() == 'post')
+    <div class="btn_floatup" onclick="up()">        
+        {{--<i class="fa-solid fa-circle-arrow-up"></i>--}}
+        <div class="circle">
+            <span class="arrow">&#x02191;</span>
+        </div>
+    </div>
+    @endif
     <div class="row py-1 div_buttons">
         <div class="div_btn_anim " >
             <div class="back_btn_anim btn1" >
                 <div class="wrap_button btn1" ></div>
-                <a href="javascript:history.back()" title="Volver" ><span >&#x021A9;</span></a>
+                <a href="javascript:history.back()" title="Volver" >
+                    {{-- <span >&#x021A9;</span> --}}
+                    <span >&#x021BA;    </span>
+                </a>
             </div>
             <div class="back_btn_anim btn2" >
                 <div class="wrap_button btn2" ></div>
-                <a  class="btn_category"  href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{$post->category->slug}}</span></a>
+                <a  class="btn_category"  href="{{ route("category",$post->category->slug) }}"><span class="post_detail_category_name">{{$post->category->name}}</span></a>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row ">
         <div class="col">
             <div class="card box_card ">
-                <h2 class="card-success-outline post_detail_header ">
+                <h1 class="card-success-outline post_detail_header ">
                     {{ $post->title }}
-                </h2>
+                </h1>
                 @if($post->file && $post->file != "NULL")
-                        <img src="{{asset($post->file) }}" class="card-image-top img-fluid mx-auto mb-4 " >
+                        <img src="{{asset($post->file) }}" alt="{{$post->title}}" class="card-image-top img-fluid mx-auto mb-4 " >
                 @endif
                 
                 <div class="card-block card_block">
                     <div class="card-title post_detail_bodymain">
-                        <p><?php echo $post->body_main; ?></p>                        
+                        <h2><?php echo $post->body_main; ?></h2>                        
                     </div>
 <!-- añadimos el tag v-pre para que las dobles llaves no generen conflicto con Vue (integrado en Laravel Mix)-->
                     <div class="card-text post_detail_bodyplus" v-pre>

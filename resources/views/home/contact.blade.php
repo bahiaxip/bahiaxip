@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@section('title','Contacto')
 @section('content')
 <div class="wrap_contact">
 	<div class="box_contact">
         
-	<div class="container contact">
+	<div class="contact">
 		<div class="row ">
 			<div class="col">
 				<h2>CONTÁCTAME</h2>
@@ -109,12 +109,18 @@
         </div>
         --}}
         <div class="box_circle">
+            
             <div class="circle">
                 <img src="{{asset('icon/email2.svg')}}" alt="">
             </div>
+            
         </div>
         <div class="text_email">
             <p>bahiaxip<span>@hotmail.com</span></p>
+        </div>
+        <div class="div_name">
+            <div class="name">Fernando Gómez</div>
+            <div class="job_profile">Desarrollador web</div>
         </div>
         
         <div>

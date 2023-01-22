@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
+    <meta content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -9,7 +9,9 @@
     <meta name="route_name" content={{ Route::currentRouteName() }}>
     <meta name="cookieBX" content="{{get_cookies() }}">
     <link rel="shortcut icon" href="{{asset('ima/logo_BX_verdex200.png')}}" />
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
+    <title>@yield('title')</title>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -110,12 +112,14 @@
         @endif
 
         <main class="main">
+            @if(Route::currentRouteName() != 'post')
             <div class="btn_floatup" onclick="up()">        
                 {{--<i class="fa-solid fa-circle-arrow-up"></i>--}}
                 <div class="circle">
                     <span class="arrow">&#x02191;</span>
                 </div>
             </div>
+            @endif
             @yield('content')
         </main>
 

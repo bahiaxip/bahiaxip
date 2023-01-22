@@ -19,6 +19,10 @@ rgba2 = rgba(0,178,146,1)
 rgba17 = rgba(24,210,110,1)
 rgba1 = rgb(72,97,255)
 main = #161616
+
+::-webkit-scrollbar-button{
+	background: orange
+}
 /*
 *,*::before,*::after
 	margin 0
@@ -165,17 +169,19 @@ main = #161616
 					display flex
 					font-family YoutubeB
 					
-					min-height 300px
+					min-height 200px
 					transform translateY(-400px)
 					opacity 0
 					width 100%				
 					.text_name
-						font-size 60px
+						display flex
+						justify-content center
+						font-size 90px
 						width 100%
 						h5	
-							font-size 35px					
-							span
-								color #18D26E
+							font-size 90px					
+						span
+							color #18D26E
 					.image
 						/*
 						background-image url('../ima/logo_BX_verdex200.png')
@@ -274,7 +280,7 @@ main = #161616
 				.angle_bottom
 					background greyboot
 					height 40px
-					width 50%
+					width 50%					
 				.left				
 					display block
 					position relative
@@ -585,6 +591,7 @@ main = #161616
 	.div_textfooter
 		display flex
 		flex-flow column
+		padding 0 20px
 		width 100%
 		.textfooter
 			align-items end
@@ -592,6 +599,8 @@ main = #161616
 			height 100%
 			justify-content center
 			margin 0
+			opacity 0
+			transform translateX(-100%)
 			width 100%
 			p
 				color #FFF
@@ -599,8 +608,6 @@ main = #161616
 				a
 					color color17
 					text-decoration none
-				
-				
 
 /* billboard */
 /*
@@ -698,7 +705,8 @@ main = #161616
 .slice_20{left:684px;}
 .slice_21{left:720px;}
 .slice_22{left:756px;}
-		
+
+
 #latcol::-webkit-scrollbar{
 	display none
 }
@@ -714,10 +722,12 @@ main = #161616
 		width 100%
 		.contact
 			color color10
+			margin auto
 			padding-top 20px
 			position relative
 			transform translateY(-300px)
 			opacity 0
+			width 80%
 			
 			h2				
 				font-family YoutubeB
@@ -751,10 +761,15 @@ main = #161616
 							box-shadow 0px 0px 5px #D3D3D3
 						
 	.contact2
-		margin-top 20px
-		width 100%
+		
+		margin 20px auto
+		width 80%
 		.box_circle
+			display flex
+			justify-content space-around
 			width 100%
+			
+				
 			.circle
 				background-color color17
 				border-radius 50%
@@ -784,6 +799,21 @@ main = #161616
 				opacity 0
 				span
 					color color17
+		.div_name
+			.name
+				align-items center
+				color #FFF
+				display flex
+				justify-content center
+				font-family YoutubeB
+				font-size 45px
+			.job_profile
+				align-items center
+				color #FFF
+				display flex
+				justify-content center
+				font-family YoutubeB
+				font-size 25px
 /*
 .box_contact::before
 	content ""
@@ -830,14 +860,15 @@ main
 	//background-color rgba(0,0,0,.7)
 	background-color main
 	display flex
-	flex-wrap wrap
+	flex-wrap wrap	
 	width 100%
 	.wrap_blog.box_blog
 		
 		padding 20px 0
-		.div_search
+		.div_search			
+			display flex
+			padding 0 20px
 			transform translateY(-200px) scale(0)
-			display flex			
 			width 100%
 			.input_search
 				position relative
@@ -894,7 +925,7 @@ main
 		.div_blog
 			display flex
 			margin 20px auto
-			
+			overflow hidden
 			width 100%
 			.blog
 				padding-bottom 20px
@@ -931,15 +962,16 @@ main
 						background-color greyboot
 						opacity 0
 						overflow hidden
-						a
-							overflow hidden
-							
-							img
-								max-height 500px
-								margin 0 auto
-								
-								transition transform .5s linear
-								width 100%
+						a	
+							text-decoration none
+							.div_img
+								overflow hidden
+								img
+									max-height 500px
+									margin 0 auto
+									overflow hidden
+									transition transform .5s linear
+									width 100%
 						&:hover
 							
 							img
@@ -980,7 +1012,7 @@ main
 								
 								color color9
 								
-								font-family QuicksandB
+								font-family YoutubeB
 								font-size 20px
 								font-weight bold
 								
@@ -1102,7 +1134,9 @@ main
 							margin 0 8px
 							padding 4px 			
 		.box_pagination
-			width 80%
+			opacity 0
+			transform translateY(100%)
+			width 70%
 			ul.pagination
 				display flex
 				font-family QuicksandB
@@ -1139,13 +1173,19 @@ main
 			
 		/*post*/
 	.minim.post
+		width 80%
+		margin auto
 		padding 10px 0
 		.div_buttons
 			opacity 0
 			z-index 1
 			.div_btn_anim
-				display flex				
+				display flex
+				justify-content space-between				
 				.back_btn_anim.btn1
+					span
+						font-size 15px
+						font-weight bold
 					&:hover 
 						.wrap_button::before
 							transform scaleX(6)
@@ -1229,7 +1269,7 @@ main
 							align-items center						
 							color #FFF
 							display block
-							font-size 1em
+							
 							font-weight bold
 							max-width 120px							
 							vertical-align middle
@@ -1304,11 +1344,11 @@ main
 			.post_detail_header
 				color color10
 				display flex
-				font-family QuicksandB
-				font-size 30px
+				font-family YoutubeB
+				font-size 35px
 				justify-content center
 				margin 2px 0px 10px 0px
-				padding 10px
+				padding 10px 10px 20px 10px
 				
 			img
 				max-height 550px
@@ -1320,28 +1360,60 @@ main
 				align-items center
 				vertical-align middle
 				
-				p
-					font-family Montserrat
-					font-size 20px
+				h2
+					font-family YoutubeB
+					font-size 25px
 					font-weight bold
 					text-align center
 					margin 0
 					padding 10px 5px
+				
 			.post_detail_bodyplus
 				color black
 				font-family Montserrat
 				padding 1rem 3rem
 				pre
 					background-color #000
+					font-size 14px
+				
 
 /* admin */
 .admin_posts
 	.header
+		color color9		
 		display flex
+		font-family YoutubeB
+		font-weight bold
 		justify-content space-between
-	tr td
+	tr td, tr th
+		background-color transparent
+		color color9
 		a, button
 			font-size 14px
+		
+	.table-striped>tbody>tr:nth-of-type(odd)>*
+		background-color color6
+		color color9
+	.table-striped>tbody>tr:nth-of-type(odd)>td:nth-child(1),.table-striped>tbody>tr:nth-of-type(odd)>td:nth-child(2)
+		&:hover
+			background-color color17
+			color #FFF
+	.table-striped>tbody>tr:nth-of-type(even)>*
+		background-color color8
+		color color9
+	.table-striped>tbody>tr:nth-of-type(even)>td:nth-child(1),.table-striped>tbody>tr:nth-of-type(even)>td:nth-child(2)
+		&:hover
+			background-color color17
+			color #FFF
+/* admin edit */
+main
+	.row_post
+		background-color greyboot
+		color color9
+		padding 10px
+	//vista login
+	.box_login
+		min-height 100vh
 			
 /* botón de subir */
 .btn_floatup
@@ -1425,8 +1497,7 @@ main
 	
 @media only screen and (max-width 1000px)
 	.wrap .section_home .home .box_profile .profile
-		.text_name
-			font-size 48px
+		.text_name			
 			h5
 				font-size 30px
 	/*
@@ -1446,6 +1517,10 @@ main
 	*/
 	.wrap .section_home .home .box_profile
 		width 80%
+		
+	.main .minim.post .box_card .post_detail_bodyplus
+		p
+			overflow auto
 @media only screen and (max-width 768px)
 	.bx_nav
 		.navbar-nav
@@ -1485,20 +1560,6 @@ main
 		width 80%
 	.btn_floatup
 		right 10px
-@media only screen and (max-width 420px)
-	.box_canvas
-		display none
-	.skills
-		display none
-	.wrap .section_home .home .box_profile .profile
-		.text_name
-			font-size 40px
-			h5
-				font-size 25px
-	.btn_floatup
-		bottom 70px	
-	
-		
 	main .box_blog .box_pagination
 		overflow auto
 		width 95%
@@ -1506,6 +1567,21 @@ main
 			display flex
 			ul.pagination
 				margin auto
+@media only screen and (max-width 420px)
+	.box_canvas
+		display none
+	.skills
+		display none
+	.wrap .section_home .home .box_profile .profile
+		.text_name
+			font-size 64px
+			h5
+				font-size 25px
+	.btn_floatup
+		bottom 70px	
+	
+		
+	
 			
 
 @keyframes girar2{

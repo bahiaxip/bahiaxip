@@ -4,7 +4,7 @@
 
 <div class="container mt-4">
     <button style="float:left" class="btn btn-primary " onclick="window.location='{{ route("posts.index") }}'">Volver</button>
-    <div class="row">
+    <div class="row row_post">
         <div class="col-10 offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">

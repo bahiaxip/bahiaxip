@@ -76,11 +76,11 @@ function updateAnalyticsApi(){
     //anterior y si esa actualización tiene las 2 propiedades 
     //distintas a 'denied', si son distintas hacemos llamada al 
     //método denyAnalytics()
-        console.log("pasa por aquí");
+        //console.log("pasa por aquí");
         if(found && found[2]){
             if(found[2]['ad_storage'] && found[2]['analytics_storage']){
                 if(found[2]['ad_storage'] != 'denied' || found[2]['analytics_storage'] != 'denied'){
-                    console.log("pasa por aquí tbn");
+                    //console.log("pasa por aquí tbn");
                     denyAnalytics();
                 }
             }                    
@@ -89,7 +89,7 @@ function updateAnalyticsApi(){
         //por defecto(objeto dLayer[0] con las propiedades consent y 
         //default) son distintas a 'denied' denegamos el consentimiento
             if(dLayer[0][2]['ad_storage'] != 'denied' || dLayer[0][2]['analytics_storage'] != 'denied'){
-                console.log("pasa por aquí tbn2");
+                //console.log("pasa por aquí tbn2");
                 denyAnalytics();
             }
         }

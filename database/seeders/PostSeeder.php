@@ -73,46 +73,48 @@ class PostSeeder extends Seeder
             'title' =>'Formatear USB',
             'slug' => 'formatear-usb',
             'body_main' => 'Como formatear un dispositivo usb desde una terminal en linux.',
-            'body_plus' => '<p><strong>Revisamos las particiones del usb mediante el comando fdisk</strong></p>
+            'body_plus' => '<p><strong><span style="font-size:16px">El proceso que se muestra a continuaci&oacute;n es aplicable a cualquier partici&oacute;n, ya sea usb o disco.</span></strong></p>
+
+<p><span style="font-size:16px"><strong>Revisamos las particiones del usb mediante el comando fdisk</strong></span></p>
 
 <pre>
 <code class="language-bash">sudo fdisk-l
 </code></pre>
 
-<p><strong>Este comando nos muestra los distintos dispositivos conectados(discos duros, usb,etc...):</strong></p>
+<p><span style="font-size:16px"><strong>Este comando nos muestra los distintos dispositivos conectados(discos duros, usb,etc...):</strong></span></p>
 
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955190.png" style="height:421px; width:694px" /></p>
+<p><span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955190.png" style="height:421px; width:694px" /></span></p>
 
-<p><strong>Una vez detectado nuestro usb podemos usar el comando mkfs:</strong></p>
+<p><span style="font-size:16px"><strong>Una vez detectado nuestro usb podemos usar el comando mkfs:</strong></span></p>
 
 <pre>
 <code class="language-bash">mkfs.[tipo de formato] [otras opciones(opcional)] [dispositivo o partición a formatear]
 </code></pre>
 
-<p>Ejemplo con tipo de formato ext4 (linux):</p>
+<p><span style="font-size:16px">Ejemplo con tipo de formato ext4 (linux):</span></p>
 
 <p><br />
-<img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955323.png" style="height:85px; width:621px" /></p>
+<span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955323.png" style="height:85px; width:621px" /></span></p>
 
-<p>Ejemplo con tipo de formato fat (Windows)</p>
+<p><span style="font-size:16px">Ejemplo con tipo de formato fat (Windows)</span></p>
 
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955400.png" style="height:77px; width:363px" /></p>
+<p><span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955400.png" style="height:77px; width:363px" /></span></p>
 
-<p>Ejemplo con tipo de formato fat a&ntilde;adiendo opciones:</p>
+<p><span style="font-size:16px">Ejemplo con tipo de formato fat a&ntilde;adiendo opciones:</span></p>
 
-<p>(Mediante la opci&oacute;n -F asignamos el tipo de formato fat32 y mediante la opci&oacute;n -n asignamos un nombre al dispositivo).</p>
+<p><span style="font-size:16px">(Mediante la opci&oacute;n -F asignamos el tipo de formato fat32 y mediante la opci&oacute;n -n asignamos un nombre al dispositivo).</span></p>
 
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955486.png" style="height:86px; width:551px" /></p>
+<p><span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955486.png" style="height:86px; width:551px" /></span></p>
 
-<p>Nota: En el caso de que el dispositivo se encuentre protegido contra escritura existe la opci&oacute;n -l que nos permite sobrescribir:</p>
+<p><span style="font-size:16px">Nota: En el caso de que el dispositivo se encuentre protegido contra escritura existe la opci&oacute;n -l que nos permite sobrescribir:</span></p>
 
-<p><strong>Si el dispositivo estuviera montado al ejecutar el comando mkfs la terminal nos muestra un mensaje de aviso y se detiene la ejecuci&oacute;n:</strong></p>
+<p><span style="font-size:16px"><strong>Si el dispositivo estuviera montado al ejecutar el comando mkfs la terminal nos muestra un mensaje de aviso y se detiene la ejecuci&oacute;n:</strong></span></p>
 
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955538.png" style="height:90px; width:491px" /></p>
+<p><span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955538.png" style="height:90px; width:491px" /></span></p>
 
-<p><strong>Solo debemos desmontar el dispositivo y volver a ejecutar el comando:</strong></p>
+<p><span style="font-size:16px"><strong>Solo debemos desmontar el dispositivo y volver a ejecutar el comando:</strong></span></p>
 
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955575.png" style="height:155px; width:537px" /></p>
+<p><span style="font-size:16px"><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955575.png" style="height:155px; width:537px" /></span></p>
 
 <p>&nbsp;</p>
 ',
@@ -131,7 +133,7 @@ class PostSeeder extends Seeder
             'category_id' => 1,
             'title' =>'Crear un USB de arranque para Linux',
             'slug' => 'crear-un-usb-de-arranque-para-linux',
-            'body_main' => 'Como formatear un dispositivo usb desde una terminal en linux.',
+            'body_main' => 'Como crear un usb de arranque en linux desde la terminal.',
             'body_plus' => '<p>Linux dispone del comando dd para crear im&aacute;genes de distribuciones linux y poder instalarlas en nuestro PC de forma sencilla y r&aacute;pida.</p>
 
 <p>Para hacer uso del comando dd es recomendable formatear y desmontar la partici&oacute;n.</p>
@@ -200,14 +202,14 @@ class PostSeeder extends Seeder
             'slug' => 'menu-de-arranque-grub',
             'body_main' => 'Modificar el menú de arranque en Linux.',
             'body_plus' => '
-<p>Para poder modificar la opci&oacute;n del men&uacute; de arranque que se instala cuando instalamos Linux y seleccionar la opci&oacute;n por defecto a nuestro gusto debemos editar el archivo grub.cfg que se encuentra en el directorio /boot/grub.</p>
+<p>Para poder modificar la opci&oacute;n del men&uacute; de arranque que se instala cuando instalamos Linux y seleccionar la opci&oacute;n por defecto a nuestra elección debemos editar el archivo grub.cfg que se encuentra en el directorio /boot/grub.</p>
 
 <p>Para ello hacemos uso de alg&uacute;n editor de texto con permisos de administrador</p>
 
 <pre>
 <code class="language-bash">sudo gedit /boot/grub/grub.cfg</code></pre>
 
-<p>Y cambiamos el n&uacute;mero de la l&iacute;nea &laquo;set default&raquo; por el que nosotros queramos. Por defecto est&aacute; en 0.</p>
+<p>Y cambiamos el n&uacute;mero de la l&iacute;nea &laquo;set default&raquo; por el de nuestra elección. Por defecto se encuentra en valor 0.</p>
 
 <p>Nota: Si tenemos varias distribuciones Linux debemos editar el &uacute;ltimo grub instalado.</p>
 
@@ -270,7 +272,7 @@ class PostSeeder extends Seeder
 
 <p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665956221.png" style="height:494px; width:515px" /></p>
 
-<p>El problema se agrava&nbsp; cuando estamos desarrollando algo que necesitamos subir el archivo al servidor y a continuaci&oacute;n acceder el archivo y escribir o manipularlo. Para ello debemos acceder al archivo de configuraci&oacute;n envvars que se encuentra en el directorio /etc/apache2. Solo tenemos que comentar las l&iacute;neas siguientes colocando la almohadilla delante:</p>
+<p>El problema se agrava&nbsp; cuando se requiere acceder el archivo y escribir en él. Para ello debemos acceder al archivo de configuraci&oacute;n envvars que se encuentra en el directorio /etc/apache2. Solo tenemos que comentar las l&iacute;neas siguientes colocando el símbolo de almohadilla delante:</p>
 
 <pre>
 <code class="language-bash">#export APACHE_RUN_USER=www-data
@@ -335,7 +337,7 @@ class PostSeeder extends Seeder
             'slug' => 'anadir-user-a-mysql',
             'body_main' => 'Añadir un nuevo usuario en MySQL',
             'body_plus' => '
-<p>En ocasiones necesitamos crear un usuario nuevo o concederle permisos espec&iacute;ficos a un usuario que ya existe, en ese caso necesitamos acceder a la consola mysql. Para acceder a a mysql en modo consola solo tenemos que ejecutar mysql desde la terminal:</p>
+<p>En ocasiones necesitamos crear un usuario nuevo o concederle permisos espec&iacute;ficos a un usuario que ya existe, en ese caso necesitamos acceder a la consola mysql. Para acceder a mysql en modo consola solo tenemos que ejecutar mysql desde la terminal:</p>
 
 <pre>
 <code class="language-bash">sudo mysql</code></pre>
@@ -386,19 +388,19 @@ class PostSeeder extends Seeder
 <p>Estructura:</p>
 
 <pre>
-<code class="language-bash">GRANT permiso ON base de datos.tabla TO ‘nombre de usuario’@’localhost’;
+<code class="language-bash">GRANT permiso ON mi_base_de_datos.mitabla TO ‘nombre de usuario’@’localhost’;
 </code></pre>
 
 <p><strong>Para eliminar permisos:</strong></p>
 
 <pre>
-<code class="language-bash">REVOKE permiso ON base de datos.tabla FROM ‘nombre de usuario’@’localhost’;
+<code class="language-bash">REVOKE permiso ON mi_base_de_datos.mitabla FROM ‘nombre de usuario’@’localhost’;
 </code></pre>
 
 <p><strong>Para poder asignar la todos los permisos:</strong></p>
 
 <pre>
-<code class="language-bash">GRANT ALL PRIVILEGES ON *.* TO »nombre de usuario@’localhost’ IDENTIFIED BY ‘contraseña’ WITH GRANT OPTION;</code></pre>
+<code class="language-bash">GRANT ALL PRIVILEGES ON *.* TO »nombre_ de_usuario@’localhost’ IDENTIFIED BY ‘contraseña’ WITH GRANT OPTION;</code></pre>
 
 <p><strong>Privilegios de mysql</strong>:</p>
 
@@ -425,6 +427,10 @@ service mysql restart
 /etc/init.d/mysql start
 /etc/init.d/mysql stop
 /etc/init.d/mysql restart</code></pre>
+
+sudo systemctl start mysql
+sudo systemctl stop mysql
+sudo systemctl restart mysql
 
 <p>&nbsp;</p>
 ',          
@@ -579,7 +585,7 @@ service mysql restart
 
 ',          
             'user_id' => 1,
-            'status' => 'PUBLISHED',
+            'status' => 'DRAFT',
             'file' => 'image/post/main/qpzYJ6hHHtmIdMnD8Il1zeBDe9eWQYwphTfnexMR.png'
 
         ]);
@@ -3204,7 +3210,7 @@ function calculadora(cuenta,num1,num2)
     return cuenta(num1,num2);
 }</code></pre>
 
-<p>El c&oacute;digo de arriba est&aacute; compuesto por varios m&eacute;todos que realizan una operaci&oacute;n artim&eacute;tica. La funci&oacute;n calculadora representa la funci&oacute;n principal mientras que los otros cuatro m&eacute;todos representan los callbacks. Sustituyendo el par&aacute;metro&nbsp;<strong>cuenta</strong>&nbsp;de la funci&oacute;n calculadora por alguno de los callbacks realizar&aacute; la operaci&oacute;n correspondiente al callback indicado.</p>
+<p>El c&oacute;digo de arriba est&aacute; compuesto por varios m&eacute;todos que realizan una operaci&oacute;n aritm&eacute;tica. La funci&oacute;n calculadora representa la funci&oacute;n principal mientras que los otros cuatro m&eacute;todos representan los callbacks. Sustituyendo el par&aacute;metro&nbsp;<strong>cuenta</strong>&nbsp;de la funci&oacute;n calculadora por alguno de los callbacks realizar&aacute; la operaci&oacute;n correspondiente al callback indicado.</p>
 
 <pre>
 <code class="language-javascript">calculadora(suma,3,5);
@@ -3585,7 +3591,7 @@ USUARIO.edad = 33;</code></pre>
 <p>fuente:&nbsp;//es.stackoverflow.com/questions/7403/diferencias-entre-m%C3%A9todos-procedimiento-funci%C3%B3n-para-que-sirven-cada-uno-y-co</p>
 ',          
             'user_id' => 1,
-            'status' => 'PUBLISHED',
+            'status' => 'DRAFT',
             'file' => 'NULL'
 
         ]);
@@ -3933,7 +3939,7 @@ export class AppModule { }</code></pre>
 <code class="language-javascript">/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";</code></pre>
 
-<p>A continuaci&oacute;n distintos m&oacute;dulos de Angular Material.</p>
+<p>A continuaci&oacute;n se definen distintos m&oacute;dulos de Angular Material.</p>
 
 <p><strong>MATTOOLBAR</strong></p>
 
@@ -10060,19 +10066,7 @@ sudo ufw allow 500000:51000/udp
             'title' =>'HTTP',
             'slug' => 'http',
             'body_main' => 'Protocolo HTTP',
-            'body_plus' => '<p>Linux dispone del comando dd para crear im&aacute;genes de distribuciones linux y poder instalarlas en nuestro PC de forma sencilla y r&aacute;pida.</p>
-
-<p>Para hacer uso del comando dd es recomendable formatear y desmontar la partici&oacute;n.</p>
-
-<p>A&ntilde;adimos la ruta de la imagen iso&nbsp; y la ruta del dispositivo:</p>
-
-<pre>
-<code class="language-bash">dd if=[imagen.iso] of=[dispositivo]
-</code></pre>
-
-<p>Ejemplo de instalaci&oacute;n de una distribuci&oacute;n debian en un usb:</p>
-
-<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955715.png" style="height:106px; width:626px" /></p><p>El protocolo&nbsp;HTTP&nbsp;es un conjunto de normas o reglas que permite comunicarse e intercambiar datos entre un servidor web y un cliente. Este protocolo se basa en el esquema petici&oacute;n-respuesta, el cliente (user agent) env&iacute;a una petici&oacute;n al servidor y el servidor web (webservice) recibe la solicitud y env&iacute;a una respuesta. Existen distintos m&eacute;todos de petici&oacute;n, a continuaci&oacute;n se explican los m&aacute;s usados.</p>
+            'body_plus' => '<p>El protocolo&nbsp;HTTP&nbsp;es un conjunto de normas o reglas que permite comunicarse e intercambiar datos entre un servidor web y un cliente. Este protocolo se basa en el esquema petici&oacute;n-respuesta, el cliente (user agent) env&iacute;a una petici&oacute;n al servidor y el servidor web (webservice) recibe la solicitud y env&iacute;a una respuesta. Existen distintos m&eacute;todos de petici&oacute;n, a continuaci&oacute;n se explican los m&aacute;s usados.</p>
 
 <p>M&Eacute;TODOS O VERBOS HTTP</p>
 
@@ -10123,7 +10117,7 @@ sudo ufw allow 500000:51000/udp
 <p>Las&nbsp;<strong>cabeceras HTTP</strong>&nbsp;permiten a&ntilde;adir informaci&oacute;n adicional en el intercambio de datos entre el servidor y el cliente. Estas cabeceras pueden contener informaci&oacute;n&nbsp;descriptiva&nbsp;como puede ser el t&iacute;tulo de la p&aacute;gina, el idioma, la ubicaci&oacute;n como tambi&eacute;n pueden contener informaci&oacute;n de cookies con datos de la sesi&oacute;n&nbsp; o datos adicionales que indiquen el tipo de documento a recibir (XML, HTML, texto plano, etc...).</p>
 ',          
             'user_id' => 1,
-            'status' => 'PUBLISHED',
+            'status' => 'DRAFT',
             'file' => 'NULL'
 
         ]);
@@ -13581,9 +13575,7 @@ public class ReadFile extends JFrame implements ActionListener, MouseListener {
 
 <p><span style="font-size:18px">La clase debe estar definida por la palabra reservada class y est&aacute; compuesta por atributos, constructor y m&eacute;todos y se utiliza b&aacute;sicamente para crear un objeto.</span></p>
 
-<pre>
 
-&nbsp;</pre>
 
 <pre>
 <code class="language-java">public class MiClase {
@@ -13608,9 +13600,6 @@ System.out.println("método uno");
 
 <p><span style="font-size:18px">La interfaz debe definirse con la palabra reservada </span><strong><span style="font-size:18px">interface </span></strong><span style="font-size:18px">y</span><span style="font-size:18px">&nbsp;difiere de la clase principalmente en que puede definir m&eacute;todos pero no pueden ser implementados, es decir, la interfaz puede contener m&eacute;todos pero &eacute;stos no pueden contener ninguna instrucci&oacute;n. Se usan generalmente para definir m&eacute;todos.</span></p>
 
-<pre>
-
-&nbsp;</pre>
 
 <pre>
 <code class="language-java">public interface MiInterfaz {

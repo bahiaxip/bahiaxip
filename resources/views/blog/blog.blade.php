@@ -1,12 +1,5 @@
 @extends("layouts.app")
 @section("title","Blog")
-
-
-
-    
-    
-    
-
 @section("content")
 
 <div class="container wrap_blog box_blog">
@@ -64,7 +57,12 @@
                         Búsqueda de entradas: <span>{{request()->search}}</span>
                     </span>                    
                     @else
-                    <span class="title_blog">Últimas entradas</span>
+                    <span class="title_blog">Últimas entradas
+                        @if(request()->page)
+                        > Página {{request()->page}}
+                        @endif
+                    </span>
+
                     @endif
                 @endif
             </div>
@@ -86,16 +84,18 @@
                 @if($i%2==0)
                 <div class="card-group mtop16" >
                 @endif
-                    <div class="card border_card {{($key %2 == 0) ? 'even':'odd'}}" title="{{ $post->body_main }}">
+                    <div class="card border_card {{($key %2 == 0) ? 'even':'odd'}}" title="{{ $post->title }}">
                         {{--
                         <div class="card-header post_title" >                
                             <a href="{{route('post',$post->slug)}}">{{ $post->title }}</a>
                         </div>
                         --}}
+                        <a href="{{ route('post',$post->slug) }}">
                         @if($post->file && $post->file != "NULL")
-                            <a href="{{ route('post',$post->slug) }}">
+                                <div class="div_img">
                                 <img src="{{ asset($post->file) }}" class="img-fluid img_posts">
-                            </a>
+                                </div>
+                            
                         @endif
                         <!--<div class="card-block ">                
                             <div class="card-text mt-3 post_text">
@@ -105,10 +105,10 @@
                         </div>-->
                         <div class="card-block  post_card_block">    
                             <span>
-                                <div class="card-text post_text" data-hover="{{ $post->body_main }}" ></div>    
-                            </span>          
-                            
+                                <h2 class="card-text post_text" data-hover="{{ $post->title }}" ></h2>
+                            </span>
                         </div>
+                        </a>
                     </div>
                 @if($i%2!=0 || $key+1 == count($posts))
                 </div>
@@ -155,8 +155,10 @@
             </ul>
         </aside>
     </div>
+    {{-- para hacer los botones de páginas más pequeños podemos añadir la clase pagination-sm--}}
     <div class="box_pagination">
-    {{ $posts->onEachSide(0)->links() }}
+    {{-- Para establecer el mínimo de anchura añadimos el método onEachside(0) --}}
+    {{ $posts->onEachSide(1)->links() }}
     </div>
     
 </div>
