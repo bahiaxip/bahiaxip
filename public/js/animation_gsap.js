@@ -409,7 +409,23 @@ window.addEventListener('load',()=>{
             opacity:1
 
         })
-        animationFooter('contact',null,3.5)
+        gsap.to('.div_name .name',{
+            delay:2,
+            duration:2,
+            ease:'power4.out',
+            x:0,
+            opacity:1
+
+        })
+        gsap.to('.div_name .job_profile',{
+            delay:2,
+            duration:2,
+            ease:'power4.out',
+            x:0,
+            opacity:1
+
+        })
+        animationFooter('contact',null,3.6)
     }
     
 
