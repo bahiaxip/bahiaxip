@@ -7,12 +7,13 @@
             <li>
                 <a class="nav-link .cubo" onclick="pausar()" onmousemove="showPlay()" onmouseout="hidePlay()" style="font-family:QuicksandB;font-size:16px;display:flex;margin:auto;cursor:pointer" title="Pausar/Reanudar">
                     @include('layouts.cube')
+                    
                 </a>
             </li>
             <!-- logo Bahiaxip -->
             <li>
-                <a class="nav-link logo" href="{{ route('home') }}" style="font-family:QuicksandB;font-size:16px;display:flex;margin:auto" >
-                    <div>{{ config('app.name', 'Bahiaxip') }}</div>
+                <a class="nav-link logo" href="{{ route('home') }}"  >
+                    <h5>{{ config('app.name', 'Bahiaxip') }}</h5>
                 </a>
             </li>
             

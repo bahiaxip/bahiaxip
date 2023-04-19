@@ -29,6 +29,7 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+Route::get('/projects',[HomeController::class,'projects'])->name('projects');
 Route::get('/post/{slug}',[BlogController::class,'post'])->name('post');
 Auth::routes();
 

@@ -4,11 +4,12 @@ window.addEventListener('load',function(){
 	const ctx =canvas.getContext('2d');
 	//en lugar de window.innerWidth establecemos un número fijo(1000) para que siempre tenga
 	//las mismas dimensiones, tanto en la acción de resize() como cargando desde cualquier resolución
-	canvas.width = 500;
-	canvas.height = window.innerHeight;
+	canvas.width = 800;
+	/*canvas.height = window.innerHeight;*/
+	canvas.height = 200;
 	let counter1 = 0;
 	const image1 = document.getElementById('image1');
-	//console.log("image1: ",image1)
+	console.log("image1: ",image1)
 	//añadimos los parámetros x, y que serán el origen y el color
 	class Particle {
 		constructor(effect,x,y,color){

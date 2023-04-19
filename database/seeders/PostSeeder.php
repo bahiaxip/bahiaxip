@@ -6186,7 +6186,7 @@ npm install -g n</code></pre>
 <code class="language-bash">npm set audit false
 </code></pre>
 
-<p><strong>INSTALACI&Oacute;N DE DEPENDENCIAS B&Aacute;SICAS</strong></p>
+<p><strong>INSTALACI&Oacute;N DE DEPENDENCIAS B&Aacute;SICAS PARA NODEJS</strong></p>
 
 <p>La instalaci&oacute;n de dependencias se realiza mediante el gestor NPM y a&ntilde;adiendo el comando install seguido del nombre de la dependencia. En versiones anteriores es necesaria la opci&oacute;n&nbsp;--save&nbsp;o&nbsp;-s,&nbsp;sin embargo en las &uacute;ltimas versiones esta opci&oacute;n no es necesaria.</p>
 
@@ -20653,12 +20653,6 @@ export default MiComponente;</code></pre>
 <pre>
 <code class="language-bash">npm run serve -- --port [número_puerto]
 </code></pre>
-
-<pre>
-
-&nbsp;</pre>
-
-<p><code>npm run serve -- --port [n&uacute;mero_puerto]</code></p>
 
 <p><strong>Nueva versi&oacute;n Vue 3</strong></p>
 

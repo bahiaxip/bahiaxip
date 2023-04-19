@@ -77,7 +77,10 @@ window.addEventListener('load',()=>{
         //gsap.from('.profile',{x:-200})        
         //gsap.to('.profile',{x:0,opacity:1,duration:1})
 //profile - name and position
-        gsap.to('.profile',{y:0,opacity:1,duration:1,delay:2,ease:'back.out'})
+
+        gsap.to('.profile',{y:0,opacity:1,duration:1,delay:2,ease:'power4.out'})
+        
+        gsap.delayedCall(1,setIcons,['.title']);
         gsap.to('.back_skill1',{
             scale: 1,
             duration:.5,
@@ -91,10 +94,14 @@ window.addEventListener('load',()=>{
 //skills
         var tl=gsap.timeline();
         //dibujamos el primer bloque de elementos
+    //las 2 líneas siguientes dan warning (GSAP target undefined not found)
         tl.to('.box_skills1',{}).call(setIcons('.box_skills1'));
         //dibujamos el segundo bloque de elementos
         tl.to('.box_skills2',{}).call(setIcons('.box_skills2'));
         //gsap.to('.back_skill1')
+
+        
+        
         gsap.registerPlugin(ScrollTrigger);
         /*
         var tl2 = gsap.timeline({
@@ -425,7 +432,7 @@ window.addEventListener('load',()=>{
             opacity:1
 
         })
-        animationFooter('contact',null,3.6)
+        animationFooter('contact',null,3.5)
     }
     
 

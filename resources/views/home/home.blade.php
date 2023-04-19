@@ -43,9 +43,10 @@
                     {{-- <div class="text_name"><span style="margin:auto 10px;opacity:0.2">&#x0276E;  </span>
                         Bahiaxip<span style="margin:auto 0px auto 10px;opacity:0.2">/</span><span style="margin:auto 0px auto 0px;opacity:0.2">&#x0276F; </span>
                     </div> --}}
-                    <div class="text_name">
+                    {{-- <div class="text_name">
                         BAHIA<span>XIP</span>
-                    </div>
+                    </div> --}}
+                    @include('home.title')
                     <!--
                     <div class="image">
                         <div class="box_canvas">

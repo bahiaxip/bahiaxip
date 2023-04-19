@@ -37,11 +37,12 @@ main = #161616
 	position relative
 	*/
 	height 30px
-	width 100%
+	/*width 100%*/
+	width 35%
 	display flex
 	/*el position relative permite mostrarlo en el nav pero pierde la transparencia */
 	position relative
-	bottom 62px
+	/*bottom 62px*/
 	
 	#canvas1
 		/*
@@ -51,9 +52,9 @@ main = #161616
 		transform translate(-50%,-50%)
 		*/
 		display flex
-		width 400px
+		width 250px
 		margin auto
-		top:100px
+		
 		/*
 		position relative
 		z-index 1
@@ -172,7 +173,30 @@ main = #161616
 					min-height 200px
 					transform translateY(-400px)
 					opacity 0
-					width 100%				
+					width 100%
+					.title
+						margin auto
+						position relative
+						bottom -10px
+						.offset1							
+							width 280pt							
+							min-width 70pt
+							min-height 40pt
+						
+							.path
+								fill #18D26E
+								stroke-width 0px
+								stroke #18D26E
+								/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
+								
+								
+								transition stroke-dashoffset 1s linear 0s,fill 1.5s linear 1s,stroke-width 0.2s linear 1s
+					
+									
+							.path.svg_active
+								stroke-dashoffset 0px
+								fill transparent
+								stroke-width 2px
 					.text_name
 						display flex
 						justify-content center
@@ -247,6 +271,7 @@ main = #161616
 								margin 20px auto
 							p	
 								font-size 18px
+								margin-top 10px
 					.back_skill1.offset1 .path
 						stroke-dasharray 150px
 						stroke-dashoffset -150px
@@ -457,6 +482,9 @@ main = #161616
 						img
 							max-width 35%
 							padding 10px
+							transition all .5s linear
+							&:hover
+								transform scale(1.1)
 							
 						h4
 							display flex
@@ -465,6 +493,9 @@ main = #161616
 							font-size 16px
 							margin auto
 							padding 5px
+							transition all .5s linear
+							&:hover
+								color color17
 				
 					p
 						font-family QuicksandR
@@ -818,6 +849,31 @@ main = #161616
 				font-size 25px
 				transform translateX(1000px)
 				opacity 0
+				
+/* proyectos */
+
+.wrap_projects
+	
+	min-height 95vh
+	position relative
+	width 100%
+	.box_projects
+		color #FFF
+		margin auto
+		position relative
+		width 80%
+		.div_projects
+			
+			display flex
+			justify-content space-around
+			margin 50px auto
+			width 100%
+			.projects
+				background-color lightgreen
+				border-radius 10px
+				height 250px
+				width 250px
+			
 /*
 .box_contact::before
 	content ""
@@ -1493,6 +1549,9 @@ main
 @font-face
 	font-family Poppins	
 	src url(../fonts/Poppins-SemiBold.ttf)
+@font-face
+	font-family Ecliptic_BRK	
+	src url(../fonts/Ecliptic_BRK.ttf)
 
 @media only screen and (max-width 1200px)
 	/* cambiamos a top para que la franja negra se quede debajo*/
@@ -1504,6 +1563,9 @@ main
 		.text_name			
 			h5
 				font-size 30px
+	.wrap .section_home .home .box_profile .profile
+		.title .offset1
+			width 100%
 	/*
 	.board2 .ad
 		width 100%
@@ -1551,6 +1613,7 @@ main
 		
 		
 @media only screen and (max-width 620px)
+	
 	/*
 	.board2
 		display none
@@ -1583,6 +1646,12 @@ main
 				font-size 25px
 	.btn_floatup
 		bottom 70px	
+		
+	.wrap .section_blog .blog #latcol .div_lat a.column_index
+		display block
+		img
+			max-width 60%
+				
 	
 		
 	
