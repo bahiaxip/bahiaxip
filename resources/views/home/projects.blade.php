@@ -10,15 +10,55 @@
 	
 	<div class="box_projects" >
 		<div class="div_projects" >
+			<a class="projects" href="http://bxcazorla.bahiaxip.com" target="_blank">
+				<p>Turismo</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
+			<a class="projects" href="http://ecomsail.bahiaxip.com" target="_blank">
+				<p>E-Commerce</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
+			<a class="projects" href="http://biedit.bahiaxip.com" target="_blank">
+				<p>Editor</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
+			<a class="projects" href="http://decormontilla.bahiaxip.com" target="_blank">
+				<p>Decoración</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
 			<div class="projects">
-				proyecto1
+				<p>Banner</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
 			</div>
-			<div class="projects">
-				proyecto2
-			</div>
-			<div class="projects">
-				proyecto2
-			</div>
+			<a class="projects" href="http://bxrs.bahiaxip.com" target="_blank">
+				<p>RRSS</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
+			<a class="projects" href="http://chat-node.bahiaxip.com" target="_blank">
+				<p>Chat</p>
+				<div class="modal_projects">
+					<div class="modal_pro left"></div>
+					<div class="modal_pro right"></div>
+				</div>
+			</a>
 		</div>
 	</div>
 

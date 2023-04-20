@@ -861,18 +861,53 @@ main = #161616
 		color #FFF
 		margin auto
 		position relative
-		width 80%
+		width 70%
 		.div_projects
-			
 			display flex
+			flex-wrap wrap
+			font-family Georgia
 			justify-content space-around
 			margin 50px auto
 			width 100%
+			a
+				color #D3D3D3
+				text-decoration none
 			.projects
-				background-color lightgreen
+				align-items center
+				background-color #353535
 				border-radius 10px
-				height 250px
-				width 250px
+				display flex
+				height 200px
+				justify-content center
+				margin 10px auto
+				overflow hidden
+				position relative
+				width 200px
+				p
+					transition all .6s linear
+				&:hover
+					p
+						transform scale(1.5)
+					.modal_projects
+						.modal_pro.left
+							transform translate(-100%,0)
+						.modal_pro.right
+							transform translate(100%,0)
+				.modal_projects
+					display flex
+					height 100%
+					position absolute
+					width 100%
+					
+						
+					.modal_pro
+						background-color rgba(0,0,0,.4)
+						transform translate(0,0)
+						transition all .5s linear
+						width 50%
+						
+							
+					
 			
 /*
 .box_contact::before

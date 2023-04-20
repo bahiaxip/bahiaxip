@@ -434,6 +434,9 @@ window.addEventListener('load',()=>{
         })
         animationFooter('contact',null,3.5)
     }
+    if(route == 'projects'){
+        
+    }
     
 
 

@@ -50,13 +50,13 @@
                         Contacto
                     </a>
                 </li>
-                {{--
+                
                 <li>
-                    <a href="{{route('home')}}" class="nav-link @if(Route::currentRouteName() == 'category') {{'active'}}@endif">
+                    <a href="{{route('projects')}}" class="nav-link @if(Route::currentRouteName() == 'projects') {{'active'}}@endif">
                         Proyectos
                     </a>
                 </li>
-                --}}
+                
                 @admin('active')
                 <li class="links_admin d-none d-lg-block">
                     <a href="{{asset('/posts')}}" class="nav-link @if(Route::currentRouteName() == 'posts.index'
