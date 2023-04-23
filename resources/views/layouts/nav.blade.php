@@ -10,7 +10,7 @@
                     
                 </a>
             </li>
-            <!-- logo Bahiaxip -->
+            <!-- logo pequeño Bahiaxip -->
             <li>
                 <a class="nav-link logo" href="{{ route('home') }}"  >
                     <h5>{{ config('app.name', 'Bahiaxip') }}</h5>
