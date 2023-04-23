@@ -36,6 +36,7 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
     <link href="{{ asset('css/cookies.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
     {{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet">--}}
     {{--<script src="{{asset('js/script.js')}}"></script>--}}
     {{--

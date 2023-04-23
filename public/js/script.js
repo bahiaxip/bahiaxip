@@ -113,7 +113,7 @@ window.addEventListener('load',function(){
 			//para que la animación sea fluida sin optimizaciones más avanzadas,
 			//debemos dar un rango de píxeles que salte la coordenada hacia abajo y a derecha,
 			//en lugar de uno por uno. Esta variable la llamamos gap
-			this.gap = 2;
+			this.gap = 3;
 			/*
 			this.mouse = {
 				radius: 200,

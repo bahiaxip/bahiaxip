@@ -37,11 +37,12 @@ main = #161616
 	position relative
 	*/
 	height 30px
-	/*width 100%*/
-	width 35%
+	width 100%
+	/*width 35%*/
 	display flex
 	/*el position relative permite mostrarlo en el nav pero pierde la transparencia */
 	position relative
+	top 10px
 	/*bottom 62px*/
 	
 	#canvas1
@@ -52,7 +53,7 @@ main = #161616
 		transform translate(-50%,-50%)
 		*/
 		display flex
-		width 250px
+		width 300px
 		margin auto
 		
 		/*
@@ -868,31 +869,29 @@ main = #161616
 			font-family Georgia
 			justify-content space-around
 			margin 50px auto
+			opacity 0
 			width 100%
 			a
 				color #D3D3D3
 				text-decoration none
+			/*.projects.active
+				transform:rotateY(180deg)*/
 			.projects
 				align-items center
-				background-color #353535
-				border-radius 10px
+				/*background-color transparent*/
+				/*border white 1px solid
+				border-radius 10px*/
 				display flex
-				height 200px
+				height 210px
 				justify-content center
 				margin 10px auto
-				overflow hidden
 				position relative
-				width 200px
-				p
-					transition all .6s linear
-				&:hover
-					p
-						transform scale(1.5)
-					.modal_projects
-						.modal_pro.left
-							transform translate(-100%,0)
-						.modal_pro.right
-							transform translate(100%,0)
+				transition:all 1s linear
+				width 210px
+				/*overflow hidden*/
+			
+				
+				
 				.modal_projects
 					display flex
 					height 100%

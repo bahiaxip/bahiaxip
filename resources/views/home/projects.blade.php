@@ -10,58 +10,196 @@
 	
 	<div class="box_projects" >
 		<div class="div_projects" >
-			<a class="projects" href="http://bxcazorla.bahiaxip.com" target="_blank">
-				<p>Turismo</p>
+			
+			<div class="projects"  onclick="activeProject(this)">
+				<div class="image-cube bxcazorla">
+					<div class="icdiv front bxcazorla"></div>
+					{{-- <div class=" icdiv right">
+						<img src="image2.jpg" alt="">
+					</div>
+					<div class="icdiv back">
+						<img src="image3.jpg" alt="">
+					</div> --}}
+					<div class="icdiv left bxcazorla">
+						<div class="div_content" >
+							<div class="text">
+								<p>Turismo rural</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>SPA</li>
+										<li>Angular, Node, MongoDB</li>
+									</ul>
+								</div>
+								<div class="div_link" >									
+									<a href="http://bxcazorla.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>						
+					</div>
+				</div>
+				{{-- <p>Turismo</p>
 				<div class="modal_projects">
 					<div class="modal_pro left"></div>
 					<div class="modal_pro right"></div>
+				</div> --}}
+			</div>
+			<div class="projects" >
+				<div class="image-cube ecomsail">
+					<div class="icdiv front ecomsail">
+					</div>
+					<div class=" icdiv right">
+						<div class="div_content">
+							<div class="text">
+								<p>E-Commerce</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>MPA</li>									
+										<li>Livewire, Laravel, MySQL</li>
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://ecomsail.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="icdiv back">
+						<img src="puente_herrerias.jpg" style="height:100%" alt="">
+					</div>
+					<div class="icdiv left ecomsail">
+						
+					</div>
 				</div>
-			</a>
-			<a class="projects" href="http://ecomsail.bahiaxip.com" target="_blank">
-				<p>E-Commerce</p>
+				{{-- <p>E-Commerce</p>
 				<div class="modal_projects">
 					<div class="modal_pro left"></div>
 					<div class="modal_pro right"></div>
-				</div>
-			</a>
-			<a class="projects" href="http://biedit.bahiaxip.com" target="_blank">
-				<p>Editor</p>
-				<div class="modal_projects">
-					<div class="modal_pro left"></div>
-					<div class="modal_pro right"></div>
-				</div>
-			</a>
-			<a class="projects" href="http://decormontilla.bahiaxip.com" target="_blank">
-				<p>Decoración</p>
-				<div class="modal_projects">
-					<div class="modal_pro left"></div>
-					<div class="modal_pro right"></div>
-				</div>
-			</a>
+				</div> --}}
+			</div>
 			<div class="projects">
-				<p>Banner</p>
-				<div class="modal_projects">
-					<div class="modal_pro left"></div>
-					<div class="modal_pro right"></div>
+				<div class="image-cube biedit">
+					<div class="icdiv front biedit"></div>
+					<div class="icdiv left biedit">
+						<div class="div_content">
+							<div class="text">
+								<p>Editor de imágenes</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>MPA</li>
+										<li>Vue, Laravel, MySQL</li>
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://biedit.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<a class="projects" href="http://bxrs.bahiaxip.com" target="_blank">
-				<p>RRSS</p>
-				<div class="modal_projects">
-					<div class="modal_pro left"></div>
-					<div class="modal_pro right"></div>
+			<div class="projects">
+				<div class="image-cube decor">
+					<div class="icdiv front decor"></div>
+					<div class="icdiv right">
+						<div class="div_content">
+							<div class="text">
+								<p>Decoración</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>MPA</li>
+										<li>Wordpress, MySQL</li>
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://biedit.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</a>
-			<a class="projects" href="http://chat-node.bahiaxip.com" target="_blank">
-				<p>Chat</p>
-				<div class="modal_projects">
-					<div class="modal_pro left"></div>
-					<div class="modal_pro right"></div>
+			</div>
+			<div class="projects">
+				<div class="image-cube banner">
+					<div class="icdiv front banner"></div>
+					<div class="icdiv left banner">
+						<div class="div_content">
+							<div class="text">
+								<p>Banner</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>									
+										<li>Front, Back: Wordpress</li>										
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://biedit.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</a>
+			</div>
+			<div class="projects">
+				<div class="image-cube bxrs">
+					<div class="icdiv front bxrs"></div>
+					<div class="icdiv right bxrs">
+						<div class="div_content">
+							<div class="text">
+								<p>Red social</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>App</li>
+										<li>Ionic</li>
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://bxrs.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="projects">
+				<div class="image-cube bxrs">
+					<div class="icdiv front chat"></div>
+					<div class="icdiv right chat">
+						<div class="div_content">
+							<div class="text">
+								<p>Chat</p>
+							</div>
+							<div class="content">
+								<div class="details">
+									<ul>
+										<li>SPA</li>
+										<li>Angular, Node</li>
+									</ul>	
+								</div>
+								<div class="div_link" >									
+									<a href="http://chat-node.bahiaxip.com" target="_blank">Demo</a>		
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
+	<div style="width:100%;position:relative;">
+		{{-- @include('home.project')	 --}}
+	</div>
+	
 </div>
 @endsection
 @section('scripts')

@@ -435,7 +435,7 @@ window.addEventListener('load',()=>{
         animationFooter('contact',null,3.5)
     }
     if(route == 'projects'){
-        
+        gsap.to('.div_projects',{opacity:1,duration:1,delay:2,ease:'power4.out'})
     }
     
 

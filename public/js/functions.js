@@ -145,3 +145,8 @@ function showMenu(){
     })
     console.log("actives")
 }
+
+function activeProject(el){
+    /*el.classList.add('active');*/
+    console.log(el)
+}
