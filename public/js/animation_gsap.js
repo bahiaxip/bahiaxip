@@ -499,11 +499,10 @@ function animationFooter(path,selector=null,secondsDelay=null){
             duration:2,
             delay: delay,
         });
-        gsap.to('.textfooter',{
-            x:0,
+        gsap.to('.textfooter',{            
             opacity:1,
-            duration:3,
-            delay:delay,
+            duration:5,
+            delay:delay+5,
             ease: 'power2.inOut',
         })
         tlicon=gsap.timeline({delay:delay});
