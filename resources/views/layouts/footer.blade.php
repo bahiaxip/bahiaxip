@@ -3,7 +3,7 @@
         <div class="animation">
             <a href="{{config('app.url')}}">
                 {{-- <img class="image" src="{{asset('ima/logo_bahiaxipX800.png')}}" alt="" height="80" > --}}
-                <img class="image" src="{{asset('ima/logo_bahiaxip800_ECLIPTIC.png')}}" alt="" height="80" >
+                <img class="image" src="{{asset('ima/proyectos_800_ECLIPTIC.png')}}" alt="" height="80" >
                 {{--<div style="width:30px;height:30px;background-color:white;position:absolute;display:flex;justify-content:end;left:50%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>
                 <div style="width:30px;height:30px;background-color:lightgreen;position:absolute;display:flex;justify-content:end;left:76%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>
                 <div style="width:30px;height:30px;background-color:lightgreen;position:absolute;display:flex;justify-content:end;left:10%;top:25px;clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)"></div>--}}
