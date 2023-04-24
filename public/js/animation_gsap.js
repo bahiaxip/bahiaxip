@@ -442,6 +442,7 @@ window.addEventListener('load',()=>{
             stagger:0.5
             
         })
+        animationFooter('contact',null,3.5)
     }
     
 
