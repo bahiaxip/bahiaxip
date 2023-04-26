@@ -37,9 +37,10 @@ rgba1 = rgb(72,97,255)
     .info_links,.div_buttonall
         display flex
         justify-content space-between
-        margin auto 20px
+        margin auto 5px
         p
             margin auto
+            padding 0 5px
         .btn_cookies
             background-color transparent
             display flex
@@ -252,3 +253,14 @@ rgba1 = rgb(72,97,255)
             display block
             span
                 justify-content center
+@media only screen and (max-width 800px)
+    .banner_cookies
+        display block
+        .info_links
+            p
+                text-align center
+            .links
+                justify-content center
+        .div_buttonall
+            justify-content center
+            

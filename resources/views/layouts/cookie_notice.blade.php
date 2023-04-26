@@ -4,7 +4,7 @@
             Utilizamos cookies para ofrecer contenido personalizado y analizar el tráfico en esta web.     
         </p>
         
-        <div>
+        <div class="links">
             <span>
                 <a class="link" data-hover="Más información" href="#"></a>
             </span>
