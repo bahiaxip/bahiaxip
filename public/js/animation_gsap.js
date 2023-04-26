@@ -420,7 +420,7 @@ window.addEventListener('load',()=>{
             delay:2,
             duration:2,
             ease:'power4.out',
-            x:0,
+            //x:0,
             opacity:1
 
         })
@@ -428,7 +428,7 @@ window.addEventListener('load',()=>{
             delay:2,
             duration:2,
             ease:'power4.out',
-            x:0,
+            //x:0,
             opacity:1
 
         })
