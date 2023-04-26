@@ -176,7 +176,7 @@
         <!-- enlaces RRSS -->
         <ul class="rrss">
             <div >
-                    <a href="">
+                    <a href="https://www.linkedin.com/in/bahiaxip/" target="_blank">
                         <div class="linkedin"></div>    
                     </a>
                     

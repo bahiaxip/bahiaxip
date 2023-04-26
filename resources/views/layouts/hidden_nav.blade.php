@@ -19,6 +19,9 @@
         <li class="hidden_link d-md-none">
             <a class="" href="{{route("contact")}}" class="nav-link">Contacto</a>
         </li>
+        <li class="hidden_link d-md-none">
+            <a class="" href="{{route("projects")}}" class="nav-link">Proyectos</a>
+        </li>
         <!--
         <li class="nav-link  d-md-none">
             <a href="#">Proyectos</a>
