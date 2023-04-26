@@ -155,7 +155,7 @@
 										</ul>	
 									</div>
 									<div class="div_link" >									
-										<a href="http://biedit.bahiaxip.com" target="_blank"><span>Demo</span></a>		
+										<a href="http://demobanner.bahiaxip.com" target="_blank"><span>Demo</span></a>		
 									</div>
 								</div>
 							</div>
