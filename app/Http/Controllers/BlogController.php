@@ -57,13 +57,16 @@ class BlogController extends Controller
 //función ajax de gestión de cookies
     public function cookies(Request $request){  
         if($request->post('bahiaxip')){
-            $ano = 60;
+            //datos en minutos para el helper cookie de Laravel
+            //provisionalmente establecemos una semana en lugar de un año.
+            $ano = 10080;
             $bxcookie = cookie('bx','true',$ano);
             return response(['status' => '200','msge' => 'La cookie recordatorio ha sido activada'])->withCookie($bxcookie);
         }      
         if($request->post('analytics') && $request->post('type')){
-            //1año en minutos
-            $ano = 60;
+            //provisionalmente establecemos una semana en lugar de un año.
+            //datos en minutos para el helper cookie de Laravel
+            $ano = 10080;
             $type = $request->post('type');
 
             

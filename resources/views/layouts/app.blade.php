@@ -8,7 +8,9 @@
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="route_name" content={{ Route::currentRouteName() }}>
     <meta name="cookieBX" content="{{get_cookies() }}">
-    <link rel="shortcut icon" href="{{asset('ima/logo_BX_verdex200.png')}}" />
+    {{-- <link rel="shortcut icon" href="{{asset('ima/logo_BX_verdex200.png')}}" />
+     --}}
+     <link rel="shortcut icon" href="{{asset('ima/bahiaxip_favicon.svg')}}" width="64"/>
     {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>@yield('title')</title>
 
