@@ -6,9 +6,9 @@
     {{ Form::label("slug", "Slug") }}
     {{ Form::text("slug",null, ["class" => "form-control","id"=> "slug"]) }}
 </div>
-<div class="form-group">
-    {{ Form::label("status", "Estado") }}
-    {{ Form::select("status",['DRAFT'=>'Borrador','PUBLISHED'=>'Público'],null,["class" => "form-select","id"=> "status"]) }}
+<div class="form-group mtop16">
+    <label for="status">Estado</label>
+    {{ Form::select('statusint',[0 => 'Borrador',1 => 'Público'],null,['class' => 'form-select'])}}
     {{ Form::hidden('user_id',auth()->id())}}
 </div>
 

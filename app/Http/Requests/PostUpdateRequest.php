@@ -31,7 +31,8 @@ class PostUpdateRequest extends FormRequest
             "tags"          => "required|array",
             "body_main"     => "required",
             "body_plus"     => "nullable",
-            //"status"        => "required|in:DRAFT,PUBLISHED"            
+            "status"        => "nullable|in:DRAFT,PUBLISHED",
+            "statusint"     => "nullable"
         ];
         if($this->get("file"))
             $rules = array_merge($rules,["file"=> "mimes:jpg,jpeg,png"]);

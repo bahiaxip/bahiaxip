@@ -68,7 +68,7 @@ class HomeController extends Controller
         
         
         
-        $posts=Posts::orderBy("id","desc")->where("status","PUBLISHED")->take(6)->get();
+        $posts=Posts::orderBy("id","desc")->where("statusint",1)->take(6)->get();
         //$data = ['posts' => $posts];
         $data = ['posts' => $posts];
         //creando cookies -> método1 con vista

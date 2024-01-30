@@ -10,7 +10,7 @@ class Posts extends Model
     use HasFactory;
 
     protected $fillable=[
-        "user_id","category_id","title","slug","body_main", "body_plus","status","file"
+        "user_id","category_id","title","slug","body_main", "body_plus","status","statusint","file"
     ];
     
     protected $hidden=[

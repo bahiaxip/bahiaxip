@@ -187,9 +187,8 @@ class PostController extends Controller
         //si existe imagen almacenamos la ruta de la imagen anterior en una variable
         if(isset($post->file) && $post->file!=null){            
             $lastFile=$post->file;
-
         }
-        
+        //dd($request->statusint);
         //if(!auth()->user()->isAdmin())
             //$this->authorize("pass",$post);
         //$prueba=$request->input("body");
@@ -197,6 +196,7 @@ class PostController extends Controller
         $email=auth()->user()->email;
         
         $post->fill($request->all())->save();
+        
         //dd($lastFile);
         /*if($post->file && $post->file!=""){
             echo "ola";exit;

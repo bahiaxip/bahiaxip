@@ -28,7 +28,8 @@ class CreateCommentsTable extends Migration
                     ->onDelete("cascade")
                     ->onUpdate("cascade");
             */
-            $table->enum("status",["PUBLISHED","DRAFT"])->default("DRAFT");
+            //$table->enum("status",["PUBLISHED","DRAFT"])->default("DRAFT");
+            $table->integer("statusint")->default(0);
             $table->tinyInteger("answer")->default(1);            
             $table->date("fecha");
             $table->time("hora");

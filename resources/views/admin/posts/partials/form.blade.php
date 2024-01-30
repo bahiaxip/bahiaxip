@@ -21,6 +21,10 @@
     {{ Form::label("slug", "URL Amigable") }}
     {{ Form::text("slug",null, ["class" => "form-control","id"=> "slug"]) }}
 </div>
+<div class="form-group mtop16">
+    <label for="status">Estado</label>
+    {{ Form::select('statusint',[0 => 'Borrador',1 => 'Público'],null,['class' => 'form-select'])}}
+</div>
 
 <div class="form-group mtop16">
     {{ Form::label("tags", "Etiquetas") }}

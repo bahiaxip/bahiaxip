@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Tag;
+use Illuminate\Support\Facades\DB;
 
 class TagSeeder extends Seeder
 {
@@ -212,6 +213,15 @@ class TagSeeder extends Seeder
             'status' => 'PUBLISHED',
             'user_id' => 1
         ]);
+
+        //COPIAMOS TODOS LOS DATOS A LA NUEVA COLUMNA AÑADIDA (PARA EVITAR CONFLICTOS CON ENUM AL INTENTAR CAMBIAR EL TIPO DE DATO).
+        //HEMOS AÑADIDO LA COLUMNA STATUSSTR DE TIPO INTEGER Y COPIAMOS TODOS LOS VALORES ALMACENADOS EN STATUS.
+        //LA FORMA DE COPIAR ES LA SIGUIENTE: 
+        //AL HACER LA MIGRACIÓN SE ESTABLECE "0" POR DEFECTO,EN LA SIGUIENTE CONSULTA SOLO CAMBIAMOS A 1 LOS CAMPOS QUE SE ENCUENTRAN
+        //EN PUBLISHED (YA QUE SOLO EXISTEN 2 VALORES(DRAFT O PUBLISHED))
+        
+        DB::statement("UPDATE tags SET statusint = 1 WHERE status = 'PUBLISHED'");
+        DB::statement("UPDATE categories SET statusint = 1 WHERE status = 'PUBLISHED'");
 
     }
 }
