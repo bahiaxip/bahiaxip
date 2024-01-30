@@ -55,8 +55,10 @@ class BlogController extends Controller
         return view("blog.blog",compact("posts","tags","rand_posts",'param'));
     }
 //función ajax de gestión de cookies
+//¡¡ Podríamos pasar el tiempo al archivo de configuración .env !!
     public function cookies(Request $request){  
         if($request->post('bahiaxip')){
+            //¡¡ LARAVEL ESTABLECE LAS COOKIES EN MINUTOS !! 
             //datos en minutos para el helper cookie de Laravel
             //provisionalmente establecemos una semana en lugar de un año.
             $ano = 10080;

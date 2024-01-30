@@ -153,6 +153,8 @@
             </ul>
         </div>
         --}}
+
+
         <div class="row @admin('active') d-lg-none @else d-md-none @endadmin current_menu">
             <!--<div class="col justify-content-start float-left">-->
                 <div class="col justify-content-start d-flex">
@@ -162,6 +164,8 @@
                 </a>
             </div>
         </div>
+
+        
         {{--
         <div class="row d-lg-none admin_menu">
             <!--<div class="col justify-content-start float-left">-->

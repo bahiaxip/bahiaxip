@@ -36,6 +36,7 @@ function denyAnalytics(){
 const cookieBx = document.getElementsByName('cookieBX')[0].getAttribute('content');
 //cookieAnalaytics es el valor de la cookie "bahiaxip_analytics" al cargar la página
 const cookieAnalytics = document.querySelector('.switch.analytics input').checked;
+//console.log("cookieAnalytics: ",cookieAnalytics);
 //booleano que indica si existe cookie recordatorio
 let initBx;
 //booleano que indica si se ha inicializado la api de Analytics
@@ -204,9 +205,12 @@ function setTextAnalytics(){
         text='Desactivadas';            
     modal.querySelector('.switch.analytics label').innerHTML = text;
 }
-function toggleModalCookies(type,ev){
-    ev.preventDefault();
+function toggleModalCookies(type,ev,el=null){
+    ev.preventDefault();    
     let modal = document.querySelector('.div_cookies');
+    if(el != null){
+        modal = document.querySelector(el);
+    }    
     if(type == 'hide'){
         modal.style.visibility = 'hidden';
         modal.style.opacity = '0';
@@ -219,6 +223,22 @@ function toggleModalCookies(type,ev){
         modal.style.transform = 'translate(-50%,-50%) scale(1)';
     }
 }
+function toggleModalCookies2(type,ev){
+    ev.preventDefault();
+    let modal = document.querySelector('.div_cookies_info');
+    if(type == 'hide'){
+        modal.style.visibility = 'hidden';
+        modal.style.opacity = '0';
+        modal.style.transform = 'translate(-50%,-50%) scale(0)';
+
+    }else{
+        checkInitAnalytics();
+        modal.style.visibility = 'visible';
+        modal.style.opacity = '1';
+        modal.style.transform = 'translate(-50%,-50%) scale(1)';
+    }
+}
+
 function toggleBannerCookies(type){
     let banner = document.querySelector('.banner_cookies');
     if(type == 'hide'){
