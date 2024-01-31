@@ -23,7 +23,7 @@ class BlogController extends Controller
     }
     public function post($slug)
     {   
-        $post=Posts::where("slug",$slug)->first();
+        $post=Posts::where("slug",$slug)->firstOrFail();
 
         //Comentarios anulados
         /*

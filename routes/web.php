@@ -16,6 +16,10 @@ use App\Http\Controllers\UploadController;
 |
 */
 
+
+// Route::get('error',function(){
+//     abort('404');
+// });
 /*
 Route::get('/', function () {
     return view('home.home');
