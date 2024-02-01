@@ -79,7 +79,7 @@ window.addEventListener('load',()=>{
 //profile - name and position
 
         gsap.to('.profile',{y:0,opacity:1,duration:1,delay:2,ease:'power4.out'})
-        
+        gsap.to('.background_cover',{width:'100%',ease:'power4.out',duration:3});
         gsap.delayedCall(1,setIcons,['.title']);
         gsap.to('.back_skill1',{
             scale: 1,

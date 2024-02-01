@@ -29,6 +29,7 @@ main = #161616
 	padding 0
 	box-sizing border-box
 */
+
 .box_canvas
 	/*
 	width 100%
@@ -136,7 +137,7 @@ main = #161616
 		position relative		
 		
 		.home
-			background-color rgba(0,0,0,.9)
+			// background-color rgba(0,0,0,.9)
 			display flex
 			justify-content center
 			margin auto
@@ -146,6 +147,12 @@ main = #161616
 			position relative
 			padding-bottom 40px
 			
+			.background_cover
+				background-color rgba(0,0,0,.6)
+				height 100%
+				position absolute				
+				 
+				width 0
 			/*
 			.box_profile::before
 				content ''			
@@ -410,7 +417,7 @@ main = #161616
 		left 0
 		right 0
 		bottom 0
-		opacity 0.1
+		opacity 0.2
 			
 	.section_blog
 		background-color rgba(0,0,0,.9)
@@ -614,6 +621,17 @@ main = #161616
 				position absolute
 				top 30px
 				width 50px
+			// a
+			// 	text-decoration none
+			// 	p.bahiaxip_shadow
+			// 		position:relative
+			// 		margin auto
+			// 		font-size 70px
+			// 		text-shadow 0px 0px 5px rgba(255,255,255,.7), 0px 2px 5px rgba(255,255,255,.7)
+			// 		color rgba(0,0,0,.2)
+			// 		font-family Ecliptic_BRK
+			// 		transform scaleY(2)
+			// 		z-index 99
 	
 	.footer_links
 		display flex
@@ -638,9 +656,14 @@ main = #161616
 			p
 				color #FFF
 				margin-bottom 3px
+				font-size 14px
 				a
 					color color17
 					text-decoration none
+					font-family Ecliptic_BRK
+
+			
+
 
 /* billboard */
 /*

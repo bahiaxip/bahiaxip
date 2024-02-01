@@ -26,6 +26,7 @@
         
     {{--<div class="row mb-3 home">--}}
         <div class="home">
+        <div class="background_cover" ></div>
 
         {{-- pasado al nav superior...
         <div class="box_canvas">
