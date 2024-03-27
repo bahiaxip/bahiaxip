@@ -2,7 +2,7 @@
 
 @section("content")
 
-<div class="container mt-4">
+<div class="container mt-4 post_create">
     <div class="row">
         <div class="col-10 offset-1">
             <div class="panel panel-default">

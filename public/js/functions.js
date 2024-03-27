@@ -97,12 +97,12 @@ window.addEventListener('load',()=>{
 
     //botón flotante 
     let btn_floatup = document.querySelector('.btn_floatup');
-    console.log(btn_floatup)
+    //console.log(btn_floatup)
     let toggle_floatup;
     window.addEventListener('scroll',function(e){
         //console.log("scrolling...",window.scrollY)
         if(btn_floatup){
-            console.log(window.scrollY)
+            //console.log(window.scrollY)
             if(window.scrollY > 200){
                 if(!toggle_floatup){
                     btn_floatup.style.opacity = '1';

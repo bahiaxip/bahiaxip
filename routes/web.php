@@ -70,3 +70,10 @@ Route::middleware(["auth"])->group(function(){
 
 Route::post('cookies',[BlogController::class,'cookies']);
 
+/* optimizado a modals*/
+/* Route::get('avisolegal',function(){
+    return view('layouts.avisolegal');
+});
+Route::get('privacidad',function(){
+    return view('layouts.privacidad');
+}); */

@@ -23467,6 +23467,39 @@ sudo chmod a+rx /usr/local/bin/youtube-dl</code></pre>
             'tag_id' => 3
         ]);
         */
+
+        /*
+        //2
+        $post = Posts::create([
+            'category_id' => 1,
+            'title' =>'Crear un USB de arranque para Linux',
+            'slug' => 'crear-un-usb-de-arranque-para-linux',
+            'body_main' => 'Como formatear un dispositivo usb desde una terminal en linux.',
+            'body_plus' => '<p>Linux dispone del comando dd para crear im&aacute;genes de distribuciones linux y poder instalarlas en nuestro PC de forma sencilla y r&aacute;pida.</p>
+
+<p>Para hacer uso del comando dd es recomendable formatear y desmontar la partici&oacute;n.</p>
+
+<p>A&ntilde;adimos la ruta de la imagen iso&nbsp; y la ruta del dispositivo:</p>
+
+<pre>
+<code class="language-bash">dd if=[imagen.iso] of=[dispositivo]
+</code></pre>
+
+<p>Ejemplo de instalaci&oacute;n de una distribuci&oacute;n debian en un usb:</p>
+
+<p><img alt="" src="http://localhost:8000/upload/posts/bahiaxip@hotmail.com/1665955715.png" style="height:106px; width:626px" /></p>
+',          
+            'user_id' => 1,
+            'status' => 'PUBLISHED',
+            'file' => 'image/post/main/66JVEXchmxa2gRAe8idWEm8tI0q8O4V6REOzt5xf.png'
+
+        ]);
+
+        DB::table('post_tag')->insert([
+            'post_id' => $post->id,
+            'tag_id' => 3
+        ]);
+        */
         
     }
 }

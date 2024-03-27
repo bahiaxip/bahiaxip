@@ -7,6 +7,7 @@ function setIcons(div_parent){
     //un número de píxeles personalizado para cada uno de los iconos 
         
     //retardamos 0.8 segundos
+    /* anulado por eliminación de iconos interactivos */
     setTimeout(()=>{
             document.querySelectorAll(div_parent+' .offset1 .path').forEach((item) => {
                 //console.log(item)
@@ -29,307 +30,44 @@ function setIcons(div_parent){
            },300)
        */
     //})
-    },800)
+    },100)
 }
 
 window.addEventListener('load',()=>{
-    console.log("ruta: ",route)
+    
     if(route == 'home'){
+        console.log("entramos a load")
 
-        /* pruebas con bahiaxip en inicio 
-        gsap.to('.box_profile .div_animation',{
-            //scale:0,
-            y:0,
-            opacity: 1,
-            ease: 'power2.out',
-            duration:2,
-            delay: 2,
-        })
-        tlicon = gsap.timeline();
+        gsap.to('.profile',{y:0,opacity:1,duration:1,delay:0,ease:'power4.out'})
+        gsap.delayedCall(.1,setIcons,['.title']);
+        gsap.to('.center',{scale:1,duration:2,delay:.5,ease:'power4.out'})
         
-        tlicon.from('.icon',{
-            y:-200,
-            ease: 'bounce.inOut',            
-            duration:3,
-            delay:2.5,
-        })        
-        .to('.icon',{            
-            x:-20,
-            duration:0.8,
-        })
-        .to('.icon',{            
-            x:10,
-            duration:0.8
-        }).to('.icon',{
-            x:0,
-            duration: 0.5
-        })
-        .to('.icon',{
-            scale:1.1,
-            duration: 0.5
-        })
-        .to('.icon',{
-            delay:2,
-            scale:1,
-            duration: 0.5
-        })
-        */
-        //gsap.from('.profile',{x:-200})        
-        //gsap.to('.profile',{x:0,opacity:1,duration:1})
-//profile - name and position
-
-        gsap.to('.profile',{y:0,opacity:1,duration:1,delay:2,ease:'power4.out'})
-        gsap.to('.background_cover',{width:'100%',ease:'power4.out',duration:3});
-        gsap.delayedCall(1,setIcons,['.title']);
-        gsap.to('.back_skill1',{
-            scale: 1,
-            duration:.5,
-            delay: 0.5
-        })
-        gsap.to('.back_skill2',{
-            scale: 1,
-            duration:.5,
-            delay: 0.5
-        })
+        // gsap.to('.back_skill1',{
+        //     scale: 1,
+        //     duration:.5,
+        //     delay: 0.5
+        // })
+        // gsap.to('.back_skill2',{
+        //     scale: 1,
+        //     duration:.5,
+        //     delay: 0.5
+        // })
 //skills
         var tl=gsap.timeline();
         //dibujamos el primer bloque de elementos
     //las 2 líneas siguientes dan warning (GSAP target undefined not found)
-        tl.to('.box_skills1',{}).call(setIcons('.box_skills1'));
-        //dibujamos el segundo bloque de elementos
-        tl.to('.box_skills2',{}).call(setIcons('.box_skills2'));
+        // tl.to('.box_skills1',{}).call(setIcons('.box_skills1'));
+        // //dibujamos el segundo bloque de elementos
+        // tl.to('.box_skills2',{}).call(setIcons('.box_skills2'));
         //gsap.to('.back_skill1')
 
         
         
         gsap.registerPlugin(ScrollTrigger);
-        /*
-        var tl2 = gsap.timeline({
-            //defaults:{ease:'none'},
-            scrollTrigger: {
-                trigger:'.main',
-                markers:true,
-                start: 'top top',
 
-                //end:'100%',
-                end: '+=500 100%',
-                //end: '100% 100%',
-                //end:'+=800 100%',
 
-                //scrub:true,
-                scrub:1,
-                //pin:true,
-                //delay:2
-            }        
-        })//.from('#back_skill1',{scale:0})    
-        */
-        /*
-        .to('.back_skill2',{
-            scale: 1,
-            duration:.8
-        })
-        */
-        
-        /*
-        tl.from('.section_blog',{opacity:0,duration:2})
-        tl.to('.section_blog',{opacity:1,duration:2})
-        */
-    //h2 SKILLS
-        var tl2 = gsap.timeline();
-        tl2.from('.section_skills h2',{
-            scale:0,
-            opacity:0,        
-            ease:'power2.out',
-            scrollTrigger:{
-                trigger:'.profile',
-                //toggleActions: "restart pause resume none",
-                markers:false,
-                
-                scrub:1,
-                start: '80% top',
-                end:'top bottom'
-            },
-        }).to('.section_skills h2',{        
-            scale:1,
-            duration:.5,
-            //ease:'bounce',
-            scrollTrigger:{
-                trigger:'.profile',
-                //toggleActions: "restart pause resume none",
-                markers:false,
-                scrub:1,
-                start: '80% top',
-                end:'+=900 bottom'
-            },
-        })
-        //tl2.from('.box_progress_skills ',{x:-500,opacity:0})
-        /*
-        tl2.to('h2',{
-            x:0,
-            opacity:1,
-            duration:1,
-            
-        })
-        */
-    //progress y carousel
-        //tl.('.box_progress_skills .left',{x:-500,opacity:0})
-        /*
-        gsap.defaults({
-            //ease:'bounce',
-            //duration:5
-        })
-        */
-//progress bar
-        var tl3 = gsap.timeline(),
-        tl4 = gsap.timeline(),
-        tl5 = gsap.timeline();
-        tl3.from('.box_progress_skills .left',{
-            x:-500,opacity:0,
-            ease:'power2.out',
-            duration:3,
-            scrollTrigger:{
-                trigger:'.box_skills1',
-                markers:false,
-                //scrub:3,
-                scrub:1,
-                start: 'top top',
-                end:'+=800 100%'    
-            }
-        })
-        tl3.from('.box_progress_skills .right',{
-            x:500,opacity:0,
-            ease:'power2.out',
-            duration:3,
-            scrollTrigger:{
-                trigger:'.box_skills1',
-                markers:false,
-                //scrub:3,
-                scrub:1,
-                start: 'top top',
-                end:()=>'+=800 100%'    
-            }
-        })
-//carousel skills
-        tl3.from('.all_skills',{
-            scale:0,opacity:0,
-            ease:'linear',
-            delay:3,
-            duration:2,
-            scrollTrigger:{
-                trigger:'.box_skills1',
-                markers:false,
-                //scrub:3,
-                scrub:2,
-                start: '50% top',
-                end:'+=900 100%'    
-            }
-        })
-        //tl3.to('.all_skills',{duration:1,delay:1}).call(dar);
-            
-        
-        /*
-        ScrollTrigger.create({
-            animation: tl4,
-            trigger:'.box_skills1',
-            markers:true,
-            //scrub:3,
-            scrub:1,
-            start: 'top top',
-            end:'+=400 100%'
-        })
-        */
-        //tl3.to('.all_skills',{scale:1,opacity:1,duration:2.5})
-        //.to('box_progress_skills .left',{opacity:1,x:0});
-        
-        //array de barras de progreso
-        let progressSkill = document.querySelectorAll('.progress_skill');
-        progressSkill.forEach((item,index)=>{
-            //console.log(index)
-            const title = item.querySelector('.title .percent');
-            const progress = item.querySelector('.div_progress');
-            const progressbar = progress.querySelector('.progress0');
-            //porcentaje establecido en el HTML de cada barra de progreso 
-            const percent = title.textContent;
-            //console.log(progress)
-            let a = 'pbtl_'+index;
-            a = gsap.timeline({
-                defaults:{
-                    duration:3,
-                    ease:'bounce.out',
-                    
-                },
-                scrollTrigger:{
-                    trigger: '.box_skills1',
-                    scrub:2,
-                    delay:2,
-
-                    start: '30% top',
-                    end:'+=800 100%',
-                    markers:false
-                    //toogleActions: 'play pause resume reset'
-                }
-            })
-            a.fromTo(progressbar,{width:0},{width:percent});
-            
-            a.from(title,{
-                duration:3,
-                ease:'bounce.out',
-                textContent: 0 + '%',
-                snap:{ textContent: 1},
-            },'<');
-
-        })
-
-//blog
-        gsap.from('.section_blog h2',{
-            scale:0,
-            opacity:0,        
-            ease:'power2.out',
-            scrollTrigger:{
-                trigger:'.box_skills2',
-                //toggleActions: "restart pause resume none",
-                //markers:true,            
-                scrub:1,
-                start: 'center top',
-                end:'+=800 bottom'
-            },
-        })
-        gsap.from('.row.blog .slider_blog',{
-            
-            duration:2,
-            delay:2,
-            
-            opacity:0,
-            x:'-100%',
-            ease:'power2.out',
-            
-            scrollTrigger:{
-                trigger:'.box_skills2',
-                start:'bottom top',
-                end:'+=1200 100%',
-                scrub:1,
-                //markers:true,
-            }
-        })
-        gsap.from('.row.blog #latcol',{
-            
-            duration:2,
-            delay:2,
-            
-            opacity:0,
-            x:'100%',
-            ease:'power2.out',
-            
-            scrollTrigger:{
-                trigger:'.box_skills2',
-                start:'bottom top',
-                end:'+=1200 100%',
-                scrub:1,
-                //markers:true,
-            }
-        })
-
-        animationFooter('home','.section_blog');
+        /* animationFooter('home','.section_blog'); */
+        animationFooter('home');
         
         
     }
@@ -464,12 +202,12 @@ function animationFooter(path,selector=null,secondsDelay=null){
             ease: 'power2.out',
             duration:2,
             delay: 2,
-            scrollTrigger:{
+            /* scrollTrigger:{
                 trigger: selector,
                 start:'top top',
                 end:'+=300 100%',
                 scrub:1,
-            }
+            } */
         })
         gsap.to('.textfooter',{
             x:0,

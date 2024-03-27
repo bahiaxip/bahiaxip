@@ -1,0 +1,12 @@
+.miprefijo-imageslider2 {
+  background-image: url("../img/bg2.jpg");
+}
+.miprefijo-imageslider3 {
+  background-image: url("../img/bg3.jpg");
+}
+.miprefijo-imageslider4 {
+  background-image: url("../img/bg4.jpg");
+}
+.miprefijo-center .miprefijo-clasdiv {
+  padding: 10px;
+}

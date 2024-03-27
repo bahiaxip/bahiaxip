@@ -13,7 +13,8 @@
      <link rel="shortcut icon" href="{{asset('ima/bahiaxip_favicon.svg')}}" width="64"/>
     {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>@yield('title')</title>
-
+    {{-- estilos de slider principal del home (antiguo) --}}
+    <!-- <link rel="stylesheet" href="{{asset('css/slider_styles.css')}}" /> -->
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -44,6 +45,8 @@
     {{--
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     --}}
+    <link rel="stylesheet" href="{{asset('css/imageslider_styles.css')}}">
+    <link rel="stylesheet" href="{{asset('css/modals.css')}}">
 
 </head>
 <body>
@@ -51,6 +54,8 @@
     <!-- fondo al abrir el menú principal en bajas resoluciones -->
     <div id="back_menu" class="back_menu"></div>
     @include('layouts.cookie_notice')
+    @include('layouts.advice')
+    @include('layouts.privacity')
     <div id="latleft_oculto" class="hidden_menu  ">
         @include('layouts.hidden_nav')
         
@@ -115,14 +120,14 @@
         @endif
 
         <main class="main">
-            @if(Route::currentRouteName() != 'post')
+            {{-- @if(Route::currentRouteName() != 'post') --}}
             <div class="btn_floatup" onclick="up()">        
                 {{--<i class="fa-solid fa-circle-arrow-up"></i>--}}
                 <div class="circle">
-                    <span class="arrow">&#x02191;</span>
+                    <span class="arrow">&#10094;</span>
                 </div>
             </div>
-            @endif
+            {{-- @endif --}}
             @yield('content')
         </main>
 
@@ -208,13 +213,19 @@
 
         
     </script>
-    <script src="{{asset('js/carousel_slides.js')}}"></script>
+    <!-- <script src="{{asset('js/carousel_slides.js')}}"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
     <script src="{{asset('js/animation_gsap.js')}}"></script>
+        
+    
+    <!-- código JS de slider principal -->
+    
     <!-- cookies -->
     <script src="{{asset('js/cookies.js')}}"></script>
+    <!-- modals -->
+    <script src="{{asset('js/modals.js')}}"></script>
     @yield('scripts')
 </body>
 </html>

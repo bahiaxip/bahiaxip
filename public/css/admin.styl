@@ -138,47 +138,27 @@ main = #161616
 		
 		.home
 			// background-color rgba(0,0,0,.9)
-			display flex
-			justify-content center
+			/* display flex
+			justify-content center */
 			margin auto
 			min-height 100vh
 			perspective 2000px
 			perspective-origin top
 			position relative
-			padding-bottom 40px
+			padding-bottom 40px			
 			
-			.background_cover
-				background-color rgba(0,0,0,.6)
-				height 100%
-				position absolute				
-				 
-				width 0
-			/*
-			.box_profile::before
-				content ''			
-				background-image url('../ima/DNI_2022_recortado_bynx800.png')
-				background-repeat no-repeat
-				background-position top right
-				background-size 35%
-				top 0
-				left 0
-				right 0
-				bottom 0
-				margin auto
-				opacity 0.2
-				position absolute
-				width 60%
-			*/
+			
 			.box_profile
-				
-				width 60%
+				/* min-height:850px;
+				width:100%; */
+				// width 60%
 				.profile
 					align-items center
 					color #FFF
 					display flex
 					font-family YoutubeB
 					
-					min-height 200px
+					min-height 150px
 					transform translateY(-400px)
 					opacity 0
 					width 100%
@@ -214,97 +194,7 @@ main = #161616
 							font-size 90px					
 						span
 							color #18D26E
-					.image
-						/*
-						background-image url('../ima/logo_BX_verdex200.png')
-						background-repeat no-repeat
-						background-size 100%
-						background-position center
-						
-						display flex
-						margin auto
-						min-height 200px
-						justify-content center
-						width 200px
-						/*
-						img
-							width 40%
-							min-width 250px
-							opacity 0.2
-						*/
-				.skills2
-					margin 20px auto 0px auto
-					position relative
-					width 80%
-					.box_skills1,.box_skills2
-						display flex
-						justify-content space-between
-						margin 20px auto
-						width 100%
-					.box_skills2 .back_skill#back_skill1
-						transform scale(0)
-						
-					.back_skill1,.back_skill2
-						background-color greyboot
-						border-radius 4px
-						color #FFF
-						display flex
-						flex-flow column
-						font-family YoutubeB
-						font-size 18px
-						margin auto
-						min-height 200px
-						min-width 175px
-						width 30%
-						transform scale(0)
-						.skill
-							margin auto
-							.path
-								fill transparent
-								stroke-width 1px
-								stroke #18D26E
-								/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
-								
-								
-								transition stroke-dashoffset 1s linear 0s,fill 0.2s linear 1s,stroke-width 0.2s linear 1s
-					
-									
-							.path.svg_active
-								stroke-dashoffset 0px
-								fill #18D26E
-								stroke-width 0px
-								
-							img
-								display flex
-								margin 20px auto
-							p	
-								font-size 18px
-								margin-top 10px
-					.back_skill1.offset1 .path
-						stroke-dasharray 150px
-						stroke-dashoffset -150px
-					.back_skill1.offset2 .path
-						stroke-dasharray 220px
-						stroke-dashoffset -220px
-					.back_skill1.offset3 .path
-						stroke-dasharray 260px
-						stroke-dashoffset -260px
-					.back_skill2.offset1 .path
-						stroke-dasharray 100px
-						stroke-dashoffset -100px
-					.back_skill2.offset2 .path
-						stroke-dasharray 200px
-						stroke-dashoffset -200px
-					.back_skill2.offset3 .path
-						stroke-dasharray 250px
-						stroke-dashoffset -250px
-			/*
-			.logo
-				background-color rgba(0,0,0,.8)
-				position absolute
-				width 100%
-				height 100%
-			*/
+			
 			.div_angle
 				bottom 0
 				position absolute
@@ -321,97 +211,14 @@ main = #161616
 					clip-path polygon(0 100%,0% 0, 100% 100%)
 				.right
 					shape-outside polygon(100% 0,0% 100%,100% 100%)
-					clip-path polygon(100% 0,0% 100%, 100% 100%)	
-		
-			
-	.section_skills
-		background-color greyboot
-		margin auto
-		padding 20px 0 20px 0
-		position relative
-		width 100%
-		.skills0
-			color color10
-			margin auto
-			width 70%
-			h2
-				font-size 45px
-				font-family YoutubeB
-				text-align center
-				margin 10px auto 20px auto
-			.box_progress_skills
-				display flex
-				padding 10px 0
-				.left,.right
-					color white
-					margin auto					
-					width 48%
-					
-					.title
-						display flex
-						font-family YoutubeB
-						font-size 15px
-						justify-content space-between
-						margin 10px auto
-					.div_progress
-						background-color #333333
-						height 5px
-						position relative
-						.progress0
-							position absolute
-							top 0
-							left 0
-							background-color color17
-							height 5px
-							width 95%
-							z-index 100
-					
-			.all_skills
-				display block
-				margin 10px auto
-				width 100%
-				overflow hidden
-				.carousel_skills
-					display flex
-					flex-shrink 1
-					gap 50px
-					/*flex-flow row nowrap*/
-					/*overflow auto*/
-					position relative
-					scroll-behavior smooth
-					
-					
-					.icon_skill
-						align-items center
-						justify-content center
-						position relative
-						flex-shrink 0
-						height 100px
-						min-width 0
-					
-						display flex
-						/*flex-flow row wrap*/
-						/*
-						margin auto 20px
-						max-width 150px
-						width calc(95% / 5)
-						*/
-						img
-							width 64px
-									
-					/*
-					.carousel_skills::-webkit-scrollbar{
-						display none
-					}
-					*/
-		
+					clip-path polygon(100% 0,0% 100%, 100% 100%)
 				
 	.home::before
 		content ""
-		background-image url('../ima/computer1.jpg')
+		/* background-image url('../ima/computer1.jpg')
 		background-size 100% 
 		background-repeat no-repeat
-		background-position center center
+		background-position center center */
 		position absolute
 		top 0
 		left 0
@@ -419,96 +226,8 @@ main = #161616
 		bottom 0
 		opacity 0.2
 			
-	.section_blog
-		background-color rgba(0,0,0,.9)
-		margin auto
-		overflow hidden
-		padding 0 0 50px 0
-		position relative
-		width 100%
-		h2
-			font-size 45px
-			font-family YoutubeB
-			color white
-			text-align center
-		.blog
-			margin auto
-			padding-top 20px
-			width 70%
-			
-			#principal-carousel
-				img
-					max-height 550px
-					padding 20px
-				/* añadir a mediaqueries */
-				/*	
-				.carousel-control-prev
-					margin-left 10px
-				.carousel-control-next
-					margin-right 10px
-				*/
-				
-				span.carousel-control-prev-icon,span.carousel-control-next-icon
-					background-color rgba(0,0,0,.5)
-					width 40px
-					height 40px
-					
-					border color6 1px solid
-					border-radius 50%
-					//para generar padding al span es necesario manejar background-origin o background-clip*/
-					background-origin content-box
-					/*background-clip content-box*/
-					background-size 100% 50%
-					padding 6px
-					&:hover
-						border color13 1px solid
-			#latcol
-				display flex
-				flex-flow column
-				/* 545 + 40 padding-bottom*/
-				/*max-height 585px*/
-				/*overflow auto*/
-				scrollbar-width none
-				/*border #D3D3D3 1px solid*/
-				height 80%
-				.div_lat
-					
-					border-bottom color17 1px solid
-					display block
-					padding 10px 0
-					width 100%
-					a.column_index
-						color color9
-						display flex
-						font-family QuicksandB
-						font-size 18px
-						height 100%
-						text-decoration none
-						width 100%
-						&:hover
-							color #FFF
-						img
-							max-width 35%
-							padding 10px
-							transition all .5s linear
-							&:hover
-								transform scale(1.1)
-							
-						h4
-							display flex
-							
-							/*border-bottom color10 1px solid*/
-							font-size 16px
-							margin auto
-							padding 5px
-							transition all .5s linear
-							&:hover
-								color color17
-				
-					p
-						font-family QuicksandR
-						margin auto
-		.div_angle
+		/* parte baja de la forma angular si existe contenedor inferior */
+		/* .div_angle
 			display flex
 			.angle_bottom
 				background greyboot
@@ -521,74 +240,12 @@ main = #161616
 				clip-path polygon(0 0,100% 0, 0 100%)
 			.right
 				shape-outside polygon(0 0,100% 0,100% 100%)
-				clip-path polygon(0 0,100% 0, 100% 100%)
-	.section_skills
-		overflow hidden
-		.skills
-			background-image url('../ima/fondo_azul2_500.jpg')
-			background-position center
-			/*
-			background: rgb(14,0,110);
-			background: radial-gradient(circle, rgba(14,0,110,0.8071603641456583) 23%, rgba(0,89,236,1) 100%);
-				*/
-			position relative
-			width 100%
-			height 520px
-			.list
-				display flex
-				justify-content space-around
-				font-family YoutubeB
-				font-size 24px
-				ul
-					margin 10px
-					padding 0
-					width 33%
-					li
-						color #FFF
-						display flex
-						justify-content center
-						align-items center
-						
-						padding 0
-						margin 10px auto
-						.div_skill
-							align-items center						
-							display flex
-							width 200px
-							height 70px
-							transition all 0.3s ease-in
-							.logo
-								
-								width 64px
-								img
-									padding 0px
-									
-									width 64px
-							
-							.text
-								margin auto
-								
-							&:hover 
-								transform scale(1.2)
-						
-			/*
-			height 500px
-			width 100%
-			*/
-			/*
-			.image
-				background-image url('../image/post/linux.png')
-				background-position center center
-				background-repeat no-repeat
-				background-size 25%
-				top 0
-				margin auto
-				display flex
-				opacity 1
-				position relative
-				width 100%
-				height 100%
-			*/
+				clip-path polygon(0 0,100% 0, 100% 100%) */
+
+	.main_home
+		width:100%;
+		height:100%;
+			
 .footer
 	background-color greyboot
 	display flex
@@ -635,10 +292,16 @@ main = #161616
 	
 	.footer_links
 		display flex
-		justify-content space-around
+		justify-content center
 		margin 20px 0
-		a
+		button,a
+			font-size 12px
+			color color17
 			text-decoration none
+			margin 0 20px
+			background none
+			border none
+
 		
 	.div_textfooter
 		display flex
@@ -662,105 +325,7 @@ main = #161616
 					text-decoration none
 					font-family Ecliptic_BRK
 
-			
 
-
-/* billboard */
-/*
-.board
-	display flex
-	justify-content center
-	width 100%
-	height 600px
-.board2
-	
-	padding 40px 0 0 0
-	width 100%
-	transform translateY(100%)
-	opacity 0
-	.ad
-		position relative
-		margin auto
-		width 916px
-		height 100%	
-		.ad_1,.ad_2
-			position absolute
-			margin-left 60px
-			top 35px
-		.ad_1
-			img
-				position absolute
-				width 35px
-				height 336px
-				margin auto
-				display flex
-				justify-content center
-		.ad_2	
-			img{width:0px;height:336px;margin-left:18px;position:absolute;}
-*/				
-.billboard{
-	background transparent url(../billboard/billboard.png) no-repeat 0px 0px
-	background-position center
-	position relative
-	height 599px
-	width 916px
-	
-	margin auto
-	display flex
-	justify-content center
-    /*
-	position:absolute;
-    top -30px
-    bottom:0px
-    left:50%;
-    margin-left:-452px;
-    //position:relative;top:120px;left:25px;
-    width:1016px;
-    height:599px;
-    background:transparent url(../billboard/billboard.png) no-repeat 0px 0px;
-	*/
-}
-
-/*
-.container{float:left;
-    position:absolute;bottom:0px;left:50%;margin-left:-467px;width:916px;height:599px;}
-*/
-
-/*
-.ad{width:800px;height:336px;position:relative;margin:38px 0px 0px 74px;background-color:#333;}
-*/
-/*
-.ad_1,.ad_2
-	position absolute
-	margin-left 60px
-	top 35px	
-.ad_1
-	img{width:35px;height:336px;position:absolute;}
-.ad_2	
-	img{width:0px;height:336px;margin-left:18px;position:absolute;}
-*/
-.slice_1{left:0px;}
-.slice_2{left:36px;}
-.slice_3{left:72px;}
-.slice_4{left:108px;}
-.slice_5{left:144px;}
-.slice_6{left:180px;}
-.slice_7{left:216px;}
-.slice_8{left:252px;}
-.slice_9{left:288px;}
-.slice_10{left:324px;}
-.slice_11{left:360px;}
-.slice_12{left:396px;}
-.slice_13{left:432px;}
-.slice_14{left:468px;}
-.slice_15{left:504px;}
-.slice_16{left:540px;}
-.slice_17{left:576px;}
-.slice_18{left:612px;}
-.slice_19{left:648px;}
-.slice_20{left:684px;}
-.slice_21{left:720px;}
-.slice_22{left:756px;}
 
 
 #latcol::-webkit-scrollbar{
@@ -927,52 +492,8 @@ main = #161616
 						transform translate(0,0)
 						transition all .5s linear
 						width 50%
-						
-							
-					
 			
-/*
-.box_contact::before
-	content ""
-	
-	background-image url('../ima/fondo_estrellas_1920X2160_borrada2.jpg')
-	background-size 100% 
-	background-repeat no-repeat
-	background-position top center
-	
-	position absolute
-	top 0
-	left 0
-	right 0
-	bottom 0
-	opacity 1
-*/
-/* tipos de estilos para autocompletado en input */
-/* opción 1, con background-clip */
-/*
-input.no-autofill:-webkit-autofill{
-	-webkit-background-clip: text
-	-webkit-text-fill-color: white !important
-}
-*/
-/* opción 2, con transition */
-/*
-input.no-autofill:-webkit-autofill,
-input.no-autofill:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
-}
-input.no-autofill[data-autocompleted] {
-    background-color: transparent !important;
-}
-*/
-/* opción 3, con box-shadow (interfiere en el box-shadow del input) */
 
-/*
-input.no-autofill:-webkit-autofill{
-	-webkit-box-shadow:none inset !important
-	-webkit-text-fill-color: yellow !important
-}
-*/
 main
 	//background-color rgba(0,0,0,.7)
 	background-color main
@@ -985,7 +506,7 @@ main
 		.div_search			
 			display flex
 			padding 0 20px
-			transform translateY(-200px) scale(0)
+			// transform translateY(-200px) scale(0)
 			width 100%
 			.input_search
 				position relative
@@ -1552,20 +1073,21 @@ main
 		transition background-color .3s linear, color .4s linear
 		width 40px
 		.arrow
-			align-items center
-			
+			align-items center			
 			color color8
 			display flex
-			font-size 2em
+			font-size 1.7em
 			height 100%
 			justify-content center
+			transform rotate(90deg)
 			width 100%
 		&:hover
 			background-color color17
 			border color17 1px solid
 			border-radius 50%
 			.arrow
-				color #FFF
+				color #000
+				
 	
 	/* flecha de icono (subir arriba) con pseudoelemento before en lugar de span*/
 	/*span::before
@@ -1582,7 +1104,9 @@ main
 		margin auto
 		width 40px
 		*/
-
+/* admin create */
+.post_create
+	color:#FFF;
 .pagination
 	display flex
 /* añadido para aumentar el height de CKEDITOR*/
@@ -1626,23 +1150,9 @@ main
 	.wrap .section_home .home .box_profile .profile
 		.title .offset1
 			width 100%
-	/*
-	.board2 .ad
-		width 100%
-	*/
-	.ad_1,.ad_2
-		display none 
-	.billboard
-		background-size 611px 400px
-		width 611px
-		height 400px
-
-	/*
-	.box_canvas #canvas1
-		width 300px
-	*/
+	
 	.wrap .section_home .home .box_profile
-		width 80%
+		// width 80%
 		
 	.main .minim.post .box_card .post_detail_bodyplus
 		p

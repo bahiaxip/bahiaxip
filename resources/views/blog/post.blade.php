@@ -11,14 +11,14 @@
 </style>
 --}}
 <div class="minim post">
-    @if(Route::currentRouteName() == 'post')
+    {{-- @if(Route::currentRouteName() == 'post') --}}
     <div class="btn_floatup" onclick="up()">        
         {{--<i class="fa-solid fa-circle-arrow-up"></i>--}}
         <div class="circle">
             <span class="arrow">&#x02191;</span>
         </div>
     </div>
-    @endif
+    {{-- @endif --}}
     <div class="row py-1 div_buttons">
         <div class="div_btn_anim " >
             <div class="back_btn_anim btn1" >
