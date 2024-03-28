@@ -99,6 +99,11 @@
         });
 
         //editor_init('body_plus');
+        
+        /*
+        PARA MODIFICAR LAS OPCIONES IR A:
+         https://ckeditor.com/latest/samples/toolbarconfigurator/index.html#advanced
+        */
         CKEDITOR.replace('body_plus',{
             //language: '{{app()->getLocale()}}',
             language: 'es',
@@ -114,12 +119,14 @@
                 /* 
                 { name:'clipboard', items:['Cut','Copy','Paste','PasteText','-','Undo','Redo']},
                 */
+               
                 { name: 'paragraph', items:['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']},
                 //{ name: 'basicstyles',items:['Bold','Italic','BulletedList','Strike','Image','Link','Unlink','Blockquote']},
                 //eliminamos 'Image','Link' y 'Unlink' temporalmente
-                { name: 'basicstyles',items:['Bold','Italic','UnderLine','Strike','BulletedList','Blockquote']},
+                { name: 'basicstyles',items:['Bold','Italic','UnderLine','Strike','NumberedList','BulletedList','Blockquote']},
                 {name: 'links', items:['Link']},
-                { name:'styles', items:['Font','FontSize']},
+                { name:'styles', items:['Font','FontSize','Format']},
+                
                 {name:'colors', items:['TextColor','BGColor']},
                 { name: 'document', items:['CodeSnippet','EmojiPanel','Preview','Source']},
                 { name:'insert', items:['Image']},
@@ -127,13 +134,15 @@
 
             ],
             
+            
             /*
             toolbar:[
                 {name: 'colors',items:['TextColor','BGColor']}
             ],
             */
             extraPlugins:['codesnippet','colorbutton','font','justify','basicstyles'],
-            codeSnippet_theme: 'monokai_sublime'
+            codeSnippet_theme: 'monokai_sublime',
+            format_tags : 'p;h1;h2;h3;h4',
             
         });
         

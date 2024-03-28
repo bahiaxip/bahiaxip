@@ -1,7 +1,7 @@
 const token = document.getElementsByName('csrf_token')[0].getAttribute('content');
 const route = document.getElementsByName('route_name')[0].getAttribute('content');
 //console.log(route)
-function editor_init(field){
+/* function editor_init(field){
     //CKEDITOR.plugins.addExternal('codesnippet',base+'/static/libs/ckeditor/plugins/codesnippet/','plugins.js');
     CKEDITOR.replace(field,{
         height:['400px'],
@@ -15,16 +15,18 @@ function editor_init(field){
         //skin:'mono',
         //extraPlugins: 'codesnippet,ajax,xml,textmatch,autocomplete,textwatcher,emoji,panelbutton,preview,wordcount',
         toolbar:[
+            'heading','|',
         { name:'clipboard', items:['Cut','Copy','Paste','PasteText','-','Undo','Redo']},
         //{ name: 'basicstyles',items:['Bold','Italic','BulletedList','Strike','Image','Link','Unlink','Blockquote']},
         //eliminamos 'Image','Link' y 'Unlink' temporalmente
+
         { name: 'basicstyles',items:['Bold','Italic','BulletedList','Strike','Blockquote']},
         { name: 'document', items:['CodeSnippet','EmojiPanel','Preview','Source']}
         ]
     })
     CKEDITOR.instances.body_plus.resize('100%','600px');
-
-}
+    console.log("ckeditor")
+} */
 
 //botón nav activo
 function set_active(){
