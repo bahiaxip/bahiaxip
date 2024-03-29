@@ -9,27 +9,10 @@ function setIcons(div_parent){
     //retardamos 0.8 segundos
     /* anulado por eliminación de iconos interactivos */
     setTimeout(()=>{
-            document.querySelectorAll(div_parent+' .offset1 .path').forEach((item) => {
-                //console.log(item)
-                item.classList.add('svg_active')
-            });
-            document.querySelectorAll(div_parent+' .offset2 .path').forEach((item) => {
-                //console.log(item)
-                item.classList.add('svg_active')
-            });
-            document.querySelectorAll(div_parent+' .offset3 .path').forEach((item) => {
-                //console.log(item)
-                item.classList.add('svg_active')
-            });
-        /*
-        else
-            setTimeout(()=>{
-               back_skill.querySelectorAll('.path').forEach((item) => {
-                    item.classList.add('svg_active')
-                });
-           },300)
-       */
-    //})
+        document.querySelectorAll(div_parent+' .offset1 .path').forEach((item) => {
+            //console.log(item)
+            item.classList.add('svg_active')
+        });
     },100)
 }
 
@@ -41,35 +24,8 @@ window.addEventListener('load',()=>{
         gsap.to('.profile',{y:0,opacity:1,duration:1,delay:0,ease:'power4.out'})
         gsap.delayedCall(.1,setIcons,['.title']);
         gsap.to('.center',{scale:1,duration:2,delay:.5,ease:'power4.out'})
-        
-        // gsap.to('.back_skill1',{
-        //     scale: 1,
-        //     duration:.5,
-        //     delay: 0.5
-        // })
-        // gsap.to('.back_skill2',{
-        //     scale: 1,
-        //     duration:.5,
-        //     delay: 0.5
-        // })
-//skills
-        var tl=gsap.timeline();
-        //dibujamos el primer bloque de elementos
-    //las 2 líneas siguientes dan warning (GSAP target undefined not found)
-        // tl.to('.box_skills1',{}).call(setIcons('.box_skills1'));
-        // //dibujamos el segundo bloque de elementos
-        // tl.to('.box_skills2',{}).call(setIcons('.box_skills2'));
-        //gsap.to('.back_skill1')
-
-        
-        
-        gsap.registerPlugin(ScrollTrigger);
-
-
-        /* animationFooter('home','.section_blog'); */
+        gsap.registerPlugin(ScrollTrigger);        
         animationFooter('home');
-        
-        
     }
 
     if(route == 'blog' || route == 'tag' || route == 'category'){
@@ -124,21 +80,12 @@ window.addEventListener('load',()=>{
     }
 
     if(route == 'contact'){
-        
         gsap.to('.contact',{
             y:0,
             duration:1,
             opacity:1,
             ease: 'power2.out',            
         })
-        /*
-        gsap.to('.board2',{ 
-            delay:.5,           
-            duration: 2,
-            y:0,
-            opacity:1,
-        })
-        */
         gsap.to('.circle',{
             delay:.5,
             duration:2,
@@ -152,7 +99,6 @@ window.addEventListener('load',()=>{
             ease:'power4.out',
             y:0,
             opacity:1
-
         })
         gsap.to('.div_name .name',{
             delay:2,
@@ -160,7 +106,6 @@ window.addEventListener('load',()=>{
             ease:'power4.out',
             //x:0,
             opacity:1
-
         })
         gsap.to('.div_name .job_profile',{
             delay:2,
@@ -168,26 +113,21 @@ window.addEventListener('load',()=>{
             ease:'power4.out',
             //x:0,
             opacity:1
-
         })
         animationFooter('contact',null,3.5)
     }
+
     if(route == 'projects'){
         gsap.to('.projects',{
             opacity:1,
             duration:2,
             delay:2.5,
             stagger:0.5
-            
         })
         animationFooter('contact',null,3.5)
     }
-    
-
-
-
-    
 });
+
 //animación footer
 function animationFooter(path,selector=null,secondsDelay=null){
     let tlicon;
@@ -196,12 +136,12 @@ function animationFooter(path,selector=null,secondsDelay=null){
         delay = secondsDelay;
     }
 
-    if(path == 'home'){
-        gsap.to('.footer .div_animation',{
-            scale:1,
+    
+        gsap.to('.footer .animation',{
+            y:-5,
             ease: 'power2.out',
             duration:2,
-            delay: 2,
+            delay: 4,
             /* scrollTrigger:{
                 trigger: selector,
                 start:'top top',
@@ -209,71 +149,28 @@ function animationFooter(path,selector=null,secondsDelay=null){
                 scrub:1,
             } */
         })
+        
         gsap.to('.textfooter',{
             x:0,
             opacity:1,
             duration:3,
             delay:delay,
             ease: 'power2.inOut',
-            scrollTrigger:{
+            /* scrollTrigger:{
                 trigger: selector,
                 start:'top top',
                 end:'+=300 100%',
                 scrub:1,
-            }
+            } */
         })
-        tlicon = gsap.timeline({
-            scrollTrigger:{
-                trigger:selector,
-                start:'top top',
-                end:'+=500 100%',
-                //scrub:1,
-                //markers:true,    
-            }
-        });
-    }else if(path == 'blog' || path == 'contact' || path == 'post'){
-        gsap.to('.footer .div_animation',{
-            scale:1,
-            ease: 'power2.out',
-            duration:2,
-            delay: delay,
-        });
-        gsap.to('.textfooter',{            
+        gsap.to('.footer_links',{
+            delay:3,
+            duration:1,
             opacity:1,
-            duration:5,
-            delay:delay+5,
-            ease: 'power2.inOut',
-        })
-        tlicon=gsap.timeline({delay:delay});
-    }
-        
-    tlicon.from('.icon',{
-        y:-200,
-        ease: 'bounce.inOut',            
-        duration:3,
-        delay:1
-        
-    })        
-    .to('.icon',{            
-        x:-20,
-        duration:0.8,
-    })
-    .to('.icon',{            
-        x:10,
-        duration:0.8
-    }).to('.icon',{
-        x:0,
-        duration: 0.5
-    })
-    .to('.icon',{
-        scale:1.1,
-        duration: 0.5
-    })
-    .to('.icon',{
-        delay:2,
-        scale:1,
-        duration: 0.5
-    })
+            scale:1,
+        })        
+        gsap.delayedCall(4,setIcons,['.animation']);
+    
 }
 function effectButton(){
     let btn = document.querySelector('.post .wrap_button');
@@ -284,57 +181,3 @@ function effectButton(){
     }
     
 }
-//progressBar();
-/*
-function dar(){
-tlm.invalidate().kill();
-tlm.restart();
-}
-*/
-/*var tlm;
-function progressBar(){
-    let progressbar = document.querySelector('.progress0.progress1');
-    //console.log("progressbar: ", progressbar);
-    tlm = new TimelineMax({
-        paused:true
-    })
-    tlm.to({},3,{
-        force3D:true,
-        onUpdateParams:['{self}'],
-        onUpdate:function(timeline){
-            TweenMax.set(progressbar,{
-                scaleX:timeline.progress(),
-                transformOrigin:'0px 0px'
-            })
-        }
-    })
-    tlm.play();
-}*/
-
-
-
-
-
-/*function dar(){
-
-    //let div =document.querySelector('.progress_skill.skill1 .percent');
-    let percent = document.querySelector('.progress_skill.skill1 .percent').innerHTML;
-    console.log(percent)
-    //console.log(div.textContent);
-    const target = '100%';
-    gsap.fromTo('.div_progress.progress_back',{width:0},{
-        width:percent,
-        duration:2,
-        ease:'bounce.out'
-    })
-    gsap.from('.progress_skill.skill1 .percent',{
-        textContent:0+'%',
-        duration:2,
-        ease:'bounce.out',
-        snap:{textContent:1}
-    })
-}*/
-
-
-
-//tl.to('.box_skills',{x:'1000',duration:1}).call(setIcons);

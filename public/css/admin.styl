@@ -253,20 +253,33 @@ main = #161616
 	height 200px
 	width 100%
 	.div_animation
-		display flex
+		/* display flex */
 		margin auto
 		overflow hidden
-		transform scale(0)
+		
+		height 100px
+		width 400px
 		.animation
 			margin auto
-			
-			padding 30px 5px
+			transform translateY(-150px)
+			padding 25px 5px
 			position relative
 			.image
 				margin auto
-				position relative
-				top 0px
+				position relative				
 				z-index 1
+				.path
+					fill #18D26E
+					stroke-width 0px
+					stroke #18D26E
+					/* en ocasiones es suficiente con 110 px y en otras más según el recorrido del trazo*/
+					
+					
+					transition stroke-dashoffset 1s linear 0s,fill 1.5s linear 1s,stroke-width 0.2s linear 1s
+				.path.svg_active
+					stroke-dashoffset 0px
+					fill transparent
+					stroke-width 2px
 			.icon
 				background-image url('../ima/logos_programacion/linux_new.png')
 				background-repeat no-repeat
@@ -276,8 +289,9 @@ main = #161616
 				justify-content end
 				left 66%
 				position absolute
-				top 30px
+				top 40px
 				width 50px
+			
 			// a
 			// 	text-decoration none
 			// 	p.bahiaxip_shadow
@@ -294,6 +308,8 @@ main = #161616
 		display flex
 		justify-content center
 		margin 20px 0
+		opacity 0
+		transform scale(0)
 		button,a
 			font-size 12px
 			color color17
