@@ -827,13 +827,16 @@ main
 			
 		/*post*/
 	.minim.post
-		width 80%
+		width 100%
 		margin auto
 		padding 10px 0
 		.div_buttons
 			opacity 0
 			z-index 1
+			display flex
+			justify-content center
 			.div_btn_anim
+				width:95%;
 				display flex
 				justify-content space-between				
 				.back_btn_anim.btn1
@@ -939,8 +942,10 @@ main
 			/* buttons tags */
 			.tags_buttons
 				display flex
-				margin 20px auto
+				margin 20px 10px
 				position relative
+				justify-content flex-start
+				width 100%
 				a
 					border color6 1px solid
 					border-radius 4px
@@ -984,17 +989,24 @@ main
 							
 							
 		.back_tags
-			margin 10px
+			margin 10px auto
 			width 100%
 		.box_card
 			background-color transparent
 			border none
+			overflow hidden
+			border-radius 0
 			/*transform translateX(-100%)*/
-			transform scale(0)
-			opacity 0
+			/* transform scale(0)
+			opacity 0 */
+			img
+				transform scale(0)
+				max-height 550px
 			.card_block
 				background-color #FFF
-				border-radius 8px
+				transform translateY(100%) 
+				
+				/* border-radius 8px */
 			.post_detail_header
 				color color10
 				display flex
@@ -1004,8 +1016,7 @@ main
 				margin 2px 0px 10px 0px
 				padding 10px 10px 20px 10px
 				
-			img
-				max-height 550px
+			
 			.post_detail_bodymain
 				margin auto 10px
 				border-bottom color9 1px solid

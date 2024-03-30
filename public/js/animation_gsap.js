@@ -64,9 +64,19 @@ window.addEventListener('load',()=>{
     }
 
     if(route=='post' ){
-        gsap.to('.box_card',{
+        gsap.to('.box_card img',{
             opacity:1,
+            delay:1,
             scale:1,
+            ease:'power4.out',
+            duration:1.5
+        })
+        gsap.to('.box_card .card_block',{
+            /* opacity:1, */
+            y:0,
+            delay:1,
+            scrub:1,
+            /* scale:1, */
             ease:'power4.out',
             duration:1.5
         })
@@ -74,7 +84,9 @@ window.addEventListener('load',()=>{
             opacity:1,
             ease:'power2.in',
             delay:.5,
-            duration:2
+            duration:2,
+            scrub:1
+
         })
         animationFooter('post')
     }

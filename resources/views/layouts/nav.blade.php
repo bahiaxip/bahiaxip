@@ -51,11 +51,11 @@
                     </a>
                 </li>
                 
-                <li>
+                {{-- <li>
                     <a href="{{route('projects')}}" class="nav-link @if(Route::currentRouteName() == 'projects') {{'active'}}@endif">
                         Proyectos
                     </a>
-                </li>
+                </li> --}}
                 
                 @admin('active')
                 <li class="links_admin d-none d-lg-block">
@@ -179,12 +179,11 @@
         --}}
         <!-- enlaces RRSS -->
         <ul class="rrss">
-            <div >
-                    <a href="https://www.linkedin.com/in/bahiaxip/" target="_blank">
-                        <div class="linkedin"></div>    
-                    </a>
-                    
-                </div>
+            {{-- <div>
+                <a href="https://www.linkedin.com/in/bahiaxip/" target="_blank">
+                    <div class="linkedin"></div>    
+                </a>
+            </div> --}}
         </ul>
     </div>
     

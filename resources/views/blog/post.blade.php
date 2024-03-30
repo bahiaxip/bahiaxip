@@ -19,7 +19,7 @@
         </div>
     </div>
     {{-- @endif --}}
-    <div class="row py-1 div_buttons">
+    <div class="py-1 div_buttons">
         <div class="div_btn_anim " >
             <div class="back_btn_anim btn1" >
                 <div class="wrap_button btn1" ></div>
@@ -34,14 +34,14 @@
             </div>
         </div>
     </div>
-    <div class="row ">
-        <div class="col">
+    <div class="">
+        <div class="">
             <div class="card box_card ">
                 <h1 class="card-success-outline post_detail_header ">
                     {{ $post->title }}
                 </h1>
                 @if($post->file && $post->file != "NULL")
-                        <img src="{{asset($post->file) }}" alt="{{$post->title}}" class="card-image-top img-fluid mx-auto mb-4 " >
+                        <img src="{{asset($post->file) }}" alt="{{$post->title}}" class="card-image-top img-fluid mx-auto" >
                 @endif
                 
                 <div class="card-block card_block">
